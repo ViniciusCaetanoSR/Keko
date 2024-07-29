@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>F_Visita__c</fullName>
+    <externalId>false</externalId>
+    <label>Frequência Visita</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Opcional</fullName>
+                <default>false</default>
+                <label>Opcional</label>
+            </value>
+            <value>
+                <fullName>Mensal</fullName>
+                <default>false</default>
+                <label>Mensal</label>
+            </value>
+            <value>
+                <fullName>Bimestral</fullName>
+                <default>false</default>
+                <label>Bimestral</label>
+            </value>
+            <value>
+                <fullName>Trimestral</fullName>
+                <default>false</default>
+                <label>Trimestral</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

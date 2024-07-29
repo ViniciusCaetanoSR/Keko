@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Canal__c</fullName>
+    <externalId>false</externalId>
+    <label>Canal</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Segmento__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AFTER ME</fullName>
+                <default>false</default>
+                <label>AFTER ME</label>
+            </value>
+            <value>
+                <fullName>KEKO USA</fullName>
+                <default>false</default>
+                <label>KEKO USA</label>
+            </value>
+            <value>
+                <fullName>AFTER MI</fullName>
+                <default>false</default>
+                <label>AFTER MI</label>
+            </value>
+            <value>
+                <fullName>FIAT ARMAZEM</fullName>
+                <default>false</default>
+                <label>FIAT ARMAZEM</label>
+            </value>
+            <value>
+                <fullName>FORD ARMAZEM CAJAMAR</fullName>
+                <default>false</default>
+                <label>FORD ARMAZEM CAJAMAR</label>
+            </value>
+            <value>
+                <fullName>FORD ARMAZEM SP BARUERI</fullName>
+                <default>false</default>
+                <label>FORD ARMAZEM SP BARUERI</label>
+            </value>
+            <value>
+                <fullName>GM ARMAZEM DSH</fullName>
+                <default>false</default>
+                <label>GM ARMAZEM DSH</label>
+            </value>
+            <value>
+                <fullName>HONDA REPOSICAO</fullName>
+                <default>false</default>
+                <label>HONDA REPOSICAO</label>
+            </value>
+            <value>
+                <fullName>MITSUBISHI ARMAZEM</fullName>
+                <default>false</default>
+                <label>MITSUBISHI ARMAZEM</label>
+            </value>
+            <value>
+                <fullName>NISSAN ARMAZEM</fullName>
+                <default>false</default>
+                <label>NISSAN ARMAZEM</label>
+            </value>
+            <value>
+                <fullName>PEUGEOT ARMAZEM</fullName>
+                <default>false</default>
+                <label>PEUGEOT ARMAZEM</label>
+            </value>
+            <value>
+                <fullName>RENAULT ARMAZEM</fullName>
+                <default>false</default>
+                <label>RENAULT ARMAZEM</label>
+            </value>
+            <value>
+                <fullName>TOYOTA ARMAZEM</fullName>
+                <default>false</default>
+                <label>TOYOTA ARMAZEM</label>
+            </value>
+            <value>
+                <fullName>TOYOTA ARMAZEM ARGENTINA</fullName>
+                <default>false</default>
+                <label>TOYOTA ARMAZEM ARGENTINA</label>
+            </value>
+            <value>
+                <fullName>TOYOTA TSUSHO</fullName>
+                <default>false</default>
+                <label>TOYOTA TSUSHO</label>
+            </value>
+            <value>
+                <fullName>VOLKSWAGEN ARMAZEM</fullName>
+                <default>false</default>
+                <label>VOLKSWAGEN ARMAZEM</label>
+            </value>
+            <value>
+                <fullName>FIAT ARGENTINA</fullName>
+                <default>false</default>
+                <label>FIAT ARGENTINA</label>
+            </value>
+            <value>
+                <fullName>FIAT ASIA</fullName>
+                <default>false</default>
+                <label>FIAT ASIA</label>
+            </value>
+            <value>
+                <fullName>FIAT/PEUGEOT URUGUAI</fullName>
+                <default>false</default>
+                <label>FIAT/PEUGEOT URUGUAI</label>
+            </value>
+            <value>
+                <fullName>FORD ALEMANHA</fullName>
+                <default>false</default>
+                <label>FORD ALEMANHA</label>
+            </value>
+            <value>
+                <fullName>FORD AMERICA LATINA</fullName>
+                <default>false</default>
+                <label>FORD AMERICA LATINA</label>
+            </value>
+            <value>
+                <fullName>FORD ARGENTINA</fullName>
+                <default>false</default>
+                <label>FORD ARGENTINA</label>
+            </value>
+            <value>
+                <fullName>FORD CHILE</fullName>
+                <default>false</default>
+                <label>FORD CHILE</label>
+            </value>
+            <value>
+                <fullName>FORD INDIA</fullName>
+                <default>false</default>
+                <label>FORD INDIA</label>
+            </value>
+            <value>
+                <fullName>FORD MEXICO</fullName>
+                <default>false</default>
+                <label>FORD MEXICO</label>
+            </value>
+            <value>
+                <fullName>FORD PERU</fullName>
+                <default>false</default>
+                <label>FORD PERU</label>
+            </value>
+            <value>
+                <fullName>GM AMERICA LATINA</fullName>
+                <default>false</default>
+                <label>GM AMERICA LATINA</label>
+            </value>
+            <value>
+                <fullName>GM ARGENTINA</fullName>
+                <default>false</default>
+                <label>GM ARGENTINA</label>
+            </value>
+            <value>
+                <fullName>GM CHILE</fullName>
+                <default>false</default>
+                <label>GM CHILE</label>
+            </value>
+            <value>
+                <fullName>GM EQUADOR</fullName>
+                <default>false</default>
+                <label>GM EQUADOR</label>
+            </value>
+            <value>
+                <fullName>GM MEXICO</fullName>
+                <default>false</default>
+                <label>GM MEXICO</label>
+            </value>
+            <value>
+                <fullName>GM TAILANDIA</fullName>
+                <default>false</default>
+                <label>GM TAILANDIA</label>
+            </value>
+            <value>
+                <fullName>GM USA</fullName>
+                <default>false</default>
+                <label>GM USA</label>
+            </value>
+            <value>
+                <fullName>MERCEDES ALEMANHA</fullName>
+                <default>false</default>
+                <label>MERCEDES ALEMANHA</label>
+            </value>
+            <value>
+                <fullName>NISSAN MEXICO</fullName>
+                <default>false</default>
+                <label>NISSAN MEXICO</label>
+            </value>
+            <value>
+                <fullName>RENAULT COLOMBIA</fullName>
+                <default>false</default>
+                <label>RENAULT COLOMBIA</label>
+            </value>
+            <value>
+                <fullName>TOYOTA ARGENTINA OEM</fullName>
+                <default>false</default>
+                <label>TOYOTA ARGENTINA OEM</label>
+            </value>
+            <value>
+                <fullName>TOYOTA ARGENTINA P&amp;A</fullName>
+                <default>false</default>
+                <label>TOYOTA ARGENTINA P&amp;A</label>
+            </value>
+            <value>
+                <fullName>FIAT OM</fullName>
+                <default>false</default>
+                <label>FIAT OM</label>
+            </value>
+            <value>
+                <fullName>FORD MOD CENTER BA</fullName>
+                <default>false</default>
+                <label>FORD MOD CENTER BA</label>
+            </value>
+            <value>
+                <fullName>FORD MOD CENTER SBC</fullName>
+                <default>false</default>
+                <label>FORD MOD CENTER SBC</label>
+            </value>
+            <value>
+                <fullName>GM OM</fullName>
+                <default>false</default>
+                <label>GM OM</label>
+            </value>
+            <value>
+                <fullName>GM PERU</fullName>
+                <default>false</default>
+                <label>GM PERU</label>
+            </value>
+            <value>
+                <fullName>HONDA OEM</fullName>
+                <default>false</default>
+                <label>HONDA OEM</label>
+            </value>
+            <value>
+                <fullName>MITSUBISHI OM</fullName>
+                <default>false</default>
+                <label>MITSUBISHI OM</label>
+            </value>
+            <value>
+                <fullName>NISSAN OEM</fullName>
+                <default>false</default>
+                <label>NISSAN OEM</label>
+            </value>
+            <value>
+                <fullName>RENAULT OM</fullName>
+                <default>false</default>
+                <label>RENAULT OM</label>
+            </value>
+            <value>
+                <fullName>TOYOTA MOD CENTER</fullName>
+                <default>false</default>
+                <label>TOYOTA MOD CENTER</label>
+            </value>
+            <value>
+                <fullName>TOYOTA OEM</fullName>
+                <default>false</default>
+                <label>TOYOTA OEM</label>
+            </value>
+            <value>
+                <fullName>VOLKS OM</fullName>
+                <default>false</default>
+                <label>VOLKS OM</label>
+            </value>
+            <value>
+                <fullName>FIAT P&amp;A</fullName>
+                <default>false</default>
+                <label>FIAT P&amp;A</label>
+            </value>
+            <value>
+                <fullName>FORD P&amp;A</fullName>
+                <default>false</default>
+                <label>FORD P&amp;A</label>
+            </value>
+            <value>
+                <fullName>GM P&amp;A</fullName>
+                <default>false</default>
+                <label>GM P&amp;A</label>
+            </value>
+            <value>
+                <fullName>HYUNDAI P&amp;A</fullName>
+                <default>false</default>
+                <label>HYUNDAI P&amp;A</label>
+            </value>
+            <value>
+                <fullName>JEEP/RAM P&amp;A</fullName>
+                <default>false</default>
+                <label>JEEP/RAM P&amp;A</label>
+            </value>
+            <value>
+                <fullName>MITSUBISHI P&amp;A</fullName>
+                <default>false</default>
+                <label>MITSUBISHI P&amp;A</label>
+            </value>
+            <value>
+                <fullName>NISSAN P&amp;A</fullName>
+                <default>false</default>
+                <label>NISSAN P&amp;A</label>
+            </value>
+            <value>
+                <fullName>TOYOTA P&amp;A</fullName>
+                <default>false</default>
+                <label>TOYOTA P&amp;A</label>
+            </value>
+            <value>
+                <fullName>VOLKS P&amp;A</fullName>
+                <default>false</default>
+                <label>VOLKS P&amp;A</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>After Nacional</controllingFieldValue>
+            <valueName>AFTER MI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>After Export</controllingFieldValue>
+            <valueName>AFTER ME</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>After Export</controllingFieldValue>
+            <valueName>KEKO USA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Armazém</controllingFieldValue>
+            <valueName>FIAT ARMAZEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Armazém</controllingFieldValue>
+            <valueName>FORD ARMAZEM CAJAMAR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Armazém</controllingFieldValue>
+            <valueName>FORD ARMAZEM SP BARUERI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Armazém</controllingFieldValue>
+            <valueName>GM ARMAZEM DSH</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Armazém</controllingFieldValue>
+            <valueName>HONDA REPOSICAO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Armazém</controllingFieldValue>
+            <valueName>MITSUBISHI ARMAZEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Armazém</controllingFieldValue>
+            <valueName>NISSAN ARMAZEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Armazém</controllingFieldValue>
+            <valueName>PEUGEOT ARMAZEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Armazém</controllingFieldValue>
+            <valueName>RENAULT ARMAZEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Armazém</controllingFieldValue>
+            <valueName>TOYOTA ARMAZEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Armazém</controllingFieldValue>
+            <valueName>TOYOTA ARMAZEM ARGENTINA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Armazém</controllingFieldValue>
+            <valueName>TOYOTA TSUSHO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Armazém</controllingFieldValue>
+            <valueName>VOLKSWAGEN ARMAZEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>FIAT OM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>FORD MOD CENTER BA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>FORD MOD CENTER SBC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>GM OM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>GM PERU</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>HONDA OEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>MITSUBISHI OM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>NISSAN OEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>RENAULT OM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>TOYOTA MOD CENTER</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>TOYOTA OEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>OEM</controllingFieldValue>
+            <valueName>VOLKS OM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P&amp;A</controllingFieldValue>
+            <valueName>FIAT P&amp;A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P&amp;A</controllingFieldValue>
+            <valueName>FORD P&amp;A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P&amp;A</controllingFieldValue>
+            <valueName>GM P&amp;A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P&amp;A</controllingFieldValue>
+            <valueName>HYUNDAI P&amp;A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P&amp;A</controllingFieldValue>
+            <valueName>JEEP/RAM P&amp;A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P&amp;A</controllingFieldValue>
+            <valueName>MITSUBISHI P&amp;A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P&amp;A</controllingFieldValue>
+            <valueName>NISSAN P&amp;A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P&amp;A</controllingFieldValue>
+            <valueName>TOYOTA P&amp;A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>P&amp;A</controllingFieldValue>
+            <valueName>VOLKS P&amp;A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>FIAT ARGENTINA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>FIAT ASIA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>FIAT/PEUGEOT URUGUAI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>FORD ALEMANHA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>FORD AMERICA LATINA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>FORD ARGENTINA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>FORD CHILE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>FORD INDIA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>FORD MEXICO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>FORD PERU</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>GM AMERICA LATINA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>GM ARGENTINA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>GM CHILE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>GM EQUADOR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>GM MEXICO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>GM TAILANDIA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>GM USA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>MERCEDES ALEMANHA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>NISSAN MEXICO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>RENAULT COLOMBIA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>TOYOTA ARGENTINA OEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora Export</controllingFieldValue>
+            <valueName>TOYOTA ARGENTINA P&amp;A</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

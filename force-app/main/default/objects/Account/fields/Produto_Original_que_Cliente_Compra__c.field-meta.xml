@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Produto_Original_que_Cliente_Compra__c</fullName>
+    <externalId>false</externalId>
+    <label>Produto Original que Cliente Compra</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>NENHUM</fullName>
+                <default>false</default>
+                <label>NENHUM</label>
+            </value>
+            <value>
+                <fullName>SANTANTÔNIO</fullName>
+                <default>false</default>
+                <label>SANTANTÔNIO</label>
+            </value>
+            <value>
+                <fullName>ENGATE DE REBOQUE</fullName>
+                <default>false</default>
+                <label>ENGATE DE REBOQUE</label>
+            </value>
+            <value>
+                <fullName>ESTRIBO</fullName>
+                <default>false</default>
+                <label>ESTRIBO</label>
+            </value>
+            <value>
+                <fullName>CAPOTA LONA</fullName>
+                <default>false</default>
+                <label>CAPOTA LONA</label>
+            </value>
+            <value>
+                <fullName>CAPOTA RÍGIDA</fullName>
+                <default>false</default>
+                <label>CAPOTA RÍGIDA</label>
+            </value>
+            <value>
+                <fullName>KIT VEDAÇÃO</fullName>
+                <default>false</default>
+                <label>KIT VEDAÇÃO</label>
+            </value>
+            <value>
+                <fullName>RENOVADOR LONA</fullName>
+                <default>false</default>
+                <label>RENOVADOR LONA</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

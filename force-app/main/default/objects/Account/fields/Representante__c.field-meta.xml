@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Representante__c</fullName>
+    <externalId>false</externalId>
+    <label>Representante</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>GE SPCAP</fullName>
+                <default>false</default>
+                <label>GE SPCAP</label>
+            </value>
+            <value>
+                <fullName>GE SUL</fullName>
+                <default>false</default>
+                <label>GE SUL</label>
+            </value>
+            <value>
+                <fullName>GE MG/RJ/ES</fullName>
+                <default>false</default>
+                <label>GE MG/RJ/ES</label>
+            </value>
+            <value>
+                <fullName>GE SPCAMP</fullName>
+                <default>false</default>
+                <label>GE SPCAMP</label>
+            </value>
+            <value>
+                <fullName>GE SPR.PRETO</fullName>
+                <default>false</default>
+                <label>GE SPR.PRETO</label>
+            </value>
+            <value>
+                <fullName>VI SUDESTE</fullName>
+                <default>false</default>
+                <label>VI SUDESTE</label>
+            </value>
+            <value>
+                <fullName>VI SUL/SP</fullName>
+                <default>false</default>
+                <label>VI SUL/SP</label>
+            </value>
+            <value>
+                <fullName>VI CENT/NORT</fullName>
+                <default>false</default>
+                <label>VI CENT/NORT</label>
+            </value>
+            <value>
+                <fullName>VI NORD/SUD</fullName>
+                <default>false</default>
+                <label>VI NORD/SUD</label>
+            </value>
+            <value>
+                <fullName>GE MT/RO/AC</fullName>
+                <default>false</default>
+                <label>GE MT/RO/AC</label>
+            </value>
+            <value>
+                <fullName>GE NORD CE</fullName>
+                <default>false</default>
+                <label>GE NORD CE</label>
+            </value>
+            <value>
+                <fullName>GE NORD PE</fullName>
+                <default>false</default>
+                <label>GE NORD PE</label>
+            </value>
+            <value>
+                <fullName>GE NORT/GODF</fullName>
+                <default>false</default>
+                <label>GE NORT/GODF</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

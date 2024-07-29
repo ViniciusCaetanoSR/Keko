@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <description>Relatar Problema Cliente (uso oportunidade - chamado via process builder)</description>
+    <formulas>
+        <description>data hora atual - 1 min</description>
+        <name>v_f_horaatual</name>
+        <dataType>DateTime</dataType>
+        <expression>now() - 0.0007</expression>
+    </formulas>
+    <interviewLabel>Relatar Problema Cliente {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Relatar Problema Cliente</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordCreates>
+        <description>Cria tarefa</description>
+        <name>C1</name>
+        <label>C1</label>
+        <locationX>486</locationX>
+        <locationY>195</locationY>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>Descreva_o_problema_relatado_para_descri_o_da_tarefa</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>O1.Owner.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <elementReference>Assunto_Tarefa</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>O1.Account.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <description>Obter Registro Oportunidade</description>
+        <name>O1</name>
+        <label>O1</label>
+        <locationX>183</locationX>
+        <locationY>190</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Relato_Problema_Cliente_Nova_Terefa</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>1º Contato</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>LastModifiedDate</field>
+            <operator>GreaterThanOrEqualTo</operator>
+            <value>
+                <elementReference>v_f_horaatual</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Cliente_relatou_algum_problema__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Sim</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <screens>
+        <name>Relato_Problema_Cliente_Nova_Terefa</name>
+        <label>Relato Problema Cliente (Nova Terefa)</label>
+        <locationX>335</locationX>
+        <locationY>187</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>C1</targetReference>
+        </connector>
+        <fields>
+            <name>Assunto_Tarefa</name>
+            <dataType>String</dataType>
+            <fieldText>Assunto tarefa</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Descreva_o_problema_relatado_para_descri_o_da_tarefa</name>
+            <fieldText>Descreva o problema relatado (Comentários tarefa)</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>O1</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>ID Conta</description>
+        <name>v_conta</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>ID Responsavel</description>
+        <name>v_responsavel</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

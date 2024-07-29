@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Mascara_CNPJ</name>
+        <label>Mascara CNPJ</label>
+        <locationX>50</locationX>
+        <locationY>971</locationY>
+        <assignmentItems>
+            <assignToReference>newCNPJ</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>MascaraCNPJ</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>AtualizaCNPJ</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>RemoveMascara_assignment</name>
+        <label>RemoveMascara</label>
+        <locationX>182</locationX>
+        <locationY>755</locationY>
+        <assignmentItems>
+            <assignToReference>newCNPJ</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>RemoveMascara</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Algoritmo_Validado</targetReference>
+        </connector>
+    </assignments>
+    <customErrors>
+        <description>Contas internacionais não devem ter CNPJ</description>
+        <name>CNPJ_preenchido_erro</name>
+        <label>CNPJ preenchido erro</label>
+        <locationX>1370</locationX>
+        <locationY>539</locationY>
+        <customErrorMessages>
+            <errorMessage>Contas internacionais não devem ter CNPJ</errorMessage>
+            <fieldSelection>CNPJ__c</fieldSelection>
+            <isFieldError>true</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <description>CNPJ não pode estar vazio</description>
+        <name>CNPJ_vazio_erro</name>
+        <label>CNPJ vazio erro</label>
+        <locationX>842</locationX>
+        <locationY>539</locationY>
+        <customErrorMessages>
+            <errorMessage>CNPJ não pode estar vazio</errorMessage>
+            <fieldSelection>CNPJ__c</fieldSelection>
+            <isFieldError>true</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Erro_de_Validacao</name>
+        <label>Erro de Validação</label>
+        <locationX>314</locationX>
+        <locationY>971</locationY>
+        <customErrorMessages>
+            <errorMessage>O CNPJ inserido não é válido.</errorMessage>
+            <fieldSelection>CNPJ__c</fieldSelection>
+            <isFieldError>true</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Erro_Duplicidade</name>
+        <label>Erro de Duplicidade</label>
+        <locationX>578</locationX>
+        <locationY>755</locationY>
+        <customErrorMessages>
+            <errorMessage>O CNPJ inserido está em duplicidade no sistema.</errorMessage>
+            <fieldSelection>CNPJ__c</fieldSelection>
+            <isFieldError>true</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Algoritmo_Validado</name>
+        <label>Algoritmo Validado?</label>
+        <locationX>182</locationX>
+        <locationY>863</locationY>
+        <defaultConnector>
+            <targetReference>Erro_de_Validacao</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Não</defaultConnectorLabel>
+        <rules>
+            <name>Sim</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ValidaAlgoritmo</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Mascara_CNPJ</targetReference>
+            </connector>
+            <label>Sim</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CNPJ_em_duplicidade_na_base</name>
+        <label>CNPJ em duplicidade na base?</label>
+        <locationX>380</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Erro_Duplicidade</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Sim</defaultConnectorLabel>
+        <rules>
+            <name>CNPJ_em_duplicidade_na_base_Nao</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>BuscarContas1</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>RemoveMascara_assignment</targetReference>
+            </connector>
+            <label>Não</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CNPJ_preenchido</name>
+        <label>CNPJ preenchido?</label>
+        <locationX>1238</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>CNPJ_preenchido_erro</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Sim</defaultConnectorLabel>
+        <rules>
+            <name>CNPJ_preenchido_Nao</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CNPJ__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>Não</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CNPJ_vazio</name>
+        <label>CNPJ vazio?</label>
+        <locationX>611</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>CNPJ_vazio_erro</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Sim</defaultConnectorLabel>
+        <rules>
+            <name>CNPJNaoVazio</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CNPJ__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>BuscarContas1</targetReference>
+            </connector>
+            <label>Não</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Conta_internacional</name>
+        <label>Conta é internacional?</label>
+        <locationX>924</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>CNPJ_preenchido</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Sim</defaultConnectorLabel>
+        <rules>
+            <name>Nao</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Mercado__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Export</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CNPJ_vazio</targetReference>
+            </connector>
+            <label>Não</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>MascaraCNPJ</name>
+        <dataType>String</dataType>
+        <expression>MID({!RemoveMascara}, 1, 2) + &apos;.&apos; + MID({!RemoveMascara}, 3, 3) + &apos;.&apos; + MID({!RemoveMascara}, 6, 3) + &apos;/&apos; + MID({!RemoveMascara}, 9, 4) + &apos;-&apos; + MID({!RemoveMascara}, 13, 2)</expression>
+    </formulas>
+    <formulas>
+        <name>RemoveMascara</name>
+        <dataType>String</dataType>
+        <expression>SUBSTITUTE(SUBSTITUTE(SUBSTITUTE({!$Record.CNPJ__c}, &quot;/&quot;, &quot;&quot;), &quot;.&quot;, &quot;&quot;),&quot;-&quot;, &quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>ValidaAlgoritmo</name>
+        <dataType>Boolean</dataType>
+        <expression>IF(
+AND(
+IF(
+MOD((
+VALUE(LEFT({!newCNPJ},1))*5+
+VALUE(MID({!newCNPJ},2,1))*4+
+VALUE(MID({!newCNPJ},3,1))*3+
+VALUE(MID({!newCNPJ},4,1))*2+
+VALUE(MID({!newCNPJ},5,1))*9+
+VALUE(MID({!newCNPJ},6,1))*8+
+VALUE(MID({!newCNPJ},7,1))*7+
+VALUE(MID({!newCNPJ},8,1))*6+
+VALUE(MID({!newCNPJ},9,1))*5+
+VALUE(MID({!newCNPJ},10,1))*4+
+VALUE(MID({!newCNPJ},11,1))*3+
+VALUE(MID({!newCNPJ},12,1))*2
+),11) &lt; 2,
+VALUE(MID({!newCNPJ},13,1)) == 0,
+11 - MOD((
+VALUE(LEFT({!newCNPJ},1))*5+
+VALUE(MID({!newCNPJ},2,1))*4+
+VALUE(MID({!newCNPJ},3,1))*3+
+VALUE(MID({!newCNPJ},4,1))*2+
+VALUE(MID({!newCNPJ},5,1))*9+
+VALUE(MID({!newCNPJ},6,1))*8+
+VALUE(MID({!newCNPJ},7,1))*7+
+VALUE(MID({!newCNPJ},8,1))*6+
+VALUE(MID({!newCNPJ},9,1))*5+
+VALUE(MID({!newCNPJ},10,1))*4+
+VALUE(MID({!newCNPJ},11,1))*3+
+VALUE(MID({!newCNPJ},12,1))*2
+),11) == VALUE(MID({!newCNPJ},13,1))),
+IF(MOD((
+VALUE(LEFT({!newCNPJ},1))*6+
+VALUE(MID({!newCNPJ},2,1))*5+
+VALUE(MID({!newCNPJ},3,1))*4+
+VALUE(MID({!newCNPJ},4,1))*3+
+VALUE(MID({!newCNPJ},5,1))*2+
+VALUE(MID({!newCNPJ},6,1))*9+
+VALUE(MID({!newCNPJ},7,1))*8+
+VALUE(MID({!newCNPJ},8,1))*7+
+VALUE(MID({!newCNPJ},9,1))*6+
+VALUE(MID({!newCNPJ},10,1))*5+
+VALUE(MID({!newCNPJ},11,1))*4+
+VALUE(MID({!newCNPJ},12,1))*3+
+VALUE(MID({!newCNPJ},13,1))*2
+),11) &lt; 2,
+VALUE(MID({!newCNPJ},14,1)) == 0,
+11 - MOD((
+VALUE(LEFT({!newCNPJ},1))*6+
+VALUE(MID({!newCNPJ},2,1))*5+
+VALUE(MID({!newCNPJ},3,1))*4+
+VALUE(MID({!newCNPJ},4,1))*3+
+VALUE(MID({!newCNPJ},5,1))*2+
+VALUE(MID({!newCNPJ},6,1))*9+
+VALUE(MID({!newCNPJ},7,1))*8+
+VALUE(MID({!newCNPJ},8,1))*7+
+VALUE(MID({!newCNPJ},9,1))*6+
+VALUE(MID({!newCNPJ},10,1))*5+
+VALUE(MID({!newCNPJ},11,1))*4+
+VALUE(MID({!newCNPJ},12,1))*3+
+VALUE(MID({!newCNPJ},13,1))*2
+),11) == VALUE(MID({!newCNPJ},14,1)))
+),
+true, false
+)</expression>
+    </formulas>
+    <interviewLabel>Mascara CNPJ {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Mascara CNPJ</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>BuscarContas1</name>
+        <label>Buscar Contas</label>
+        <locationX>380</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>CNPJ_em_duplicidade_na_base</targetReference>
+        </connector>
+        <filterLogic>1 AND (2 OR 3)</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>CNPJ__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>MascaraCNPJ</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>CNPJ__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RemoveMascara</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>AtualizaCNPJ</name>
+        <label>AtualizaCNPJ</label>
+        <locationX>50</locationX>
+        <locationY>1079</locationY>
+        <inputAssignments>
+            <field>CNPJ__c</field>
+            <value>
+                <elementReference>newCNPJ</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>798</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Conta_internacional</targetReference>
+        </connector>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>CNPJBuscarConta</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>newCNPJ</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

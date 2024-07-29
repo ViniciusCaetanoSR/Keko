@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Valor_pretendido_do_primeiro_pedido__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Escrever o valor do pedido que o cliente pretende colocar para abertura da conta</inlineHelpText>
+    <label>Valor pretendido do primeiro pedido</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Compra_fonte_sto__c</fullName>
+    <externalId>false</externalId>
+    <label>Compra de qual fonte?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Somente Original</fullName>
+                <default>false</default>
+                <label>Somente Original</label>
+            </value>
+            <value>
+                <fullName>Somente Keko</fullName>
+                <default>false</default>
+                <label>Somente Keko</label>
+            </value>
+            <value>
+                <fullName>Original e Keko</fullName>
+                <default>false</default>
+                <label>Original e Keko</label>
+            </value>
+            <value>
+                <fullName>Bepo</fullName>
+                <default>false</default>
+                <label>Bepo</label>
+            </value>
+            <value>
+                <fullName>Track</fullName>
+                <default>false</default>
+                <label>Track</label>
+            </value>
+            <value>
+                <fullName>Solar</fullName>
+                <default>false</default>
+                <label>Solar</label>
+            </value>
+            <value>
+                <fullName>CCF</fullName>
+                <default>false</default>
+                <label>CCF</label>
+            </value>
+            <value>
+                <fullName>C&amp;K</fullName>
+                <default>false</default>
+                <label>C&amp;K</label>
+            </value>
+            <value>
+                <fullName>Distribuidor</fullName>
+                <default>false</default>
+                <label>Distribuidor</label>
+            </value>
+            <value>
+                <fullName>Terceirizadora</fullName>
+                <default>false</default>
+                <label>Terceirizadora</label>
+            </value>
+            <value>
+                <fullName>Outro</fullName>
+                <default>false</default>
+                <label>Outro</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

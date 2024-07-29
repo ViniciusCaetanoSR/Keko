@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Segmento__c</fullName>
+    <externalId>false</externalId>
+    <label>Segmento</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>After Nacional</fullName>
+                <default>false</default>
+                <label>After Nacional</label>
+            </value>
+            <value>
+                <fullName>After Export</fullName>
+                <default>false</default>
+                <label>After Export</label>
+            </value>
+            <value>
+                <fullName>Armazém</fullName>
+                <default>false</default>
+                <label>Armazém</label>
+            </value>
+            <value>
+                <fullName>OEM</fullName>
+                <default>false</default>
+                <label>OEM</label>
+            </value>
+            <value>
+                <fullName>P&amp;A</fullName>
+                <default>false</default>
+                <label>P&amp;A</label>
+            </value>
+            <value>
+                <fullName>Mod Center</fullName>
+                <default>false</default>
+                <label>Mod Center</label>
+            </value>
+            <value>
+                <fullName>Montadora Export</fullName>
+                <default>false</default>
+                <label>Montadora Export</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Funil__c</fullName>
+    <externalId>false</externalId>
+    <label>Funil Ferramental</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cliente Potencial</fullName>
+                <default>true</default>
+                <label>Cliente Potencial</label>
+            </value>
+            <value>
+                <fullName>Contato Realizado</fullName>
+                <default>false</default>
+                <label>Contato Realizado</label>
+            </value>
+            <value>
+                <fullName>Demostração Agendada</fullName>
+                <default>false</default>
+                <label>Demostração Agendada</label>
+            </value>
+            <value>
+                <fullName>Proposta Feita</fullName>
+                <default>false</default>
+                <label>Proposta Feita</label>
+            </value>
+            <value>
+                <fullName>Negociações Iniciadas</fullName>
+                <default>false</default>
+                <label>Negociações Iniciadas</label>
+            </value>
+            <value>
+                <fullName>Negociações Encerradas</fullName>
+                <default>false</default>
+                <label>Negociações Encerradas</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Segmento__c</fullName>
+    <externalId>false</externalId>
+    <label>Segmento</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Mercado__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>After Nacional</fullName>
+                <default>false</default>
+                <label>After Nacional</label>
+            </value>
+            <value>
+                <fullName>After Export</fullName>
+                <default>false</default>
+                <label>After Export</label>
+            </value>
+            <value>
+                <fullName>Armazém</fullName>
+                <default>false</default>
+                <label>Armazém</label>
+            </value>
+            <value>
+                <fullName>OEM</fullName>
+                <default>false</default>
+                <label>OEM</label>
+            </value>
+            <value>
+                <fullName>P&amp;A</fullName>
+                <default>false</default>
+                <label>P&amp;A</label>
+            </value>
+            <value>
+                <fullName>Mod Center</fullName>
+                <default>false</default>
+                <label>Mod Center</label>
+            </value>
+            <value>
+                <fullName>Montadora Export</fullName>
+                <default>false</default>
+                <label>Montadora Export</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Export</controllingFieldValue>
+            <valueName>After Export</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Export</controllingFieldValue>
+            <valueName>Montadora Export</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Varejo</controllingFieldValue>
+            <valueName>After Nacional</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Varejo</controllingFieldValue>
+            <controllingFieldValue>Montadora</controllingFieldValue>
+            <valueName>P&amp;A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora</controllingFieldValue>
+            <valueName>Armazém</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora</controllingFieldValue>
+            <valueName>OEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Montadora</controllingFieldValue>
+            <valueName>Mod Center</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

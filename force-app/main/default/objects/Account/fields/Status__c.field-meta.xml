@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ativo</fullName>
+                <default>false</default>
+                <label>Ativo</label>
+            </value>
+            <value>
+                <fullName>Inativo</fullName>
+                <default>false</default>
+                <label>Inativo</label>
+            </value>
+            <value>
+                <fullName>CKR (Cliente Keko Recuperação)</fullName>
+                <default>false</default>
+                <label>CKR (Cliente Keko Recuperação)</label>
+            </value>
+            <value>
+                <fullName>Perdido</fullName>
+                <default>false</default>
+                <label>Perdido</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
