@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <assignments>
+        <name>Muda_status_para_Apresentacao_das_Vantagens</name>
+        <label>Muda status para Apresentação das Vantagens</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Apresentação das Vantagens de Comprar KEKO</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Muda_status_para_Perdido</name>
+        <label>Muda status para Perdido</label>
+        <locationX>578</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Perdido</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Muda_status_para_Validacao_do_Gerente</name>
+        <label>Muda status para Validação do Gerente</label>
+        <locationX>314</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Validação do Gerente</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>busca_gerente.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Cliente_Passou_por_Politica_Comercial</name>
+        <label>Cliente Passou por Política Comercial?</label>
+        <locationX>248</locationX>
+        <locationY>287</locationY>
+        <defaultConnector>
+            <targetReference>Necessito_aprovacao_do_Gerente</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Não</defaultConnectorLabel>
+        <rules>
+            <name>Sim</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.O_primeiro_pedido_sera_de_6000__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sim</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.O_cliente_fara_compra_mensal_de_2200__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sim</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ContadorFamilia</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>3.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Muda_status_para_Apresentacao_das_Vantagens</targetReference>
+            </connector>
+            <label>Sim</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Necessito_aprovacao_do_Gerente</name>
+        <label>Necessito aprovação do Gerente?</label>
+        <locationX>446</locationX>
+        <locationY>395</locationY>
+        <defaultConnector>
+            <targetReference>Muda_status_para_Perdido</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Não</defaultConnectorLabel>
+        <rules>
+            <name>Sim_Necessito_aprovacao_do_Gerente</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Necessito_aprovacao_do_Gerente__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sim, levar para Validação do Gerente</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>busca_gerente</targetReference>
+            </connector>
+            <label>Sim</label>
+        </rules>
+    </decisions>
+    <description>Lead Flow Factory.</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>Contador para verificar quantos itens foram selecionados</description>
+        <name>ContadorFamilia</name>
+        <dataType>Number</dataType>
+        <expression>IF(INCLUDES({!$Record.Cliente_comprar_quais_fam_de_produto__c}, &quot;Capota Marítima&quot;), 1, 0) +
+IF(INCLUDES({!$Record.Cliente_comprar_quais_fam_de_produto__c}, &quot;Capota Rígida&quot;), 1, 0) +
+IF(INCLUDES({!$Record.Cliente_comprar_quais_fam_de_produto__c}, &quot;Estribo&quot;), 1, 0) +
+IF(INCLUDES({!$Record.Cliente_comprar_quais_fam_de_produto__c}, &quot;Estribo Elétrico&quot;), 1, 0) +
+IF(INCLUDES({!$Record.Cliente_comprar_quais_fam_de_produto__c}, &quot;Santo Antônio&quot;), 1, 0) +
+IF(INCLUDES({!$Record.Cliente_comprar_quais_fam_de_produto__c}, &quot;Engate de Reboque&quot;), 1, 0) +
+IF(INCLUDES({!$Record.Cliente_comprar_quais_fam_de_produto__c}, &quot;Utilitários&quot;), 1, 0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <interviewLabel>Lead - Trigger - Create/Update - Before {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead - Trigger - Create/Update - Before</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>busca_gerente</name>
+        <label>busca gerente</label>
+        <locationX>314</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Muda_status_para_Validacao_do_Gerente</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Marcos Reolon</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>122</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Cliente_Passou_por_Politica_Comercial</targetReference>
+        </connector>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

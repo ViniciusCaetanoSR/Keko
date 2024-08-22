@@ -3,7 +3,7 @@
 .sfdx/
 .localdevserver/
 deploy-options.json
-
+package.xml
 # LWC VSCode autocomplete
 **/lwc/jsconfig.json
 
@@ -47,5 +47,4 @@ $RECYCLE.BIN/
 *.key
 *.json
 *.txt
-
 !sfdx-project.json
