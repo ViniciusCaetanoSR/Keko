@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Valida_Fechado_Ganho</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+ISPICKVAL(StageName, &quot;Fechado Ganho&quot;),
+pc_fechamento_cubagem__c &gt; 0,
+ISBLANK(Aprova_Frete__c),
+ISPICKVAL(Account.Mercado__c,&quot;Export&quot;)
+)
+||
+AND (
+ISPICKVAL(StageName, &quot;Fechado Ganho&quot;),
+pc_fechamento_cubagem__c &gt; 0,
+ISBLANK(Aprova_Seguro__c),
+ISPICKVAL(Account.Mercado__c,&quot;Export&quot;)
+)
+||
+AND (
+ISPICKVAL(StageName, &quot;Fechado Ganho&quot;),
+pc_fechamento_cubagem__c &gt; 0,
+ISBLANK(Aprova_Embalagem__c),
+ISPICKVAL(Account.Mercado__c,&quot;Export&quot;)
+)</errorConditionFormula>
+    <errorMessage>NESTA FASE É NECESSÁRIO APROVAÇÃO DE FRETE, SEGURO E EMBALAGEM.</errorMessage>
+</ValidationRule>

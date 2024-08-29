@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Valida_Proforma</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+ISPICKVAL(StageName, &quot;Validação do Pedido&quot;),
+ISBLANK(Data_Entrega_KEKO__c),
+ISPICKVAL(Account.Mercado__c,&quot;Export&quot;)
+)
+||
+AND (
+ISPICKVAL(StageName, &quot;Validação do Pedido&quot;),
+ISBLANK(Programa_Embarque__c),
+ISPICKVAL(Account.Mercado__c,&quot;Export&quot;)
+)
+||
+AND (
+ISPICKVAL(StageName, &quot;Validação do Pedido&quot;),
+ISPICKVAL(Modalidade_de_Embarque__c, &quot;&quot;),
+ISPICKVAL(Account.Mercado__c,&quot;Export&quot;)
+)
+||
+AND (
+ISPICKVAL(StageName, &quot;Validação do Pedido&quot;),
+pc_fechamento_cubagem__c &gt; 0.2 ,
+pc_fechamento_cubagem__c &lt; 0.8,
+ISPICKVAL(Account.Mercado__c,&quot;Export&quot;)
+)</errorConditionFormula>
+    <errorMessage>NESTA FASE É NECESSÁRIO DEFINIR MODALIDADE DE TRANSPORTE, DATA EMBARQUE E % CUBAGEM DEVE ATENDER AS REGRAS</errorMessage>
+</ValidationRule>

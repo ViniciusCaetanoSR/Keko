@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Motivo_Perda_Closed_Lost</fullName>
+    <active>true</active>
+    <description>Motivo_Perda_Closed_Lost</description>
+    <errorConditionFormula>ISBLANK(TEXT(Motivo_Perda__c)) &amp;&amp; ISPICKVAL( StageName , &quot;Closed Lost&quot;)</errorConditionFormula>
+    <errorMessage>Necessário Informar motivo de perda na oportunidade.</errorMessage>
+</ValidationRule>

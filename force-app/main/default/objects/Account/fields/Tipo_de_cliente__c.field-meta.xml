@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Tipo_de_cliente__c</fullName>
-    <externalId>false</externalId>
     <label>Tipo de cliente</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
-    <trackHistory>false</trackHistory>
+    <trackHistory>true</trackHistory>
     <type>Picklist</type>
     <valueSet>
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
-            <value>
-                <fullName>Lead</fullName>
-                <default>true</default>
-                <label>Lead</label>
-            </value>
             <value>
                 <fullName>Ativo</fullName>
                 <default>false</default>
@@ -32,8 +26,15 @@
                 <label>CKR</label>
             </value>
             <value>
+                <fullName>Lead</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lead</label>
+            </value>
+            <value>
                 <fullName>Perdido</fullName>
                 <default>false</default>
+                <isActive>false</isActive>
                 <label>Perdido</label>
             </value>
         </valueSetDefinition>

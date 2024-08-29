@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Bandeira__c</fullName>
-    <externalId>false</externalId>
     <label>Bandeira</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
     <type>Picklist</type>
     <valueSet>
+        <controllingField>Cod_Canal__c</controllingField>
+        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
@@ -79,6 +81,112 @@
                 <default>false</default>
                 <label>JEEP/RAM</label>
             </value>
+            <value>
+                <fullName>AGRALE</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>AGRALE</label>
+            </value>
         </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>960</controllingFieldValue>
+            <controllingFieldValue>971</controllingFieldValue>
+            <controllingFieldValue>972</controllingFieldValue>
+            <controllingFieldValue>973</controllingFieldValue>
+            <controllingFieldValue>985</controllingFieldValue>
+            <controllingFieldValue>986</controllingFieldValue>
+            <controllingFieldValue>988</controllingFieldValue>
+            <controllingFieldValue>994</controllingFieldValue>
+            <controllingFieldValue>998</controllingFieldValue>
+            <controllingFieldValue>958</controllingFieldValue>
+            <controllingFieldValue>959</controllingFieldValue>
+            <valueName>GM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>961</controllingFieldValue>
+            <controllingFieldValue>908</controllingFieldValue>
+            <controllingFieldValue>947</controllingFieldValue>
+            <controllingFieldValue>948</controllingFieldValue>
+            <controllingFieldValue>996</controllingFieldValue>
+            <controllingFieldValue>954</controllingFieldValue>
+            <valueName>FIAT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>962</controllingFieldValue>
+            <controllingFieldValue>979</controllingFieldValue>
+            <controllingFieldValue>938</controllingFieldValue>
+            <valueName>RENAULT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>963</controllingFieldValue>
+            <controllingFieldValue>955</controllingFieldValue>
+            <valueName>HONDA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>964</controllingFieldValue>
+            <controllingFieldValue>965</controllingFieldValue>
+            <controllingFieldValue>966</controllingFieldValue>
+            <valueName>VOLKS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>967</controllingFieldValue>
+            <controllingFieldValue>970</controllingFieldValue>
+            <controllingFieldValue>993</controllingFieldValue>
+            <controllingFieldValue>956</controllingFieldValue>
+            <valueName>NISSAN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>915</controllingFieldValue>
+            <valueName>HYUNDAI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>974</controllingFieldValue>
+            <controllingFieldValue>905</controllingFieldValue>
+            <controllingFieldValue>939</controllingFieldValue>
+            <controllingFieldValue>990</controllingFieldValue>
+            <controllingFieldValue>991</controllingFieldValue>
+            <controllingFieldValue>992</controllingFieldValue>
+            <controllingFieldValue>952</controllingFieldValue>
+            <controllingFieldValue>997</controllingFieldValue>
+            <valueName>TOYOTA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>975</controllingFieldValue>
+            <controllingFieldValue>976</controllingFieldValue>
+            <controllingFieldValue>995</controllingFieldValue>
+            <valueName>MIT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>930</controllingFieldValue>
+            <controllingFieldValue>931</controllingFieldValue>
+            <controllingFieldValue>933</controllingFieldValue>
+            <controllingFieldValue>980</controllingFieldValue>
+            <controllingFieldValue>981</controllingFieldValue>
+            <controllingFieldValue>935</controllingFieldValue>
+            <controllingFieldValue>982</controllingFieldValue>
+            <controllingFieldValue>936</controllingFieldValue>
+            <controllingFieldValue>984</controllingFieldValue>
+            <controllingFieldValue>953</controllingFieldValue>
+            <controllingFieldValue>999</controllingFieldValue>
+            <valueName>FORD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>2</controllingFieldValue>
+            <controllingFieldValue>901</controllingFieldValue>
+            <controllingFieldValue>907</controllingFieldValue>
+            <valueName>KEKO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>910</controllingFieldValue>
+            <valueName>MERCEDES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>949</controllingFieldValue>
+            <valueName>JEEP/RAM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>950</controllingFieldValue>
+            <valueName>PEUGEOT</valueName>
+        </valueSettings>
     </valueSet>
 </CustomField>

@@ -3,11 +3,10 @@
     <fullName>Codigo_do_cliente__c</fullName>
     <externalId>false</externalId>
     <label>Código do cliente</label>
-    <precision>18</precision>
+    <length>255</length>
     <required>false</required>
-    <scale>0</scale>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
-    <type>Number</type>
-    <unique>true</unique>
+    <type>Text</type>
+    <unique>false</unique>
 </CustomField>

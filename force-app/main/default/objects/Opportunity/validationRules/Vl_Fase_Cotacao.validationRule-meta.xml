@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vl_Fase_Cotacao</fullName>
+    <active>true</active>
+    <description>Valida se ao atribuir a fase de cotação há valores informados</description>
+    <errorConditionFormula>AND (
+ISPICKVAL(StageName, &quot;Cotação&quot;),
+ISBLANK(Amount)
+)
+||
+AND (
+ISPICKVAL(StageName, &quot;Cotação/Proforma&quot;),
+ISBLANK(pc_fechamento_cubagem__c)
+)</errorConditionFormula>
+    <errorMessage>NECESSÁRIO QUE A OPORTUNIDADE POSSUA VALORES E QUANDO EXPORTAÇÃO % CUBAGEM NESTA FASE</errorMessage>
+</ValidationRule>

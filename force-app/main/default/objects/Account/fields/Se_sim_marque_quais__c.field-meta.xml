@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Se_sim_marque_quais__c</fullName>
+    <label>Se sim, marque quais:</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>distribuição</fullName>
+                <default>false</default>
+                <label>distribuição</label>
+            </value>
+            <value>
+                <fullName>atendimento à concessionárias</fullName>
+                <default>false</default>
+                <label>atendimento à concessionárias</label>
+            </value>
+            <value>
+                <fullName>e-commerce</fullName>
+                <default>false</default>
+                <label>e-commerce</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

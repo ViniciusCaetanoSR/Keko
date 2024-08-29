@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Recebe_Nota_Fiscal_Eletronica__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Recebe Nota Fiscal Eletrônica</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

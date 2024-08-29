@@ -11,13 +11,15 @@ public with sharing class IntegrationTotvsService {
             enviarIntegracao(conta.Id);
         }
     }
-
+    
     public static void enviarIntegracao(String idConta) {
         
         System.debug('Iniciando mapeamento da conta para TotvsBody');
 
         Account conta = AccountSelector.selectAccountById(idConta);
-
+	
+        System.debug('CONTA: ' + conta);
+        	
         if(conta == null) {
             System.debug('Conta não encontrada: ' + idConta);
             return;
@@ -63,9 +65,6 @@ public with sharing class IntegrationTotvsService {
                 Integer customerCodeInt = (Integer) responseMap.get('customerCode');
                 String customerCode = String.valueOf(customerCodeInt);
                 System.debug('Customer Code recebido: ' + customerCode);
-
-                // Ativar o bypass antes da atualização para evitar disparo de trigger
-                AccountTriggerHandler.bypassTrigger = true;
                 
                 Account conta = AccountSelector.selectAccountById(idConta);
                 if(conta != null) {
@@ -73,13 +72,10 @@ public with sharing class IntegrationTotvsService {
                     conta.Codigo_do_cliente__c = customerCode;
                     update conta;
                 }
-                
-                // Redefinir o bypass após a atualização
-                AccountTriggerHandler.bypassTrigger = false;
-                
             } else {
                 System.debug('Erro ao enviar dados: ' + response.getStatus());
                 System.debug('Resposta: ' + response.getBody());
+                System.debug('REQUEST' + requestBodyJson);
             }
         } catch (Exception e) {
             System.debug('Exceção ao enviar dados: ' + e.getMessage());

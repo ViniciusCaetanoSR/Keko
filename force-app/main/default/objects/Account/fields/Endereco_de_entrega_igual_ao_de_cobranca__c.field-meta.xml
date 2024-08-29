@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Endereco_de_entrega_igual_ao_de_cobranca__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Endereço de entrega igual ao de cobrança</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

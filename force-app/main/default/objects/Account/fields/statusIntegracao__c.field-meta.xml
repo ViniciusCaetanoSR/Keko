@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>statusIntegracao__c</fullName>
+    <description>Exibe uma mensagem visual indicando o status da integração Totvs.</description>
+    <externalId>false</externalId>
+    <formula>IF(IntegracaoTotvs__c,
+IMAGE(&quot;/img/samples/flag_green.gif&quot;, &quot;Sucesso na Integração&quot;),
+IMAGE(&quot;/img/samples/flag_red.gif&quot;, &quot;Falha na Integração&quot;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Status da Integração com Totvs</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

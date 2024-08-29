@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Necessito_aprovacao_do_Gerente__c</fullName>
+    <label>Necessito aprovação do Gerente?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sim, levar para Validação do Gerente</fullName>
+                <default>false</default>
+                <label>Sim, levar para Validação do Gerente</label>
+            </value>
+            <value>
+                <fullName>Não, mudar status para Perdido</fullName>
+                <default>false</default>
+                <label>Não, mudar status para Perdido</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,6 +1,5 @@
 public with sharing class AccountUtils {
 
-    //AccountUtils.deleteTestRecordsCreatedToday();
     //AccountUtils.createAccount();
 
     public static void createAccount() {
@@ -42,7 +41,7 @@ public with sharing class AccountUtils {
         newAccount.Segmento__c = 'After Nacional';
         newAccount.Condicoes_de_Pagamento__c = '30 dias';
         newAccount.codigoCondicaoPagamento__c = '130';
-
+        
         try {
             insert newAccount;
             System.debug('Conta criada com sucesso: ' + newAccount.Id);
@@ -79,12 +78,16 @@ public with sharing class AccountUtils {
     }
 
     public static String generateRandomPhone() {
-        String phone = '';
-        for (Integer u = 0; u < 8; u++) {
-            Integer randomDigit = Math.mod(Math.abs(Crypto.getRandomInteger()), 10);
-            phone += randomDigit;
+
+        String prefix = '+55319';
+        String randomDigits = '';
+        
+        for (Integer i = 0; i < 8; i++) {
+            Integer randomDigit = Math.floor(Math.random() * 10).intValue(); 
+            randomDigits += String.valueOf(randomDigit);
         }
-        return phone;
+        
+        return prefix + randomDigits;
     }
 
     public static String getNextAccountName() {

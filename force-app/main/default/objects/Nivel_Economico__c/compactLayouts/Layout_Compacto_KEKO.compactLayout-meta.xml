@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Layout_Compacto_KEKO</fullName>
+    <fields>Name</fields>
+    <fields>Account__c</fields>
+    <fields>Data_Fechamento__c</fields>
+    <fields>valor__c</fields>
+    <label>Layout_Compacto_KEKO</label>
+</CompactLayout>

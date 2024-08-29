@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>pc_fechamento_cubagem__c</fullName>
-    <externalId>false</externalId>
     <label>% Fechamento da Cubagem</label>
     <precision>3</precision>
     <required>false</required>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Motivo_da_perda</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISBLANK(TEXT(Motivo_Perda__c)) &amp;&amp; ISPICKVAL( StageName , &quot;Fechado Perdido&quot;)</errorConditionFormula>
+    <errorMessage>O campo Motivo da perda exige um valor quando o estágio é Fechada perdida</errorMessage>
+</ValidationRule>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Condicoes_de_Pagamento__c</fullName>
+    <inlineHelpText>indique qual seria a condição de pagamento preferencial do cliente</inlineHelpText>
+    <label>Condições de Pagamento</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Apresentação</fullName>
+                <default>false</default>
+                <label>Apresentação</label>
+            </value>
+            <value>
+                <fullName>Antecipado 7DD</fullName>
+                <default>false</default>
+                <label>Antecipado 7DD</label>
+            </value>
+            <value>
+                <fullName>À vista 21DD</fullName>
+                <default>false</default>
+                <label>À vista 21DD</label>
+            </value>
+            <value>
+                <fullName>30 dias</fullName>
+                <default>false</default>
+                <label>30 dias</label>
+            </value>
+            <value>
+                <fullName>30 dias em 2x 20/40DD</fullName>
+                <default>false</default>
+                <label>30 dias em 2x 20/40DD</label>
+            </value>
+            <value>
+                <fullName>30 dias em 3x 20/30/40DD</fullName>
+                <default>false</default>
+                <label>30 dias em 3x 20/30/40DD</label>
+            </value>
+            <value>
+                <fullName>30 dias em 4x 20/25/35/40DD</fullName>
+                <default>false</default>
+                <label>30 dias em 4x 20/25/35/40DD</label>
+            </value>
+            <value>
+                <fullName>30 dias em 5x 20/25/30/35/40DD</fullName>
+                <default>false</default>
+                <label>30 dias em 5x 20/25/30/35/40DD</label>
+            </value>
+            <value>
+                <fullName>45 dias em 2x (30/60DD)</fullName>
+                <default>false</default>
+                <label>45 dias em 2x (30/60DD)</label>
+            </value>
+            <value>
+                <fullName>45 dias em 3x (30/45/60DD)</fullName>
+                <default>false</default>
+                <label>45 dias em 3x (30/45/60DD)</label>
+            </value>
+            <value>
+                <fullName>45 dias em 4x (30/40/50/60DD)</fullName>
+                <default>false</default>
+                <label>45 dias em 4x (30/40/50/60DD)</label>
+            </value>
+            <value>
+                <fullName>45 dias em 5x (25/35/45/55/65DD)</fullName>
+                <default>false</default>
+                <label>45 dias em 5x (25/35/45/55/65DD)</label>
+            </value>
+            <value>
+                <fullName>60 dias em 3x (30/60/90DD)</fullName>
+                <default>false</default>
+                <label>60 dias em 3x (30/60/90DD)</label>
+            </value>
+            <value>
+                <fullName>60 dias em 4x (30/50/70/90DD)</fullName>
+                <default>false</default>
+                <label>60 dias em 4x (30/50/70/90DD)</label>
+            </value>
+            <value>
+                <fullName>60 dias em 5x (30/45/60/75/90DD)</fullName>
+                <default>false</default>
+                <label>60 dias em 5x (30/45/60/75/90DD)</label>
+            </value>
+            <value>
+                <fullName>60 dias em 7x (30/40/50/60/70/80/90DD)</fullName>
+                <default>false</default>
+                <label>60 dias em 7x (30/40/50/60/70/80/90DD)</label>
+            </value>
+            <value>
+                <fullName>75 dias em 3x (30/75/120DD)</fullName>
+                <default>false</default>
+                <label>75 dias em 3x (30/75/120DD)</label>
+            </value>
+            <value>
+                <fullName>75 dias em 4x (30/60/90/120DD)</fullName>
+                <default>false</default>
+                <label>75 dias em 4x (30/60/90/120DD)</label>
+            </value>
+            <value>
+                <fullName>75 dias em 5x (30/55/75/95/120DD)</fullName>
+                <default>false</default>
+                <label>75 dias em 5x (30/55/75/95/120DD)</label>
+            </value>
+            <value>
+                <fullName>75 dias em 7x (30/45/60/75/90/105/120DD)</fullName>
+                <default>false</default>
+                <label>75 dias em 7x (30/45/60/75/90/105/120DD)</label>
+            </value>
+            <value>
+                <fullName>45 dias</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>45 dias</label>
+            </value>
+            <value>
+                <fullName>60 dias</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>60 dias</label>
+            </value>
+            <value>
+                <fullName>75 dias</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>75 dias</label>
+            </value>
+            <value>
+                <fullName>teste</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>teste</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

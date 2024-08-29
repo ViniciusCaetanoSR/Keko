@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Contribuinte_de_ICMS__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>false</externalId>
     <label>Contribuinte de ICMS</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

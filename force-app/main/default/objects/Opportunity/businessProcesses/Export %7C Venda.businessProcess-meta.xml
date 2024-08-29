@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Export %7C Venda</fullName>
+    <description>Todas negociações de clientes que já pertencem à carteira Keko.</description>
+    <isActive>true</isActive>
+    <values>
+        <fullName>1º Contato</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Cotação%2FProforma</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Fechado Ganho</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Fechado Perdido</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Validação Proforma</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Validação do Pedido</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>

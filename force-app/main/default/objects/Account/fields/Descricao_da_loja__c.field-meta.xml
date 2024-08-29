@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Descricao_da_loja__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>Descrever em breve texto os seguintes aspectos: tamanho da loja, diferenciais, tempo de atuação, com quais produtos e marcas trabalha e o que mais entender importante.</inlineHelpText>
     <label>Descrição da loja</label>
     <length>131072</length>
     <trackFeedHistory>false</trackFeedHistory>
-    <trackHistory>false</trackHistory>
+    <trackHistory>true</trackHistory>
     <type>LongTextArea</type>
     <visibleLines>3</visibleLines>
 </CustomField>

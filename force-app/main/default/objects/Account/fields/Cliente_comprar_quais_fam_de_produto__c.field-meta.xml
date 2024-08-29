@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cliente_comprar_quais_fam_de_produto__c</fullName>
+    <label>Cliente comprará quais fam. de produto?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Capota Marítima</fullName>
+                <default>false</default>
+                <label>Capota Marítima</label>
+            </value>
+            <value>
+                <fullName>Capota Rígida</fullName>
+                <default>false</default>
+                <label>Capota Rígida</label>
+            </value>
+            <value>
+                <fullName>Estribo</fullName>
+                <default>false</default>
+                <label>Estribo</label>
+            </value>
+            <value>
+                <fullName>Estribo Elétrico</fullName>
+                <default>false</default>
+                <label>Estribo Elétrico</label>
+            </value>
+            <value>
+                <fullName>Santo Antônio</fullName>
+                <default>false</default>
+                <label>Santo Antônio</label>
+            </value>
+            <value>
+                <fullName>Engate de Reboque</fullName>
+                <default>false</default>
+                <label>Engate de Reboque</label>
+            </value>
+            <value>
+                <fullName>Utilitários</fullName>
+                <default>false</default>
+                <label>Utilitários</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>COF__c</fullName>
-    <externalId>false</externalId>
     <formula>(if(qtde_c1__c = 0, 0, 
 (qtde_c1__c / (qtde_c1__c + qtde_ko1__c))) + 
 if(qtde_c2__c = 0, 0, 

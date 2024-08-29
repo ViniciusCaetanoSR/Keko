@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>CO6__c</fullName>
-    <externalId>false</externalId>
     <formula>IF(qtde_c6__c = 0, 0, qtde_c6__c / (qtde_c6__c + qtde_ko6__c))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>% KV Compra de Outros</label>

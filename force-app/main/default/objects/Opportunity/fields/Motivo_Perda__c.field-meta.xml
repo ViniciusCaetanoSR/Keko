@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Motivo_Perda__c</fullName>
-    <externalId>false</externalId>
     <inlineHelpText>Selecione o principal motivo da perda da oportunidade.</inlineHelpText>
     <label>Motivo Perda</label>
     <required>false</required>

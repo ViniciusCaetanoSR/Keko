@@ -1,0 +1,1140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>mesoregiao__c</fullName>
+    <label>Meso Região</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Representante__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CACHOEIRO DE ITAPEMIRIM</fullName>
+                <default>false</default>
+                <label>CACHOEIRO DE ITAPEMIRIM</label>
+            </value>
+            <value>
+                <fullName>COLATINA</fullName>
+                <default>false</default>
+                <label>COLATINA</label>
+            </value>
+            <value>
+                <fullName>JEQUITINHONA</fullName>
+                <default>false</default>
+                <label>JEQUITINHONA</label>
+            </value>
+            <value>
+                <fullName>LINHARES</fullName>
+                <default>false</default>
+                <label>LINHARES</label>
+            </value>
+            <value>
+                <fullName>METROPOLITANA DE BELO HORIZONTE</fullName>
+                <default>false</default>
+                <label>METROPOLITANA DE BELO HORIZONTE</label>
+            </value>
+            <value>
+                <fullName>RIO DE JANEIRO</fullName>
+                <default>false</default>
+                <label>RIO DE JANEIRO</label>
+            </value>
+            <value>
+                <fullName>VALE DO RIO DOCE</fullName>
+                <default>false</default>
+                <label>VALE DO RIO DOCE</label>
+            </value>
+            <value>
+                <fullName>VITORIA</fullName>
+                <default>false</default>
+                <label>VITORIA</label>
+            </value>
+            <value>
+                <fullName>ZONA DA MATA</fullName>
+                <default>false</default>
+                <label>ZONA DA MATA</label>
+            </value>
+            <value>
+                <fullName>BRASILIA</fullName>
+                <default>false</default>
+                <label>BRASILIA</label>
+            </value>
+            <value>
+                <fullName>CAMPO GRANDE</fullName>
+                <default>false</default>
+                <label>CAMPO GRANDE</label>
+            </value>
+            <value>
+                <fullName>CUIABA</fullName>
+                <default>false</default>
+                <label>CUIABA</label>
+            </value>
+            <value>
+                <fullName>DOURADOS</fullName>
+                <default>false</default>
+                <label>DOURADOS</label>
+            </value>
+            <value>
+                <fullName>JI-PARANA</fullName>
+                <default>false</default>
+                <label>JI-PARANA</label>
+            </value>
+            <value>
+                <fullName>PORTO VELHO</fullName>
+                <default>false</default>
+                <label>PORTO VELHO</label>
+            </value>
+            <value>
+                <fullName>RIO BRANCO</fullName>
+                <default>false</default>
+                <label>RIO BRANCO</label>
+            </value>
+            <value>
+                <fullName>SINOP</fullName>
+                <default>false</default>
+                <label>SINOP</label>
+            </value>
+            <value>
+                <fullName>FORTALEZA</fullName>
+                <default>false</default>
+                <label>FORTALEZA</label>
+            </value>
+            <value>
+                <fullName>NATAL</fullName>
+                <default>false</default>
+                <label>NATAL</label>
+            </value>
+            <value>
+                <fullName>SAO LUIS</fullName>
+                <default>false</default>
+                <label>SAO LUIS</label>
+            </value>
+            <value>
+                <fullName>TERESINA</fullName>
+                <default>false</default>
+                <label>TERESINA</label>
+            </value>
+            <value>
+                <fullName>ARACAJU</fullName>
+                <default>false</default>
+                <label>ARACAJU</label>
+            </value>
+            <value>
+                <fullName>FEIRA DE SANTANA</fullName>
+                <default>false</default>
+                <label>FEIRA DE SANTANA</label>
+            </value>
+            <value>
+                <fullName>JOAO PESSOA</fullName>
+                <default>false</default>
+                <label>JOAO PESSOA</label>
+            </value>
+            <value>
+                <fullName>MACEIO</fullName>
+                <default>false</default>
+                <label>MACEIO</label>
+            </value>
+            <value>
+                <fullName>RECIFE</fullName>
+                <default>false</default>
+                <label>RECIFE</label>
+            </value>
+            <value>
+                <fullName>SALVADOR</fullName>
+                <default>false</default>
+                <label>SALVADOR</label>
+            </value>
+            <value>
+                <fullName>BELEM</fullName>
+                <default>false</default>
+                <label>BELEM</label>
+            </value>
+            <value>
+                <fullName>GOIANIA</fullName>
+                <default>false</default>
+                <label>GOIANIA</label>
+            </value>
+            <value>
+                <fullName>LUZIANIA</fullName>
+                <default>false</default>
+                <label>LUZIANIA</label>
+            </value>
+            <value>
+                <fullName>MANAUS</fullName>
+                <default>false</default>
+                <label>MANAUS</label>
+            </value>
+            <value>
+                <fullName>PALMAS</fullName>
+                <default>false</default>
+                <label>PALMAS</label>
+            </value>
+            <value>
+                <fullName>RIO VERDE</fullName>
+                <default>false</default>
+                <label>RIO VERDE</label>
+            </value>
+            <value>
+                <fullName>ARARAQUARA</fullName>
+                <default>false</default>
+                <label>ARARAQUARA</label>
+            </value>
+            <value>
+                <fullName>CAMPINAS</fullName>
+                <default>false</default>
+                <label>CAMPINAS</label>
+            </value>
+            <value>
+                <fullName>PIRACICABA</fullName>
+                <default>false</default>
+                <label>PIRACICABA</label>
+            </value>
+            <value>
+                <fullName>RIBEIRAO PRETO</fullName>
+                <default>false</default>
+                <label>RIBEIRAO PRETO</label>
+            </value>
+            <value>
+                <fullName>SAO JOSE DOS CAMPOS</fullName>
+                <default>false</default>
+                <label>SAO JOSE DOS CAMPOS</label>
+            </value>
+            <value>
+                <fullName>SOROCABA</fullName>
+                <default>false</default>
+                <label>SOROCABA</label>
+            </value>
+            <value>
+                <fullName>SUL/SUDOESTE DE MINAS</fullName>
+                <default>false</default>
+                <label>SUL/SUDOESTE DE MINAS</label>
+            </value>
+            <value>
+                <fullName>SAO PAULO</fullName>
+                <default>false</default>
+                <label>SAO PAULO</label>
+            </value>
+            <value>
+                <fullName>ARACATUBA</fullName>
+                <default>false</default>
+                <label>ARACATUBA</label>
+            </value>
+            <value>
+                <fullName>BAURU</fullName>
+                <default>false</default>
+                <label>BAURU</label>
+            </value>
+            <value>
+                <fullName>MARILIA</fullName>
+                <default>false</default>
+                <label>MARILIA</label>
+            </value>
+            <value>
+                <fullName>PRESIDENTE PRUDENTE</fullName>
+                <default>false</default>
+                <label>PRESIDENTE PRUDENTE</label>
+            </value>
+            <value>
+                <fullName>SAO JOSE DO RIO PRETO</fullName>
+                <default>false</default>
+                <label>SAO JOSE DO RIO PRETO</label>
+            </value>
+            <value>
+                <fullName>TRIANGULO MINEIRO / ALTO PARNABAIBA</fullName>
+                <default>false</default>
+                <label>TRIANGULO MINEIRO / ALTO PARNABAIBA</label>
+            </value>
+            <value>
+                <fullName>BLUMENAU</fullName>
+                <default>false</default>
+                <label>BLUMENAU</label>
+            </value>
+            <value>
+                <fullName>CAXIAS DO SUL</fullName>
+                <default>false</default>
+                <label>CAXIAS DO SUL</label>
+            </value>
+            <value>
+                <fullName>CRICIUMA</fullName>
+                <default>false</default>
+                <label>CRICIUMA</label>
+            </value>
+            <value>
+                <fullName>CURITIBA</fullName>
+                <default>false</default>
+                <label>CURITIBA</label>
+            </value>
+            <value>
+                <fullName>FLORIANOPOLIS</fullName>
+                <default>false</default>
+                <label>FLORIANOPOLIS</label>
+            </value>
+            <value>
+                <fullName>FOZ DO IGUACU</fullName>
+                <default>false</default>
+                <label>FOZ DO IGUACU</label>
+            </value>
+            <value>
+                <fullName>JOINVILLE</fullName>
+                <default>false</default>
+                <label>JOINVILLE</label>
+            </value>
+            <value>
+                <fullName>LONDRINA</fullName>
+                <default>false</default>
+                <label>LONDRINA</label>
+            </value>
+            <value>
+                <fullName>PASSO FUNDO</fullName>
+                <default>false</default>
+                <label>PASSO FUNDO</label>
+            </value>
+            <value>
+                <fullName>PONTA GROSSA</fullName>
+                <default>false</default>
+                <label>PONTA GROSSA</label>
+            </value>
+            <value>
+                <fullName>PORTO ALEGRE</fullName>
+                <default>false</default>
+                <label>PORTO ALEGRE</label>
+            </value>
+            <value>
+                <fullName>ABAETETUBA</fullName>
+                <default>false</default>
+                <label>ABAETETUBA</label>
+            </value>
+            <value>
+                <fullName>ALTAMIRA</fullName>
+                <default>false</default>
+                <label>ALTAMIRA</label>
+            </value>
+            <value>
+                <fullName>ARAGUAINA</fullName>
+                <default>false</default>
+                <label>ARAGUAINA</label>
+            </value>
+            <value>
+                <fullName>BARRA DO GARCAS</fullName>
+                <default>false</default>
+                <label>BARRA DO GARCAS</label>
+            </value>
+            <value>
+                <fullName>BOA VISTA</fullName>
+                <default>false</default>
+                <label>BOA VISTA</label>
+            </value>
+            <value>
+                <fullName>CORUMBA</fullName>
+                <default>false</default>
+                <label>CORUMBA</label>
+            </value>
+            <value>
+                <fullName>CRUZEIRO DO SUL</fullName>
+                <default>false</default>
+                <label>CRUZEIRO DO SUL</label>
+            </value>
+            <value>
+                <fullName>MACAPA</fullName>
+                <default>false</default>
+                <label>MACAPA</label>
+            </value>
+            <value>
+                <fullName>MARABA</fullName>
+                <default>false</default>
+                <label>MARABA</label>
+            </value>
+            <value>
+                <fullName>PORANGATU</fullName>
+                <default>false</default>
+                <label>PORANGATU</label>
+            </value>
+            <value>
+                <fullName>RONDONOPOLIS</fullName>
+                <default>false</default>
+                <label>RONDONOPOLIS</label>
+            </value>
+            <value>
+                <fullName>SANTAREM</fullName>
+                <default>false</default>
+                <label>SANTAREM</label>
+            </value>
+            <value>
+                <fullName>TANGARA DA SERRA</fullName>
+                <default>false</default>
+                <label>TANGARA DA SERRA</label>
+            </value>
+            <value>
+                <fullName>TRES LAGOAS</fullName>
+                <default>false</default>
+                <label>TRES LAGOAS</label>
+            </value>
+            <value>
+                <fullName>ALAGOINHAS</fullName>
+                <default>false</default>
+                <label>ALAGOINHAS</label>
+            </value>
+            <value>
+                <fullName>ARAPIRACA</fullName>
+                <default>false</default>
+                <label>ARAPIRACA</label>
+            </value>
+            <value>
+                <fullName>ARCOVERDE</fullName>
+                <default>false</default>
+                <label>ARCOVERDE</label>
+            </value>
+            <value>
+                <fullName>BACABAL</fullName>
+                <default>false</default>
+                <label>BACABAL</label>
+            </value>
+            <value>
+                <fullName>BALSAS</fullName>
+                <default>false</default>
+                <label>BALSAS</label>
+            </value>
+            <value>
+                <fullName>BARREIRAS</fullName>
+                <default>false</default>
+                <label>BARREIRAS</label>
+            </value>
+            <value>
+                <fullName>CABO FRIO</fullName>
+                <default>false</default>
+                <label>CABO FRIO</label>
+            </value>
+            <value>
+                <fullName>CAICO</fullName>
+                <default>false</default>
+                <label>CAICO</label>
+            </value>
+            <value>
+                <fullName>CAMPINA GRANDE</fullName>
+                <default>false</default>
+                <label>CAMPINA GRANDE</label>
+            </value>
+            <value>
+                <fullName>CAMPO DAS VERTENTES</fullName>
+                <default>false</default>
+                <label>CAMPO DAS VERTENTES</label>
+            </value>
+            <value>
+                <fullName>CAMPOS DOS GOYTACAZES</fullName>
+                <default>false</default>
+                <label>CAMPOS DOS GOYTACAZES</label>
+            </value>
+            <value>
+                <fullName>CARUARU</fullName>
+                <default>false</default>
+                <label>CARUARU</label>
+            </value>
+            <value>
+                <fullName>CAXIAS</fullName>
+                <default>false</default>
+                <label>CAXIAS</label>
+            </value>
+            <value>
+                <fullName>CENTRAL MINEIRA</fullName>
+                <default>false</default>
+                <label>CENTRAL MINEIRA</label>
+            </value>
+            <value>
+                <fullName>CRATEUS</fullName>
+                <default>false</default>
+                <label>CRATEUS</label>
+            </value>
+            <value>
+                <fullName>FLORIANO</fullName>
+                <default>false</default>
+                <label>FLORIANO</label>
+            </value>
+            <value>
+                <fullName>IGUATU</fullName>
+                <default>false</default>
+                <label>IGUATU</label>
+            </value>
+            <value>
+                <fullName>IMPERATRIZ</fullName>
+                <default>false</default>
+                <label>IMPERATRIZ</label>
+            </value>
+            <value>
+                <fullName>ITABAIANA</fullName>
+                <default>false</default>
+                <label>ITABAIANA</label>
+            </value>
+            <value>
+                <fullName>ITABUNA</fullName>
+                <default>false</default>
+                <label>ITABUNA</label>
+            </value>
+            <value>
+                <fullName>ITANHAEM</fullName>
+                <default>false</default>
+                <label>ITANHAEM</label>
+            </value>
+            <value>
+                <fullName>ITAPERUNA</fullName>
+                <default>false</default>
+                <label>ITAPERUNA</label>
+            </value>
+            <value>
+                <fullName>JUAZEIRO</fullName>
+                <default>false</default>
+                <label>JUAZEIRO</label>
+            </value>
+            <value>
+                <fullName>JUAZEIRO DO NORTE</fullName>
+                <default>false</default>
+                <label>JUAZEIRO DO NORTE</label>
+            </value>
+            <value>
+                <fullName>MOSSORO</fullName>
+                <default>false</default>
+                <label>MOSSORO</label>
+            </value>
+            <value>
+                <fullName>NOROESTE DE MINAS</fullName>
+                <default>false</default>
+                <label>NOROESTE DE MINAS</label>
+            </value>
+            <value>
+                <fullName>NORTE DE MINAS</fullName>
+                <default>false</default>
+                <label>NORTE DE MINAS</label>
+            </value>
+            <value>
+                <fullName>NOVA FRIBURGO</fullName>
+                <default>false</default>
+                <label>NOVA FRIBURGO</label>
+            </value>
+            <value>
+                <fullName>OESTE DE MINAS</fullName>
+                <default>false</default>
+                <label>OESTE DE MINAS</label>
+            </value>
+            <value>
+                <fullName>PARNAIBA</fullName>
+                <default>false</default>
+                <label>PARNAIBA</label>
+            </value>
+            <value>
+                <fullName>PATOS</fullName>
+                <default>false</default>
+                <label>PATOS</label>
+            </value>
+            <value>
+                <fullName>PETROLINA</fullName>
+                <default>false</default>
+                <label>PETROLINA</label>
+            </value>
+            <value>
+                <fullName>PICOS</fullName>
+                <default>false</default>
+                <label>PICOS</label>
+            </value>
+            <value>
+                <fullName>SOBRAL</fullName>
+                <default>false</default>
+                <label>SOBRAL</label>
+            </value>
+            <value>
+                <fullName>VALE DO MUCURI</fullName>
+                <default>false</default>
+                <label>VALE DO MUCURI</label>
+            </value>
+            <value>
+                <fullName>VITORIA DA CONQUISTA</fullName>
+                <default>false</default>
+                <label>VITORIA DA CONQUISTA</label>
+            </value>
+            <value>
+                <fullName>VITORIA DE SANTO ANTAO</fullName>
+                <default>false</default>
+                <label>VITORIA DE SANTO ANTAO</label>
+            </value>
+            <value>
+                <fullName>VOLTA REDONDA</fullName>
+                <default>false</default>
+                <label>VOLTA REDONDA</label>
+            </value>
+            <value>
+                <fullName>ASSIS</fullName>
+                <default>false</default>
+                <label>ASSIS</label>
+            </value>
+            <value>
+                <fullName>BAGE</fullName>
+                <default>false</default>
+                <label>BAGE</label>
+            </value>
+            <value>
+                <fullName>CAMPO MOURAO</fullName>
+                <default>false</default>
+                <label>CAMPO MOURAO</label>
+            </value>
+            <value>
+                <fullName>CHAPECO</fullName>
+                <default>false</default>
+                <label>CHAPECO</label>
+            </value>
+            <value>
+                <fullName>CORNELIO PROCOPIO</fullName>
+                <default>false</default>
+                <label>CORNELIO PROCOPIO</label>
+            </value>
+            <value>
+                <fullName>GUARAPUAVA</fullName>
+                <default>false</default>
+                <label>GUARAPUAVA</label>
+            </value>
+            <value>
+                <fullName>ITAPETININGA</fullName>
+                <default>false</default>
+                <label>ITAPETININGA</label>
+            </value>
+            <value>
+                <fullName>LAGES</fullName>
+                <default>false</default>
+                <label>LAGES</label>
+            </value>
+            <value>
+                <fullName>PATO BRANCO</fullName>
+                <default>false</default>
+                <label>PATO BRANCO</label>
+            </value>
+            <value>
+                <fullName>PELOTAS</fullName>
+                <default>false</default>
+                <label>PELOTAS</label>
+            </value>
+            <value>
+                <fullName>REGIAO LESTE DO RIO GRANDE DO SUL</fullName>
+                <default>false</default>
+                <label>REGIAO LESTE DO RIO GRANDE DO SUL</label>
+            </value>
+            <value>
+                <fullName>SANTA CRUZ</fullName>
+                <default>false</default>
+                <label>SANTA CRUZ</label>
+            </value>
+            <value>
+                <fullName>SANTA MARIA</fullName>
+                <default>false</default>
+                <label>SANTA MARIA</label>
+            </value>
+            <value>
+                <fullName>UMUARAMA</fullName>
+                <default>false</default>
+                <label>UMUARAMA</label>
+            </value>
+            <value>
+                <fullName>UNIAO DA VITORIA</fullName>
+                <default>false</default>
+                <label>UNIAO DA VITORIA</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>GE NORD CE</controllingFieldValue>
+            <valueName>FORTALEZA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE NORD CE</controllingFieldValue>
+            <valueName>NATAL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE NORD CE</controllingFieldValue>
+            <valueName>SAO LUIS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE NORD CE</controllingFieldValue>
+            <valueName>TERESINA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE NORD PE</controllingFieldValue>
+            <valueName>ARACAJU</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE NORD PE</controllingFieldValue>
+            <valueName>FEIRA DE SANTANA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE NORD PE</controllingFieldValue>
+            <valueName>JOAO PESSOA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE NORD PE</controllingFieldValue>
+            <valueName>MACEIO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE NORD PE</controllingFieldValue>
+            <valueName>RECIFE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE NORD PE</controllingFieldValue>
+            <valueName>SALVADOR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE NORT/GODF</controllingFieldValue>
+            <valueName>BELEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE NORT/GODF</controllingFieldValue>
+            <valueName>GOIANIA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE NORT/GODF</controllingFieldValue>
+            <valueName>LUZIANIA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE NORT/GODF</controllingFieldValue>
+            <valueName>MANAUS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE NORT/GODF</controllingFieldValue>
+            <valueName>PALMAS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE NORT/GODF</controllingFieldValue>
+            <valueName>RIO VERDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SPCAP</controllingFieldValue>
+            <valueName>SAO PAULO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SUL</controllingFieldValue>
+            <valueName>BLUMENAU</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SUL</controllingFieldValue>
+            <valueName>CAXIAS DO SUL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SUL</controllingFieldValue>
+            <valueName>CRICIUMA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SUL</controllingFieldValue>
+            <valueName>CURITIBA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SUL</controllingFieldValue>
+            <valueName>FLORIANOPOLIS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SUL</controllingFieldValue>
+            <valueName>FOZ DO IGUACU</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SUL</controllingFieldValue>
+            <valueName>JOINVILLE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SUL</controllingFieldValue>
+            <valueName>LONDRINA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SUL</controllingFieldValue>
+            <valueName>PASSO FUNDO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SUL</controllingFieldValue>
+            <valueName>PONTA GROSSA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SUL</controllingFieldValue>
+            <valueName>PORTO ALEGRE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE MG/RJ/ES</controllingFieldValue>
+            <valueName>CACHOEIRO DE ITAPEMIRIM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE MG/RJ/ES</controllingFieldValue>
+            <valueName>COLATINA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE MG/RJ/ES</controllingFieldValue>
+            <valueName>JEQUITINHONA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE MG/RJ/ES</controllingFieldValue>
+            <valueName>LINHARES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE MG/RJ/ES</controllingFieldValue>
+            <valueName>METROPOLITANA DE BELO HORIZONTE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE MG/RJ/ES</controllingFieldValue>
+            <valueName>RIO DE JANEIRO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE MG/RJ/ES</controllingFieldValue>
+            <valueName>VALE DO RIO DOCE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE MG/RJ/ES</controllingFieldValue>
+            <valueName>VITORIA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE MG/RJ/ES</controllingFieldValue>
+            <valueName>ZONA DA MATA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SPCAMP</controllingFieldValue>
+            <valueName>ARARAQUARA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SPCAMP</controllingFieldValue>
+            <valueName>CAMPINAS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SPCAMP</controllingFieldValue>
+            <valueName>PIRACICABA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SPCAMP</controllingFieldValue>
+            <valueName>RIBEIRAO PRETO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SPCAMP</controllingFieldValue>
+            <valueName>SAO JOSE DOS CAMPOS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SPCAMP</controllingFieldValue>
+            <valueName>SOROCABA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SPCAMP</controllingFieldValue>
+            <valueName>SUL/SUDOESTE DE MINAS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SPR.PRETO</controllingFieldValue>
+            <valueName>ARACATUBA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SPR.PRETO</controllingFieldValue>
+            <valueName>BAURU</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SPR.PRETO</controllingFieldValue>
+            <valueName>MARILIA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SPR.PRETO</controllingFieldValue>
+            <valueName>PRESIDENTE PRUDENTE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SPR.PRETO</controllingFieldValue>
+            <valueName>SAO JOSE DO RIO PRETO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE SPR.PRETO</controllingFieldValue>
+            <valueName>TRIANGULO MINEIRO / ALTO PARNABAIBA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI SUL/SP</controllingFieldValue>
+            <valueName>ASSIS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI SUL/SP</controllingFieldValue>
+            <valueName>BAGE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI SUL/SP</controllingFieldValue>
+            <valueName>CAMPO MOURAO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI SUL/SP</controllingFieldValue>
+            <valueName>CHAPECO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI SUL/SP</controllingFieldValue>
+            <valueName>CORNELIO PROCOPIO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI SUL/SP</controllingFieldValue>
+            <valueName>GUARAPUAVA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI SUL/SP</controllingFieldValue>
+            <valueName>ITAPETININGA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI SUL/SP</controllingFieldValue>
+            <valueName>LAGES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI SUL/SP</controllingFieldValue>
+            <valueName>PATO BRANCO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI SUL/SP</controllingFieldValue>
+            <valueName>PELOTAS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI SUL/SP</controllingFieldValue>
+            <valueName>REGIAO LESTE DO RIO GRANDE DO SUL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI SUL/SP</controllingFieldValue>
+            <valueName>SANTA CRUZ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI SUL/SP</controllingFieldValue>
+            <valueName>SANTA MARIA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI SUL/SP</controllingFieldValue>
+            <valueName>UMUARAMA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI SUL/SP</controllingFieldValue>
+            <valueName>UNIAO DA VITORIA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI CENT/NORT</controllingFieldValue>
+            <valueName>ABAETETUBA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI CENT/NORT</controllingFieldValue>
+            <valueName>ALTAMIRA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI CENT/NORT</controllingFieldValue>
+            <valueName>ARAGUAINA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI CENT/NORT</controllingFieldValue>
+            <valueName>BARRA DO GARCAS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI CENT/NORT</controllingFieldValue>
+            <valueName>BOA VISTA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI CENT/NORT</controllingFieldValue>
+            <valueName>CORUMBA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI CENT/NORT</controllingFieldValue>
+            <valueName>CRUZEIRO DO SUL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI CENT/NORT</controllingFieldValue>
+            <valueName>MACAPA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI CENT/NORT</controllingFieldValue>
+            <valueName>MARABA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI CENT/NORT</controllingFieldValue>
+            <valueName>PORANGATU</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI CENT/NORT</controllingFieldValue>
+            <valueName>RONDONOPOLIS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI CENT/NORT</controllingFieldValue>
+            <valueName>SANTAREM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI CENT/NORT</controllingFieldValue>
+            <valueName>TANGARA DA SERRA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI CENT/NORT</controllingFieldValue>
+            <valueName>TRES LAGOAS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>ALAGOINHAS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>ARAPIRACA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>ARCOVERDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>BACABAL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>BALSAS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>BARREIRAS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>CABO FRIO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>CAICO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>CAMPINA GRANDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>CAMPO DAS VERTENTES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>CAMPOS DOS GOYTACAZES</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>CARUARU</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>CAXIAS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>CENTRAL MINEIRA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>CRATEUS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>FLORIANO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>IGUATU</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>IMPERATRIZ</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>ITABAIANA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>ITABUNA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>ITANHAEM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>ITAPERUNA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>JUAZEIRO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>JUAZEIRO DO NORTE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>MOSSORO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>NOROESTE DE MINAS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>NORTE DE MINAS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>NOVA FRIBURGO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>OESTE DE MINAS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>PARNAIBA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>PATOS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>PETROLINA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>PICOS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>SOBRAL</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>VALE DO MUCURI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>VITORIA DA CONQUISTA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>VITORIA DE SANTO ANTAO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
+            <valueName>VOLTA REDONDA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE MT/RO/AC</controllingFieldValue>
+            <valueName>BRASILIA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE MT/RO/AC</controllingFieldValue>
+            <valueName>CAMPO GRANDE</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE MT/RO/AC</controllingFieldValue>
+            <valueName>CUIABA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE MT/RO/AC</controllingFieldValue>
+            <valueName>DOURADOS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE MT/RO/AC</controllingFieldValue>
+            <valueName>JI-PARANA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE MT/RO/AC</controllingFieldValue>
+            <valueName>PORTO VELHO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE MT/RO/AC</controllingFieldValue>
+            <valueName>RIO BRANCO</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GE MT/RO/AC</controllingFieldValue>
+            <valueName>SINOP</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>
