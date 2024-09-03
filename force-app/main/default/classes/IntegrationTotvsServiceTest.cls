@@ -1,27 +1,40 @@
 @isTest
 private class IntegrationTotvsServiceTest {
 
-    @isTest
+    @isTest(SeeAllData=true)
     static void testEnviarDadosTotvs() {
         Account testAccount = new Account(
-            Name = 'Test Account',
-            RazaoSocial__c = 'Test Razão Social',
+            NomeAbreviado__c = 'INT',
+            Name = 'INT INT',
+            RazaoSocial__c = 'INT INT INC.',
             Ramo_de_Atividade__c = 'Lojista',
-            BillingCity = 'Cidade teste',
-            BillingCountry = 'País teste',
-            BillingState = 'Estado Teste',
+            BillingCity = 'Int City',
+            BillingCountry = 'Brasil',
+            BillingState = 'SP',
             BillingPostalCode = '1234-56',
             email_comercial__c = 'email@email.com',
             Telefone_fixo__c = '1111111111',
-            Neighborhood__c = 'Bairro'
+            Neighborhood__c = 'Bairro',
+            Bandeira__c = 'KEKO',
+            Cod_Canal__c = '2',
+            Canal__c = 'AFTER MI',
+            Segmento__c = 'After Nacional',
+            Condicoes_de_Pagamento__c = 'Apresentação',
+            CNPJ__c = '12345678000195',
+            Mercado__c = 'Varejo'
             );
         insert testAccount;
 
         TotvsAPI__c testTotvsApi = new TotvsAPI__c(
-            Name = 'accesses',
+            Name = 'acc',
             base_URL__c = 'https://api.totvs.com/endpoint',
             username__c = 'testuser',
-            password__c = 'testpassword'
+            password__c = 'testpassword',
+            DefaultHolder__c = 1,
+            DefaultModality__c = 2,
+            EntityType__c = 3,
+            Modality__c = 4,
+            IbgeCode__c = 5
         );
         insert testTotvsApi;
 

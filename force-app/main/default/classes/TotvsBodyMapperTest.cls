@@ -1,11 +1,12 @@
 @isTest
 private class TotvsBodyMapperTest {
     
-    @isTest
+    @isTest(SeeAllData=true)
     private static void testTotvsMapper() {
 
         Account testAccount = new Account(
-            Name = 'Empresa',
+            NomeAbreviado__c= 'KE',
+            Name = 'KE',
             BillingCity = 'São Paulo',
             BillingCountry = 'Brasil',
             BillingState = 'SP',
@@ -46,7 +47,7 @@ private class TotvsBodyMapperTest {
         System.debug('TEEEEST: ' + request);
         
         System.assertNotEquals(null, 'O request não pode ser null.');
-        System.assertEquals('Empresa', request.shortName, 'O shortName deve ser "Empresa"');
+        System.assertEquals('KE', request.shortName, 'O shortName deve ser "KE"');
         System.assertEquals('São Paulo', request.city, 'A city deve ser "São Paulo"');
         System.assertEquals('Brasil', request.country, 'O country deve ser "Brasil"');
         System.assertEquals('SP', request.billingState, 'O billingState deve ser "SP"');
@@ -60,7 +61,7 @@ private class TotvsBodyMapperTest {
         System.assertEquals(1, request.customerGroup, 'O customerGroup deve ser 1');
         System.assertEquals(100, request.representativeCode, 'O representativeCode deve ser 100');
         System.assertEquals('teste@danfe.com', request.NFeEmail, 'O NFeEmail deve ser "teste@danfe.com"');
-        System.assertEquals('Empresa', request.tradeName, 'O tradeName deve ser "Empresa"');
+        System.assertEquals('KE', request.tradeName, 'O tradeName deve ser "KE"');
         System.assertEquals('Centro', request.billingNeighborhood, 'O billingNeighborhood deve ser "Centro"');
         System.assertEquals('12345678', request.municipalRegistration, 'O municipalRegistration deve ser "12345678"');
         System.assertEquals(9999, request.defaultHolder, 'O defaultHolder deve ser 9999');

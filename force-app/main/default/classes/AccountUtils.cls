@@ -23,6 +23,7 @@ public with sharing class AccountUtils {
         String recordtypeId =  [SELECT Id FROM RecordType WHERE DeveloperName = 'Varejo' AND SObjectType = 'Account' LIMIT 1].Id;
         String name = getNextAccountName();
 
+        newAccount.NomeAbreviado__c = name;
         newAccount.Name = name;
         newAccount.RazaoSocial__c = name; 
         newAccount.CNPJ__c = baseCNPJ; 
