@@ -153,6 +153,13 @@ public with sharing class IntegrationTotvsService {
                 requestPutTotvs(requestBodyJson, conta.Codigo_do_cliente__c, 0);
             } else {
                 System.debug('Conta não possui código do cliente para atualização.');
+
+                TotvsBody requestBody = TotvsBodyMapper.totvsMapper(conta);
+                String requestBodyJson = JSON.serialize(requestBody);
+
+                System.debug('Tentando enviar a conta para cadastro no TOTVS');
+
+                requestTotvs(requestBodyJson, conta.Id, 0);
             }
         }
     }
