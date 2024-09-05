@@ -27,9 +27,9 @@
                 <label>À vista 21DD</label>
             </value>
             <value>
-                <fullName>30 dias</fullName>
+                <fullName>30 dias em 1x 30 DD</fullName>
                 <default>false</default>
-                <label>30 dias</label>
+                <label>30 dias em 1x 30 DD</label>
             </value>
             <value>
                 <fullName>30 dias em 2x 20/40DD</fullName>
@@ -110,6 +110,12 @@
                 <fullName>75 dias em 7x (30/45/60/75/90/105/120DD)</fullName>
                 <default>false</default>
                 <label>75 dias em 7x (30/45/60/75/90/105/120DD)</label>
+            </value>
+            <value>
+                <fullName>30 dias</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>30 dias</label>
             </value>
             <value>
                 <fullName>45 dias</fullName>

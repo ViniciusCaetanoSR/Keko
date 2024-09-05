@@ -14,6 +14,7 @@ private class TotvsBodyMapperTest {
             email_comercial__c = 'teste@exemplo.com',
             RazaoSocial__c = 'Razão Social Teste',
             Telefone_fixo__c = '1122334455',
+            Phone = '1122334455',
             BillingStreet = 'Rua Teste, 123',
             Ramo_de_Atividade__c = 'Lojista',
             email_DANFE_xml__c = 'teste@danfe.com',

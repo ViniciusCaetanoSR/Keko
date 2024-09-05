@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidacaoEnderecoCampoCodigoPostal</fullName>
+    <active>true</active>
+    <description>Garante que o campo código postal esteja preenchido antes de salvar o registro.</description>
+    <errorConditionFormula>OR(ISBLANK(BillingPostalCode),NOT(REGEX(BillingPostalCode, &quot;^[0-9\\-\\s]+$&quot;)), LEN(SUBSTITUTE(SUBSTITUTE(BillingPostalCode, &quot;-&quot;, &quot;&quot;), &quot; &quot;, &quot;&quot;)) &lt;&gt; 8)</errorConditionFormula>
+    <errorMessage>O campo código postal de conter 8 dígitos e não pode estar vazio ou não pode conter uma letra.</errorMessage>
+</ValidationRule>

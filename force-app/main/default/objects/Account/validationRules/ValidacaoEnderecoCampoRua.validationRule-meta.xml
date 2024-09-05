@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidacaoEnderecoCampoRua</fullName>
+    <active>true</active>
+    <description>Garante que o campo rua esteja preenchido antes de salvar o registro.</description>
+    <errorConditionFormula>OR(ISBLANK(BillingStreet), NOT(REGEX(BillingStreet,&quot;.*,\\s*\\d+&quot;)))</errorConditionFormula>
+    <errorMessage>O campo rua deve incluir uma vírgula seguida por um número. Exemplo: &quot;Rua São João, 55&quot;.</errorMessage>
+</ValidationRule>

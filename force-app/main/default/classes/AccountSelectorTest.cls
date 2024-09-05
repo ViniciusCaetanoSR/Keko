@@ -12,7 +12,7 @@ private class AccountSelectorTest {
             MunicipalRegistration__c = '123456789',
             RazaoSocial__c = 'Razao Social Teste',
             email_comercial__c = 'teste@teste.com',
-            BillingStreet = 'Rua Teste',
+            BillingStreet = 'Rua Teste, 152',
             BillingCity = 'Cidade Teste',
             BillingState = 'Estado Teste',
             BillingPostalCode = '12345-678',
@@ -46,7 +46,7 @@ private class AccountSelectorTest {
         System.assertEquals('123456789', result.MunicipalRegistration__c, 'A inscrição municipal deve ser "123456789"');
         System.assertEquals('Razao Social Teste', result.RazaoSocial__c, 'A razão social deve ser "Razao Social Teste"');
         System.assertEquals('teste@teste.com', result.email_comercial__c, 'O email comercial deve ser "teste@teste.com"');
-        System.assertEquals('Rua Teste', result.BillingStreet, 'A rua de cobrança deve ser "Rua Teste"');
+        System.assertEquals('Rua Teste, 152', result.BillingStreet, 'A rua de cobrança deve ser "Rua Teste, 152"');
         System.assertEquals('Cidade Teste', result.BillingCity, 'A cidade de cobrança deve ser "Cidade Teste"');
         System.assertEquals('Estado Teste', result.BillingState, 'O estado de cobrança deve ser "Estado Teste"');
         System.assertEquals('12345-678', result.BillingPostalCode, 'O código postal de cobrança deve ser "12345-678"');

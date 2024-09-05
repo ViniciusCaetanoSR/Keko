@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <label>CNPJ</label>
     <length>20</length>
-    <required>false</required>
+    <required>true</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Text</type>

@@ -937,7 +937,7 @@
     <picklistValues>
         <picklist>Condicoes_de_Pagamento__c</picklist>
         <values>
-            <fullName>30 dias</fullName>
+            <fullName>30 dias em 1x 30 DD</fullName>
             <default>false</default>
         </values>
         <values>

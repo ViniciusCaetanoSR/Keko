@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ValidacaoEnderecoCampoEstado</fullName>
+    <active>true</active>
+    <description>Garante que o campo estado esteja preenchido antes de salvar o registro.</description>
+    <errorConditionFormula>ISBLANK(State)</errorConditionFormula>
+    <errorMessage>O campo estado não pode estar vazio.</errorMessage>
+</ValidationRule>

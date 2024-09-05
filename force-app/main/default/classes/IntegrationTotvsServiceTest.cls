@@ -8,12 +8,14 @@ private class IntegrationTotvsServiceTest {
             Name = 'INT INT',
             RazaoSocial__c = 'INT INT INC.',
             Ramo_de_Atividade__c = 'Lojista',
+            BillingStreet = 'Rua Teste, 152',
             BillingCity = 'Int City',
             BillingCountry = 'Brasil',
             BillingState = 'SP',
-            BillingPostalCode = '1234-56',
+            BillingPostalCode = '1234-5678',
             email_comercial__c = 'email@email.com',
             Telefone_fixo__c = '1111111111',
+            Phone = '1111111111',
             Neighborhood__c = 'Bairro',
             Bandeira__c = 'KEKO',
             Cod_Canal__c = '2',
@@ -21,7 +23,8 @@ private class IntegrationTotvsServiceTest {
             Segmento__c = 'After Nacional',
             Condicoes_de_Pagamento__c = 'Apresentação',
             CNPJ__c = '12345678000195',
-            Mercado__c = 'Varejo'
+            Mercado__c = 'Varejo',
+            MunicipalRegistration__c = '12345678'
             );
         insert testAccount;
 
