@@ -7,19 +7,22 @@ public with sharing class AccountTriggerHandler {
         }
     }
 
-    public static void onAfterInsert(List<Account> contas) {    
+    public static void onAfterInsert(List<Account> newAccounts) {    
 
-        for(Account conta : contas) {
-            IntegrationTotvsService.enviarDadosTotvs(conta.Id);
+        for(Account Account : newAccounts) {
+
+            IntegrationTotvsService.insertTotvs(Account);
         }
     }
 
-    public static void onAfterUpdate(List<Account> updatedAccount, Map<Id, Account> oldAccounts) {
+    public static void onAfterUpdate(List<Account> newAccounts, Map<Id, Account> oldAccounts) {
 		
-        for(Account acc : updatedAccount) { //for temporario
-            Account oldAccount = oldAccounts.get(acc.Id);
-            if(acc.Codigo_do_cliente__c == oldAccount.Codigo_do_cliente__c){
-                IntegrationTotvsService.updateTotvs(updatedAccount);
+        for(Account account : newAccounts) { 
+
+            Account oldAccount = oldAccounts.get(account.Id);
+
+            if(String.isNotBlank(oldAccount.Codigo_do_cliente__c) && (account.Codigo_do_cliente__c == oldAccount.Codigo_do_cliente__c)){ 
+                IntegrationTotvsService.updateTotvs(account);
             }
         }
     }

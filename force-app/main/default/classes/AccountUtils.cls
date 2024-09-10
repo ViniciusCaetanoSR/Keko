@@ -12,7 +12,7 @@ public with sharing class AccountUtils {
         List<String> neighborhoods = new List<String>{'Centro', 'Bela Vista', 'Copacabana', 'Savassi', 'Jardim Botânico'};
         
         String baseCNPJ = generateRandomCNPJ();
-        String postalCode = String.valueOf(Math.mod(Math.abs(Crypto.getRandomInteger()), 100000));
+        String postalCode = String.valueOf(Math.mod(Math.abs(Crypto.getRandomInteger()), 100000000));
         String phone = generateRandomPhone();
         String uniqueId = String.valueOf(Math.abs(Crypto.getRandomLong()));
         String street = streets[Math.mod(Math.abs(Crypto.getRandomInteger()), streets.size())];
@@ -28,8 +28,7 @@ public with sharing class AccountUtils {
         newAccount.RazaoSocial__c = name; 
         newAccount.CNPJ__c = baseCNPJ; 
         newAccount.Email_Comercial__c = uniqueId + '@test.com'; 
-        newAccount.BillingStreet = street + ', '+streetNumber; 
-        newAccount.BillingStreet = street + ', ' + streetNumber + ', Casa';  
+        newAccount.BillingStreet = street + ', ' + streetNumber;  
         newAccount.BillingCity = city; 
         newAccount.BillingState = state;  
         newAccount.BillingCountry = 'BRASIL'; 
@@ -40,9 +39,14 @@ public with sharing class AccountUtils {
         newAccount.Mercado__c = 'Varejo';
         newAccount.RecordTypeId = recordtypeId;
         newAccount.Segmento__c = 'After Nacional';
-        newAccount.Condicoes_de_Pagamento__c = '30 dias';
-        newAccount.codigoCondicaoPagamento__c = '130';
+        newAccount.Condicoes_de_Pagamento__c = 'Apresentação';
+        newAccount.Bandeira__c = 'KEKO';
+        newAccount.MunicipalRegistration__c = postalCode;
+        newAccount.Telefone_fixo__c = phone;
+        newAccount.Cod_Canal__c = '2';
+        newAccount.Canal__c = 'AFTER MI';
         
+        System.debug('Conta : ' + JSON.serialize(newAccount));
         try {
             insert newAccount;
             System.debug('Conta criada com sucesso: ' + newAccount.Id);
@@ -80,7 +84,7 @@ public with sharing class AccountUtils {
 
     public static String generateRandomPhone() {
 
-        String prefix = '+55319';
+        String prefix = '+55 31 9';
         String randomDigits = '';
         
         for (Integer i = 0; i < 8; i++) {
@@ -93,11 +97,11 @@ public with sharing class AccountUtils {
 
     public static String getNextAccountName() {
 
-        String baseName = '<<Teste>> ';
+        String baseName = '<Teste> ';
 
         List<Account> accounts = [SELECT Id, Name 
                                   FROM Account 
-                                  WHERE Name LIKE '%<<Teste>> %' 
+                                  WHERE Name LIKE '%<Teste> %' 
                                   ORDER BY CreatedDate DESC 
                                   LIMIT 1];
         
@@ -134,13 +138,13 @@ public with sharing class AccountUtils {
 
         Date today = Date.today();
         
-        List<Account> accountsToDelete = [SELECT Id FROM Account WHERE CreatedDate = TODAY AND Name like '%<<Teste>>%'];
+        List<Account> accountsToDelete = [SELECT Id FROM Account WHERE CreatedDate = TODAY AND Name like '%<Teste>%'];
         
-        List<Contact> contactsToDelete = [SELECT Id FROM Contact WHERE CreatedDate = TODAY AND Name like '%<<Teste>>%'];
+        List<Contact> contactsToDelete = [SELECT Id FROM Contact WHERE CreatedDate = TODAY AND Name like '%<Teste>%'];
         
-        List<Opportunity> opportunitiesToDelete = [SELECT Id FROM Opportunity WHERE CreatedDate = TODAY AND Name like '%<<Teste>>%'];
+        List<Opportunity> opportunitiesToDelete = [SELECT Id FROM Opportunity WHERE CreatedDate = TODAY AND Name like '%<Teste>%'];
         
-        List<Lead> leadsToDelete = [SELECT Id FROM Lead WHERE CreatedDate = TODAY AND Name like '%<<Teste>>%'];
+        List<Lead> leadsToDelete = [SELECT Id FROM Lead WHERE CreatedDate = TODAY AND Name like '%<Teste>%'];
 
         if (!opportunitiesToDelete.isEmpty()) {
             delete opportunitiesToDelete;
