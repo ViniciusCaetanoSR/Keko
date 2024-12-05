@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Company</fullName>
+    <inlineHelpText>Este será o Nome Abreviado do cliente que utilizamos no TOTvs.Você pode preenchê-lo com até 12 caracteres. Escolha preferencialmente o nome da loja.</inlineHelpText>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>true</trackHistory>
 </CustomField>

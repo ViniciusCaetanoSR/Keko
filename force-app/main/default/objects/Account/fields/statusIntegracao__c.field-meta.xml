@@ -3,9 +3,11 @@
     <fullName>statusIntegracao__c</fullName>
     <description>Exibe uma mensagem visual indicando o status da integração Totvs.</description>
     <externalId>false</externalId>
-    <formula>IF(IntegracaoTotvs__c,
-IMAGE(&quot;/img/samples/flag_green.gif&quot;, &quot;Sucesso na Integração&quot;),
-IMAGE(&quot;/img/samples/flag_red.gif&quot;, &quot;Falha na Integração&quot;))</formula>
+    <formula>IF(
+    IntegracaoTotvs__c,
+    IMAGE(&quot;/img/samples/flag_green.gif&quot;, &quot; Conta integrada com Totvs&quot;) &amp; &quot; Conta integrada com Totvs&quot;,
+    IMAGE(&quot;/img/samples/flag_red.gif&quot;, &quot; Conta não integrada com Totvs&quot;) &amp; &quot; Conta não integrada com Totvs&quot;
+)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Status da Integração com Totvs</label>
     <required>false</required>

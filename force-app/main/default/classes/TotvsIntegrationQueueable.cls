@@ -21,7 +21,7 @@ public class TotvsIntegrationQueueable implements Queueable, Database.AllowsCall
 
             Account account = AccountSelector.selectAccountById(accountId);
 
-            if (account == null) { return; }
+            if (account == null) {  return; }
 
             TotvsBody requestBodyJson = TotvsBodyMapper.totvsMapper(account);
             String credentials = totvsApi.username__c + ':' + totvsApi.password__c;
@@ -37,16 +37,19 @@ public class TotvsIntegrationQueueable implements Queueable, Database.AllowsCall
                 request.setMethod('PUT');
                 request.setEndpoint(totvsApi.base_URL__c + '/' + account.Codigo_do_cliente__c);
                 System.debug('Enviando PUT para Totvs com código do cliente: ' + account.Codigo_do_cliente__c);
+
             } else { // Se for inserção (POST)
-                
+
                 request.setMethod('POST');
                 request.setEndpoint(totvsApi.base_URL__c);
                 System.debug('Enviando POST para Totvs com accountId: ' + accountId);
+
             }
 
             response = http.send(request);
 
             System.debug('Response Status Code: ' + response.getStatusCode());
+            
 
             if (response.getStatusCode() == 200 || response.getStatusCode() == 201 || response.getStatusCode() == 204) {
                 
@@ -58,6 +61,7 @@ public class TotvsIntegrationQueueable implements Queueable, Database.AllowsCall
 
                     account.IntegracaoTotvs__c = true;
                     account.Codigo_do_cliente__c = customerCode;
+                    account.TotvsIntegrationDetails__c = '';
                     update account;
                 } else {
                     System.debug('Dados atualizados com sucesso na Totvs (PUT).');
@@ -80,10 +84,25 @@ public class TotvsIntegrationQueueable implements Queueable, Database.AllowsCall
             System.debug('Reagendando nova tentativa de integração. Tentativa número: ' + retryCount);
             System.debug('Request Body: ' + requestBody);
             System.debug('Response Body: ' + responseBody);
-            System.enqueueJob(new TotvsIntegrationQueueable(accountId, retryCount, isUpdate));
+
+            if(!Test.isRunningTest()) {
+                System.enqueueJob(new TotvsIntegrationQueueable(accountId, retryCount, isUpdate));
+            } else {
+                System.debug('Em contexto de teste não haverá enfileiramento.');
+            }
         } else {
             System.debug('Número máximo de tentativas foi alcançado.');
             CreateLogRecord.createLog(accountId, requestBody, responseBody);
+
+            if(!String.isBlank(responseBody)) {
+                Map<String, Object> errorResponse = (Map<String, Object>) JSON.deserializeUntyped(responseBody);
+                String detailedMessage = (String) errorResponse.get('detailedMessage');
+                Account conta = [SELECT Id, TotvsIntegrationDetails__c FROM Account WHERE Id = :accountId];
+                if (conta != null && (conta.TotvsIntegrationDetails__c == null || conta.TotvsIntegrationDetails__c != detailedMessage)) {
+                    conta.TotvsIntegrationDetails__c = detailedMessage;
+                    update conta;
+                }
+            }
         }
     }
 }

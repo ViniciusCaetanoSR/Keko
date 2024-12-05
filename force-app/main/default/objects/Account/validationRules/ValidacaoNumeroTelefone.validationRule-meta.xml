@@ -4,8 +4,14 @@
     <active>true</active>
     <description>Garante que os campos de telefones estejam preenchidos corretamente antes de salvar o registro.</description>
     <errorConditionFormula>OR(
-    NOT(REGEX(Telefone_fixo__c, &quot;^[0-9\\-()\\+\\s]+$&quot;)),
-    NOT(REGEX(Phone, &quot;^[0-9\\-()\\+\\s]+$&quot;))
+    AND(
+        NOT(ISBLANK(Telefone_fixo__c)),
+        NOT(REGEX(Telefone_fixo__c, &quot;^[0-9\\-()\\+\\s]+$&quot;))
+    ),
+    AND(
+        NOT(ISBLANK(Phone)),
+        NOT(REGEX(Phone, &quot;^[0-9\\-()\\+\\s]+$&quot;))
+    )
 )</errorConditionFormula>
     <errorMessage>O número de telefone deve conter apenas números válidos.</errorMessage>
 </ValidationRule>

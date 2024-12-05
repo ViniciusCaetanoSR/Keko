@@ -26,7 +26,12 @@ private class TotvsBodyMapperTest {
             Segmento__c = 'After Nacional',
             Condicoes_de_Pagamento__c = 'Apresentação',
             CNPJ__c = '12345678000195',
-            Mercado__c = 'Varejo');
+            Mercado__c = 'Varejo',
+            Compra_mensal_pretendida_na_abertura_da__c = 2000,
+            Nome_do_contato_principal__c = 'Contato principal',
+            Valor_pretendido_do_primeiro_pedido__c = 250,
+            email_financeiro__c = 'teste@teste.com'
+        );
         insert testAccount;
         
         Bandeira__mdt testBandeira = new Bandeira__mdt(
@@ -64,14 +69,11 @@ private class TotvsBodyMapperTest {
         System.assertEquals('teste@danfe.com', request.NFeEmail, 'O NFeEmail deve ser "teste@danfe.com"');
         System.assertEquals('KE', request.tradeName, 'O tradeName deve ser "KE"');
         System.assertEquals('Centro', request.billingNeighborhood, 'O billingNeighborhood deve ser "Centro"');
-        System.assertEquals('12345678', request.municipalRegistration, 'O municipalRegistration deve ser "12345678"');
         System.assertEquals(9999, request.defaultHolder, 'O defaultHolder deve ser 9999');
         System.assertEquals(6, request.defaultModality, 'O defaultModality deve ser 6');
         System.assertEquals(2, request.entityType, 'O entityType deve ser 2');
         System.assertEquals(6, request.modality, 'O modality deve ser 6');
         System.assertEquals('Centro', request.neighborhood, 'O neighborhood deve ser "Centro"');
-        System.assertEquals(0, request.billingIbgeCode, 'O billingIbgeCode deve ser 0');
-        //System.assertEquals(2110, request.paymentTerms, 'O paymentTerm deve ser 2110');
         
         Test.stopTest();
     }

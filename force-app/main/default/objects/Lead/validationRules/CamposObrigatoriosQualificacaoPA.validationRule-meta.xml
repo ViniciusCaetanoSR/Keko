@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CamposObrigatoriosQualificacaoPA</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+   ISPICKVAL(PRIORVALUE(Status), &apos;Avaliação do Lead&apos;),
+   ISPICKVAL(Segmento__c,&apos;P&amp;A&apos;),
+OR(
+  ISPICKVAL(Status, &apos;Apresentação das Vantagens de Comprar KEKO&apos;),
+  ISPICKVAL(Status, &apos;Validação do Gerente&apos;)
+),
+RecordType.DeveloperName = &apos;Varejo&apos;,
+OR(
+ISBLANK(A_loja_tem_fidelidade_com_alguma_marca__c),
+ISBLANK(Como_e_por_que_o_Lead_chegou_ate_a_KEKO__c),
+ISBLANK(De_quem_a_loja_compra_hoje__c),
+ISBLANK(Ha_quanto_tempo_a_loja_existe__c),
+ISBLANK(Qual_o_tamanho_da_cidade_que_ela_esta__c),
+ISBLANK(Quantos_vendedores_e_instaladores_tem__c),
+ISPICKVAL(Pertence_a_um_grupo_econ_mico__c, &quot;&quot;)
+)
+)</errorConditionFormula>
+    <errorMessage>É preciso preencher a seção Perfil do Cliente na aba Qualificações do Lead.</errorMessage>
+</ValidationRule>

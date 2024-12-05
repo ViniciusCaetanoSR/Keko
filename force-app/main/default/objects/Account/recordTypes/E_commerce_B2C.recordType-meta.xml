@@ -10,11 +10,19 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Campanhas RD</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Customer Event</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Google AdWords</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ligação</fullName>
             <default>false</default>
         </values>
         <values>
@@ -27,6 +35,14 @@
         </values>
         <values>
             <fullName>RD Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Site Keko</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visitas</fullName>
             <default>false</default>
         </values>
         <values>
@@ -937,70 +953,6 @@
     <picklistValues>
         <picklist>Condicoes_de_Pagamento__c</picklist>
         <values>
-            <fullName>30 dias em 2x 20%2F40DD</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>30 dias em 3x 20%2F30%2F40DD</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>30 dias em 4x 20%2F25%2F35%2F40DD</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>30 dias em 5x 20%2F25%2F30%2F35%2F40DD</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>45 dias em 2x %2830%2F60DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>45 dias em 3x %2830%2F45%2F60DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>45 dias em 4x %2830%2F40%2F50%2F60DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>45 dias em 5x %2825%2F35%2F45%2F55%2F65DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>60 dias em 3x %2830%2F60%2F90DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>60 dias em 4x %2830%2F50%2F70%2F90DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>60 dias em 5x %2830%2F45%2F60%2F75%2F90DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>60 dias em 7x %2830%2F40%2F50%2F60%2F70%2F80%2F90DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>75 dias em 3x %2830%2F75%2F120DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>75 dias em 4x %2830%2F60%2F90%2F120DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>75 dias em 5x %2830%2F55%2F75%2F95%2F120DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>75 dias em 7x %2830%2F45%2F60%2F75%2F90%2F105%2F120DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Antecipado 7DD</fullName>
             <default>false</default>
         </values>
@@ -1410,10 +1362,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>VI SUDESTE</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>VI SUL%2FSP</fullName>
             <default>false</default>
         </values>
@@ -1592,89 +1540,6 @@
         </values>
         <values>
             <fullName>Reseller</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>codigoCondicaoPagamento__c</picklist>
-        <values>
-            <fullName>11</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>130</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>2110</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>234</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>245</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>334</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>345</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>358</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>360</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>375</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>4</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>445</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>460</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>475</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>5</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>545</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>560</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>761</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>775</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>995</fullName>
             <default>false</default>
         </values>
     </picklistValues>

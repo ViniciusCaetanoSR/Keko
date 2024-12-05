@@ -10,11 +10,19 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Campanhas RD</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Customer Event</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Google AdWords</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ligação</fullName>
             <default>false</default>
         </values>
         <values>
@@ -27,6 +35,14 @@
         </values>
         <values>
             <fullName>RD Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Site Keko</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visitas</fullName>
             <default>false</default>
         </values>
         <values>
@@ -61,10 +77,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>JEEP%2FRAM</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>KEKO</fullName>
             <default>false</default>
         </values>
@@ -94,245 +106,6 @@
         </values>
         <values>
             <fullName>VOLKS</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Canal__c</picklist>
-        <values>
-            <fullName>AFTER ME</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>AFTER MI</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>FIAT ARGENTINA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>FIAT ARMAZEM</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>FIAT ASIA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>FIAT OM</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>FIAT P%26A</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>FIAT%2FPEUGEOT URUGUAI</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>FORD ALEMANHA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>FORD AMERICA LATINA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>FORD ARGENTINA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>FORD ARMAZEM CAJAMAR</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>FORD ARMAZEM SP BARUERI</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>FORD CHILE</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>FORD INDIA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>FORD MEXICO</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>FORD MOD CENTER BA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>FORD MOD CENTER SBC</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>FORD P%26A</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>FORD PERU</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>GM AMERICA LATINA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>GM ARGENTINA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>GM ARMAZEM DSH</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>GM CHILE</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>GM EQUADOR</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>GM MEXICO</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>GM OM</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>GM P%26A</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>GM PERU</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>GM TAILANDIA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>GM USA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>HONDA OEM</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>HONDA REPOSICAO</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>HYUNDAI P%26A</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>JEEP%2FRAM P%26A</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>KEKO USA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>MERCEDES ALEMANHA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>MITSUBISHI ARMAZEM</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>MITSUBISHI OM</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>MITSUBISHI P%26A</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>NISSAN ARMAZEM</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>NISSAN MEXICO</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>NISSAN OEM</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>NISSAN P%26A</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>PEUGEOT ARMAZEM</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>RENAULT ARMAZEM</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>RENAULT COLOMBIA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>RENAULT OM</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>TOYOTA ARGENTINA OEM</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>TOYOTA ARGENTINA P%26A</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>TOYOTA ARMAZEM</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>TOYOTA ARMAZEM ARGENTINA</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>TOYOTA MOD CENTER</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>TOYOTA OEM</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>TOYOTA P%26A</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>TOYOTA TSUSHO</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>VOLKS OM</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>VOLKS P%26A</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>VOLKSWAGEN ARMAZEM</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -937,70 +710,6 @@
     <picklistValues>
         <picklist>Condicoes_de_Pagamento__c</picklist>
         <values>
-            <fullName>30 dias em 2x 20%2F40DD</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>30 dias em 3x 20%2F30%2F40DD</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>30 dias em 4x 20%2F25%2F35%2F40DD</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>30 dias em 5x 20%2F25%2F30%2F35%2F40DD</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>45 dias em 2x %2830%2F60DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>45 dias em 3x %2830%2F45%2F60DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>45 dias em 4x %2830%2F40%2F50%2F60DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>45 dias em 5x %2825%2F35%2F45%2F55%2F65DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>60 dias em 3x %2830%2F60%2F90DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>60 dias em 4x %2830%2F50%2F70%2F90DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>60 dias em 5x %2830%2F45%2F60%2F75%2F90DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>60 dias em 7x %2830%2F40%2F50%2F60%2F70%2F80%2F90DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>75 dias em 3x %2830%2F75%2F120DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>75 dias em 4x %2830%2F60%2F90%2F120DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>75 dias em 5x %2830%2F55%2F75%2F95%2F120DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>75 dias em 7x %2830%2F45%2F60%2F75%2F90%2F105%2F120DD%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Antecipado 7DD</fullName>
             <default>false</default>
         </values>
@@ -1410,10 +1119,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>VI SUDESTE</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>VI SUL%2FSP</fullName>
             <default>false</default>
         </values>
@@ -1592,89 +1297,6 @@
         </values>
         <values>
             <fullName>Reseller</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>codigoCondicaoPagamento__c</picklist>
-        <values>
-            <fullName>11</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>130</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>2110</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>234</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>245</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>334</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>345</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>358</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>360</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>375</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>4</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>445</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>460</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>475</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>5</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>545</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>560</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>761</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>775</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>995</fullName>
             <default>false</default>
         </values>
     </picklistValues>

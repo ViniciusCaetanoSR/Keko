@@ -3,7 +3,7 @@
     <fullName>email_comercial__c</fullName>
     <externalId>false</externalId>
     <label>Email comercial</label>
-    <required>true</required>
+    <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>true</trackHistory>
     <type>Email</type>

@@ -3,7 +3,7 @@
     <fullName>Varejo</fullName>
     <isActive>true</isActive>
     <values>
-        <fullName>Apresentação das Vantagens de Comprar KEKO</fullName>
+        <fullName>Apresentação das Vantagens Competitivas KEKO</fullName>
         <default>false</default>
     </values>
     <values>
@@ -11,12 +11,12 @@
         <default>false</default>
     </values>
     <values>
-        <fullName>Aprovação Financeira</fullName>
+        <fullName>Aprovação Financeiro</fullName>
         <default>false</default>
     </values>
     <values>
-        <fullName>Avaliação do Lead</fullName>
-        <default>true</default>
+        <fullName>Finalizar Cadastro</fullName>
+        <default>false</default>
     </values>
     <values>
         <fullName>Ganho</fullName>
@@ -29,6 +29,10 @@
     <values>
         <fullName>Perdido</fullName>
         <default>false</default>
+    </values>
+    <values>
+        <fullName>Qualificação do Lead</fullName>
+        <default>true</default>
     </values>
     <values>
         <fullName>Validação do Gerente</fullName>

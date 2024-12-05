@@ -3,6 +3,45 @@
     <fullName>ValidacaoEnderecoCampoEstado</fullName>
     <active>true</active>
     <description>Garante que o campo estado esteja preenchido antes de salvar o registro.</description>
-    <errorConditionFormula>ISBLANK(BillingState)</errorConditionFormula>
-    <errorMessage>O campo estado não pode estar vazio.</errorMessage>
+    <errorConditionFormula>ISBLANK(BillingState) ||
+NOT(
+    OR(
+        UPPER(BillingState) = &quot;EX&quot;,
+        UPPER(BillingState) = &quot;SA&quot;,
+        UPPER(BillingState) = &quot;BO&quot;,
+        UPPER(BillingState) = &quot;AC&quot;,
+        UPPER(BillingState) = &quot;AL&quot;,
+        UPPER(BillingState) = &quot;AM&quot;,
+        UPPER(BillingState) = &quot;AP&quot;,
+        UPPER(BillingState) = &quot;BA&quot;,
+        UPPER(BillingState) = &quot;CE&quot;,
+        UPPER(BillingState) = &quot;DF&quot;,
+        UPPER(BillingState) = &quot;ES&quot;,
+        UPPER(BillingState) = &quot;GO&quot;,
+        UPPER(BillingState) = &quot;MA&quot;,
+        UPPER(BillingState) = &quot;MG&quot;,
+        UPPER(BillingState) = &quot;MS&quot;,
+        UPPER(BillingState) = &quot;MT&quot;,
+        UPPER(BillingState) = &quot;PA&quot;,
+        UPPER(BillingState) = &quot;PB&quot;,
+        UPPER(BillingState) = &quot;PE&quot;,
+        UPPER(BillingState) = &quot;PI&quot;,
+        UPPER(BillingState) = &quot;PR&quot;,
+        UPPER(BillingState) = &quot;RJ&quot;,
+        UPPER(BillingState) = &quot;RN&quot;,
+        UPPER(BillingState) = &quot;RO&quot;,
+        UPPER(BillingState) = &quot;RR&quot;,
+        UPPER(BillingState) = &quot;RS&quot;,
+        UPPER(BillingState) = &quot;SC&quot;,
+        UPPER(BillingState) = &quot;SE&quot;,
+        UPPER(BillingState) = &quot;SP&quot;,
+        UPPER(BillingState) = &quot;TO&quot;,
+        UPPER(BillingState) = &quot;MI&quot;,
+        UPPER(BillingState) = &quot;OH&quot;,
+        UPPER(BillingState) = &quot;IN&quot;,
+        UPPER(BillingState) = &quot;CO&quot;,
+        UPPER(BillingState) = &quot;MEX&quot;
+    )
+)</errorConditionFormula>
+    <errorMessage>O campo estado não pode estar vazio ou o campo deve ser um estado válido.</errorMessage>
 </ValidationRule>

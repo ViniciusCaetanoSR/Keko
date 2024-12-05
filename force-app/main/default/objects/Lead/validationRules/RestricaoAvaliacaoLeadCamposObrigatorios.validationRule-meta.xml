@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RestricaoAvaliacaoLeadCamposObrigatorios</fullName>
+    <active>true</active>
+    <description>Esta regra valida que o Lead, na fase &quot;Avaliação do Lead&quot;, precise ter todos os campos necessários preenchidos para avançar para a próxima fase.</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(PRIORVALUE(Status), &apos;Avaliação do Lead&apos;),
+    ISPICKVAL( Segmento__c, &apos;After Nacional&apos;), 
+    OR(
+    ISPICKVAL(Status, &apos;Validação do Gerente&apos;),
+    ISPICKVAL(Status, &apos;Apresentação das Vantagens de Comprar KEKO&apos;)
+    ),
+    RecordType.DeveloperName = &apos;Varejo&apos;,
+    OR(
+        ISBLANK(A_loja_tem_fidelidade_com_alguma_marca__c),
+        ISBLANK(Cliente_comprar_quais_fam_de_produto__c),
+        ISBLANK(Como_e_por_que_o_Lead_chegou_ate_a_KEKO__c),
+        ISBLANK(De_quem_a_loja_compra_hoje__c),
+        ISBLANK(Ha_quanto_tempo_a_loja_existe__c),
+        ISPICKVAL(O_cliente_fara_compra_mensal_de_2200__c, &quot;&quot;),
+        ISPICKVAL(O_primeiro_pedido_sera_de_6000__c, &quot;&quot;),
+        ISBLANK(Qual_o_tamanho_da_cidade_que_ela_esta__c),
+        ISBLANK(Quantos_vendedores_e_instaladores_tem__c),
+        ISPICKVAL(Pertence_a_um_grupo_econ_mico__c, &quot;&quot;),
+        AND(
+            JustificativaNegativaAuxiliar__c = true,
+             JustificativaNegativa__c = &apos;&apos;
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>Para avançar o estágio é preciso preencher os campos necessário para essa fase. Verifique na aba Qualificação do Lead as seções Perfil do Cliente e Políticas Comerciais estão preenchidas corretamente.</errorMessage>
+</ValidationRule>

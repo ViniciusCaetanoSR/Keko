@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RestricaoAvaliacaoLeadProximaFase</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(PRIORVALUE(Status), &apos;Avaliação do Lead&apos;),
+    RecordType.DeveloperName = &apos;Varejo&apos;, 
+        OR(
+            ISPICKVAL(Status, &apos;Ganho&apos;),
+            ISPICKVAL(Status, &apos;Negociação&apos;),
+            ISPICKVAL(Status, &apos;Aprovação Financeira&apos;),
+            ISPICKVAL(Status, &apos;Finalizar Cadastro&apos;),
+            ISPICKVAL(Status, &apos;Negociação&apos;),
+            ISPICKVAL(Status, &apos;Aprovação Back Office&apos;)
+        )
+)</errorConditionFormula>
+    <errorMessage>Não é possível modificar para essa fase.</errorMessage>
+</ValidationRule>

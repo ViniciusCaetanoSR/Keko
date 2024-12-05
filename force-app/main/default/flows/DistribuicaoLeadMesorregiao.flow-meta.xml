@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Email_para_GE</name>
+        <label>Email para GE</label>
+        <locationX>1106</locationX>
+        <locationY>863</locationY>
+        <actionName>Lead.Lead_para_vendedor_interno_ou_gestor_externo</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Lead.Lead_para_vendedor_interno_ou_gestor_externo</nameSegment>
+        <offset>0</offset>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Email_para_gestor_externo</name>
+        <label>Email para gestor externo</label>
+        <locationX>842</locationX>
+        <locationY>647</locationY>
+        <actionName>Lead.Lead_para_vendedor_interno_ou_gestor_externo</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Lead.Lead_para_vendedor_interno_ou_gestor_externo</nameSegment>
+        <offset>0</offset>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Email_para_vendedor_interno</name>
+        <label>Email para vendedor interno</label>
+        <locationX>50</locationX>
+        <locationY>647</locationY>
+        <actionName>Lead.Lead_para_vendedor_interno_ou_gestor_externo</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Lead.Lead_para_vendedor_interno_ou_gestor_externo</nameSegment>
+        <offset>0</offset>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>EmailGePortalMontadora</name>
+        <label>Email para GE de Portal Montadora</label>
+        <locationX>314</locationX>
+        <locationY>755</locationY>
+        <actionName>Lead.Lead_para_vendedor_interno_ou_gestor_externo</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Lead.Lead_para_vendedor_interno_ou_gestor_externo</nameSegment>
+        <offset>0</offset>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>EmailParaViPortalMontadora</name>
+        <label>Email para VI de Portal Montadora</label>
+        <locationX>578</locationX>
+        <locationY>755</locationY>
+        <actionName>Lead.Lead_para_vendedor_interno_ou_gestor_externo</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Lead.Lead_para_vendedor_interno_ou_gestor_externo</nameSegment>
+        <offset>0</offset>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>62.0</apiVersion>
+    <decisions>
+        <description>Verifica se o Lead é criado ou atualizado.</description>
+        <name>LeadCriadoOuAtualizado</name>
+        <label>O Lead é criado ou atualizado?</label>
+        <locationX>1056</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Veio_de_qualificacaoo_ou_negociacao</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Lead atualizado</defaultConnectorLabel>
+        <rules>
+            <name>Leadcriado</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Avaliação do Lead</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>OrigemLead</targetReference>
+            </connector>
+            <label>Lead criado</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Verifica qual o valor do campo &quot;Origem do Lead&quot; para indicar se o Lead irá para um vendedor internet ou um vendedor externo.</description>
+        <name>OrigemLead</name>
+        <label>Qual é a origem do Lead?</label>
+        <locationX>446</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>AtualizaProprietarioGestorExterno</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Origem do lead é &quot;visita&quot;</defaultConnectorLabel>
+        <rules>
+            <name>ValorOrigemLead</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ligação</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Site Keko</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Campanhas RD</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AtualizaProprietarioLead</targetReference>
+            </connector>
+            <label>Origem do lead é &quot;ligação&quot;, &quot;site Keko&quot; ou &quot;campanha RD&quot;</label>
+        </rules>
+        <rules>
+            <name>OrigemPortalMontadora</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Portal Montadora</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>PortalMontadoraViGe</targetReference>
+            </connector>
+            <label>Origem do lead é &quot;Portal Montadora&quot;</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>PortalMontadoraViGe</name>
+        <label>Portal Montadora é VI ou GE?</label>
+        <locationX>446</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>AtualizaProprietarioLeadPortalMontadoraVi</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>VI</defaultConnectorLabel>
+        <rules>
+            <name>PortalGE</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Cidade__r.Mesorregiao__r.Representante__r.GestorExterno__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AtualizaProprietarioPortalMontadoraGE</targetReference>
+            </connector>
+            <label>GE</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>PossuiGestorExterno</name>
+        <label>Possui gestor externo?</label>
+        <locationX>1238</locationX>
+        <locationY>647</locationY>
+        <defaultConnectorLabel>Não</defaultConnectorLabel>
+        <rules>
+            <name>PossuiGE</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Cidade__r.Mesorregiao__r.Representante__r.GestorExterno__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AtualizaProprietarioLeadGE</targetReference>
+            </connector>
+            <label>Sim</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Qual_origem_Lead</name>
+        <label>Qual origem do Lead?</label>
+        <locationX>1436</locationX>
+        <locationY>539</locationY>
+        <defaultConnectorLabel>Outra origem do Lead</defaultConnectorLabel>
+        <rules>
+            <name>OrigemLeadLSC</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ligação</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Site Keko</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Campanhas RD</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Portal Montadora</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>PossuiGestorExterno</targetReference>
+            </connector>
+            <label>Origem do lead é &quot;ligação&quot;, &quot;site Keko&quot; ou &quot;campanha RD&quot;</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Veio_de_qualificacaoo_ou_negociacao</name>
+        <label>Veio de qualificação ou negociação?</label>
+        <locationX>1667</locationX>
+        <locationY>431</locationY>
+        <defaultConnectorLabel>Não</defaultConnectorLabel>
+        <rules>
+            <name>SimQualificacaoOuNegociacao</name>
+            <conditionLogic>3 AND (1 OR 2)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Avaliação do Lead</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Validação do Gerente</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Apresentação das Vantagens de Comprar KEKO</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Qual_origem_Lead</targetReference>
+            </connector>
+            <label>Sim</label>
+        </rules>
+    </decisions>
+    <description>Este fluxo automatiza a atribuição de proprietário dos Leads com base na mesorregião associada à cidade e na origem do Lead. A lógica interna define se o Lead será direcionado para um vendedor interno ou externo, garantindo que os responsáveis corretos sejam atribuídos de acordo com critérios geográficos e de origem.</description>
+    <environments>Default</environments>
+    <interviewLabel>Distribuição de Leads por mesorregiões {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Distribuição de Leads por mesorregiões</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>AtualizaProprietarioGestorExterno</name>
+        <label>Atualiza proprietário do Lead para o gestor externo</label>
+        <locationX>842</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>Email_para_gestor_externo</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.Cidade__r.Mesorregiao__r.Representante__r.GestorExterno__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>AtualizaProprietarioLead</name>
+        <label>Atualiza proprietário do Lead</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <connector>
+            <targetReference>Email_para_vendedor_interno</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.Cidade__r.Mesorregiao__r.Representante__r.VendedorInterno__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>AtualizaProprietarioLeadGE</name>
+        <label>Atualiza proprietário do Lead para GE</label>
+        <locationX>1106</locationX>
+        <locationY>755</locationY>
+        <connector>
+            <targetReference>Email_para_GE</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.Cidade__r.Mesorregiao__r.Representante__r.GestorExterno__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>AtualizaProprietarioLeadPortalMontadoraVi</name>
+        <label>Atualiza proprietário do Lead em Portal Montadora para o VI</label>
+        <locationX>578</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>EmailParaViPortalMontadora</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.Cidade__r.Mesorregiao__r.Representante__r.VendedorInterno__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>AtualizaProprietarioPortalMontadoraGE</name>
+        <label>Atualiza proprietário do Lead em Portal Montadora</label>
+        <locationX>314</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>EmailGePortalMontadora</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>$Record.Cidade__r.Mesorregiao__r.Representante__r.GestorExterno__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>930</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>LeadCriadoOuAtualizado</targetReference>
+        </connector>
+        <filterFormula>{!$Record.RecordType.DeveloperName} == &apos;Varejo&apos;</filterFormula>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

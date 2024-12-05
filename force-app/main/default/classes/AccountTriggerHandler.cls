@@ -7,11 +7,10 @@ public with sharing class AccountTriggerHandler {
         }
     }
 
-    public static void onAfterInsert(List<Account> newAccounts) {    
+    public static void onAfterInsert(List<Account> newAccounts) {   
 
         for(Account Account : newAccounts) {
-
-            IntegrationTotvsService.insertTotvs(Account);
+           IntegrationTotvsService.insertTotvs(Account);
         }
     }
 
@@ -23,6 +22,10 @@ public with sharing class AccountTriggerHandler {
 
             if(String.isNotBlank(oldAccount.Codigo_do_cliente__c) && (account.Codigo_do_cliente__c == oldAccount.Codigo_do_cliente__c)){ 
                 IntegrationTotvsService.updateTotvs(account);
+            }
+            
+            if(String.isBlank(account.Codigo_do_cliente__c)) {
+                IntegrationTotvsService.insertTotvs(account);
             }
         }
     }

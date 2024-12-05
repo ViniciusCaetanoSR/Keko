@@ -13,7 +13,7 @@ global class TotvsIntegrationScheduler implements Schedulable {
 
     // Método para agendar a primeira tentativa de integração
     public static void scheduleAttempt(String idConta, Boolean isUpdate) {
-
+        
         // Gera a expressão cron para a primeira execução em 1 minuto
         String cronExp = generateCronExpression(1);
         Long uniqueSuffix = System.currentTimeMillis();
@@ -21,6 +21,13 @@ global class TotvsIntegrationScheduler implements Schedulable {
         TotvsIntegrationScheduler job = new TotvsIntegrationScheduler(idConta, 0, isUpdate); 
         System.schedule(jobName, cronExp, job);
         System.debug('Job de integração inicial agendado com nome: ' + jobName);
+        
+        //Account account = [SELECT Id, TotvsIntegrationDetails__c FROM Account WHERE Id = :idConta LIMIT 1];
+
+      //if (account != null) {
+       //  account.TotvsIntegrationDetails__c = 'Integração em processo';
+       //  update account;
+      //}
     }
 
     global void execute(SchedulableContext sc) {

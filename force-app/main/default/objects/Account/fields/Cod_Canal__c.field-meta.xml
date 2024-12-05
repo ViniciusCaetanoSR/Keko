@@ -424,17 +424,93 @@
             </value>
         </valueSetDefinition>
         <valueSettings>
+            <controllingFieldValue>TOYOTA ARMAZEM ARGENTINA</controllingFieldValue>
+            <valueName>939</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TOYOTA TSUSHO</controllingFieldValue>
+            <valueName>952</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RENAULT COLOMBIA</controllingFieldValue>
+            <valueName>938</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TOYOTA ARGENTINA OEM</controllingFieldValue>
+            <valueName>905</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TOYOTA ARGENTINA P&amp;A</controllingFieldValue>
+            <valueName>992</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FIAT OM</controllingFieldValue>
+            <valueName>961</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FORD MOD CENTER BA</controllingFieldValue>
+            <valueName>984</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FORD MOD CENTER SBC</controllingFieldValue>
+            <controllingFieldValue>NISSAN OEM</controllingFieldValue>
+            <valueName>993</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GM OM</controllingFieldValue>
+            <valueName>960</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VOLKSWAGEN ARMAZEM</controllingFieldValue>
+            <valueName>964</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GM PERU</controllingFieldValue>
+            <valueName>958</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FIAT ARGENTINA</controllingFieldValue>
+            <valueName>908</valueName>
+        </valueSettings>
+        <valueSettings>
             <controllingFieldValue>HONDA OEM</controllingFieldValue>
             <valueName>963</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FIAT ASIA</controllingFieldValue>
+            <valueName>947</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>MITSUBISHI OM</controllingFieldValue>
             <valueName>975</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>NISSAN OEM</controllingFieldValue>
-            <controllingFieldValue>FORD MOD CENTER SBC</controllingFieldValue>
-            <valueName>993</valueName>
+            <controllingFieldValue>FIAT/PEUGEOT URUGUAI</controllingFieldValue>
+            <valueName>948</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FORD ALEMANHA</controllingFieldValue>
+            <valueName>953</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FORD AMERICA LATINA</controllingFieldValue>
+            <valueName>936</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FORD ARGENTINA</controllingFieldValue>
+            <valueName>981</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FORD CHILE</controllingFieldValue>
+            <valueName>982</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FORD INDIA</controllingFieldValue>
+            <valueName>931</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>FORD MEXICO</controllingFieldValue>
+            <valueName>930</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>RENAULT OM</controllingFieldValue>
@@ -465,66 +541,28 @@
             <valueName>998</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>NISSAN ARMAZEM</controllingFieldValue>
-            <controllingFieldValue>GM USA</controllingFieldValue>
-            <valueName>956</valueName>
-        </valueSettings>
-        <valueSettings>
             <controllingFieldValue>HYUNDAI P&amp;A</controllingFieldValue>
             <valueName>915</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>PEUGEOT ARMAZEM</controllingFieldValue>
-            <valueName>950</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>JEEP/RAM P&amp;A</controllingFieldValue>
             <valueName>949</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>RENAULT ARMAZEM</controllingFieldValue>
-            <valueName>979</valueName>
-        </valueSettings>
-        <valueSettings>
             <controllingFieldValue>MITSUBISHI P&amp;A</controllingFieldValue>
-            <controllingFieldValue>VOLKS P&amp;A</controllingFieldValue>
             <valueName>995</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>TOYOTA ARMAZEM</controllingFieldValue>
-            <valueName>991</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>NISSAN P&amp;A</controllingFieldValue>
             <valueName>970</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>TOYOTA ARMAZEM ARGENTINA</controllingFieldValue>
-            <valueName>939</valueName>
-        </valueSettings>
-        <valueSettings>
             <controllingFieldValue>TOYOTA P&amp;A</controllingFieldValue>
             <valueName>997</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>TOYOTA TSUSHO</controllingFieldValue>
-            <valueName>952</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>VOLKSWAGEN ARMAZEM</controllingFieldValue>
-            <valueName>964</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>FIAT ARGENTINA</controllingFieldValue>
-            <valueName>908</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>FIAT ASIA</controllingFieldValue>
-            <valueName>947</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>FIAT/PEUGEOT URUGUAI</controllingFieldValue>
-            <valueName>948</valueName>
+            <controllingFieldValue>VOLKS P&amp;A</controllingFieldValue>
+            <valueName>965</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>AFTER ME</controllingFieldValue>
@@ -546,42 +584,6 @@
             <controllingFieldValue>FORD ARMAZEM CAJAMAR</controllingFieldValue>
             <controllingFieldValue>FORD ARMAZEM SP BARUERI</controllingFieldValue>
             <valueName>980</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>GM ARMAZEM DSH</controllingFieldValue>
-            <valueName>994</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>HONDA REPOSICAO</controllingFieldValue>
-            <valueName>955</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>MITSUBISHI ARMAZEM</controllingFieldValue>
-            <valueName>976</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>FORD ALEMANHA</controllingFieldValue>
-            <valueName>953</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>FORD AMERICA LATINA</controllingFieldValue>
-            <valueName>936</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>FORD ARGENTINA</controllingFieldValue>
-            <valueName>981</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>FORD CHILE</controllingFieldValue>
-            <valueName>982</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>FORD INDIA</controllingFieldValue>
-            <valueName>931</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>FORD MEXICO</controllingFieldValue>
-            <valueName>930</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>FORD PERU</controllingFieldValue>
@@ -612,40 +614,41 @@
             <valueName>971</valueName>
         </valueSettings>
         <valueSettings>
+            <controllingFieldValue>GM USA</controllingFieldValue>
+            <controllingFieldValue>NISSAN ARMAZEM</controllingFieldValue>
+            <valueName>956</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>GM ARMAZEM DSH</controllingFieldValue>
+            <valueName>994</valueName>
+        </valueSettings>
+        <valueSettings>
             <controllingFieldValue>MERCEDES ALEMANHA</controllingFieldValue>
             <valueName>910</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>HONDA REPOSICAO</controllingFieldValue>
+            <valueName>955</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>NISSAN MEXICO</controllingFieldValue>
             <valueName>967</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>RENAULT COLOMBIA</controllingFieldValue>
-            <valueName>938</valueName>
+            <controllingFieldValue>MITSUBISHI ARMAZEM</controllingFieldValue>
+            <valueName>976</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>TOYOTA ARGENTINA OEM</controllingFieldValue>
-            <valueName>905</valueName>
+            <controllingFieldValue>PEUGEOT ARMAZEM</controllingFieldValue>
+            <valueName>950</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>TOYOTA ARGENTINA P&amp;A</controllingFieldValue>
-            <valueName>992</valueName>
+            <controllingFieldValue>RENAULT ARMAZEM</controllingFieldValue>
+            <valueName>979</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>FIAT OM</controllingFieldValue>
-            <valueName>961</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>FORD MOD CENTER BA</controllingFieldValue>
-            <valueName>984</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>GM OM</controllingFieldValue>
-            <valueName>960</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>GM PERU</controllingFieldValue>
-            <valueName>958</valueName>
+            <controllingFieldValue>TOYOTA ARMAZEM</controllingFieldValue>
+            <valueName>991</valueName>
         </valueSettings>
     </valueSet>
 </CustomField>

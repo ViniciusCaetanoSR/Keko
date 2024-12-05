@@ -10,11 +10,19 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Campanhas RD</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Customer Event</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Google AdWords</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ligação</fullName>
             <default>false</default>
         </values>
         <values>
@@ -26,7 +34,19 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Portal Montadora</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>RD Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Site Keko</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visitas</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1414,10 +1434,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>VI SUDESTE</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>VI SUL%2FSP</fullName>
             <default>false</default>
         </values>
@@ -1596,89 +1612,6 @@
         </values>
         <values>
             <fullName>Reseller</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>codigoCondicaoPagamento__c</picklist>
-        <values>
-            <fullName>11</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>130</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>2110</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>234</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>245</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>334</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>345</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>358</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>360</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>375</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>4</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>445</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>460</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>475</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>5</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>545</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>560</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>761</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>775</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>995</fullName>
             <default>false</default>
         </values>
     </picklistValues>

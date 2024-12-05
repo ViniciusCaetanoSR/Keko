@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_CodigoSuframaObrigatorio</fullName>
+    <active>true</active>
+    <description>Quando usuário estiver no estágio &quot;Finalizar Cadastro&quot; no Lead, o código suframa é obrigatório para cidades localizadas na mesorregião dos estados do Acre (AC), Amapá (AP), Amazonas (AM), Rondônia (RO) ou Roraima (RR).</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(PRIORVALUE(Status), &apos;Finalizar Cadastro&apos;),
+    ISPICKVAL(Status, &apos;Aprovação Back Office&apos;),
+    RecordType.DeveloperName = &apos;Varejo&apos;,
+    ISBLANK(Codigo_Suframa__c),
+    OR(
+        TEXT(Cidade__r.Estado__c) = &quot;AC&quot;,
+        TEXT(Cidade__r.Estado__c) = &quot;AP&quot;,
+        TEXT(Cidade__r.Estado__c) = &quot;AM&quot;,
+        TEXT(Cidade__r.Estado__c) = &quot;RO&quot;,
+        TEXT(Cidade__r.Estado__c) = &quot;RR&quot;
+    )
+)</errorConditionFormula>
+    <errorDisplayField>Codigo_Suframa__c</errorDisplayField>
+    <errorMessage>Código Suframa é obrigatório para cidades localizadas nos estados do Acre, Amapá, Amazonas, Rondônia ou Roraima.</errorMessage>
+</ValidationRule>

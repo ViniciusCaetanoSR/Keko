@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_ConversaoLead</fullName>
+    <active>true</active>
+    <description>Apenas o perfil &quot;BackOffice&quot; poderá marcar como ganho ou converter um Lead.</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Status, &quot;Ganho&quot;),
+    $Profile.Name &lt;&gt; &quot;Backoffice&quot;
+)</errorConditionFormula>
+    <errorMessage>Apenas um perfil BackOffice pode converter um Lead.</errorMessage>
+</ValidationRule>

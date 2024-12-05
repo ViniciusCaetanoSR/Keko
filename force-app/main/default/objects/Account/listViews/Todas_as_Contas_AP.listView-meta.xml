@@ -3,7 +3,7 @@
     <fullName>Todas_as_Contas_AP</fullName>
     <columns>ACCOUNT.NAME</columns>
     <columns>Bandeira__c</columns>
-    <columns>Cod_Canal__c</columns>
+    <columns>Canal__c</columns>
     <columns>Mercado__c</columns>
     <columns>Segmento__c</columns>
     <columns>CORE.USERS.FIRST_NAME</columns>

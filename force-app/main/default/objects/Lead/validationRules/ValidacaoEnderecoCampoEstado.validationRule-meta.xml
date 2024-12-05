@@ -3,6 +3,45 @@
     <fullName>ValidacaoEnderecoCampoEstado</fullName>
     <active>true</active>
     <description>Garante que o campo estado esteja preenchido antes de salvar o registro.</description>
-    <errorConditionFormula>ISBLANK(State)</errorConditionFormula>
-    <errorMessage>O campo estado não pode estar vazio.</errorMessage>
+    <errorConditionFormula>ISBLANK(State) ||
+NOT(
+  OR(
+    UPPER(State) = &quot;EX&quot;,
+    UPPER(State) = &quot;SA&quot;,
+    UPPER(State) = &quot;BO&quot;,
+    UPPER(State) = &quot;AC&quot;,
+    UPPER(State) = &quot;AL&quot;,
+    UPPER(State) = &quot;AM&quot;,
+    UPPER(State) = &quot;AP&quot;,
+    UPPER(State) = &quot;BA&quot;,
+    UPPER(State) = &quot;CE&quot;,
+    UPPER(State) = &quot;DF&quot;,
+    UPPER(State) = &quot;ES&quot;,
+    UPPER(State) = &quot;GO&quot;,
+    UPPER(State) = &quot;MA&quot;,
+    UPPER(State) = &quot;MG&quot;,
+    UPPER(State) = &quot;MS&quot;,
+    UPPER(State) = &quot;MT&quot;,
+    UPPER(State) = &quot;PA&quot;,
+    UPPER(State) = &quot;PB&quot;,
+    UPPER(State) = &quot;PE&quot;,
+    UPPER(State) = &quot;PI&quot;,
+    UPPER(State) = &quot;PR&quot;,
+    UPPER(State) = &quot;RJ&quot;,
+    UPPER(State) = &quot;RN&quot;,
+    UPPER(State) = &quot;RO&quot;,
+    UPPER(State) = &quot;RR&quot;,
+    UPPER(State) = &quot;RS&quot;,
+    UPPER(State) = &quot;SC&quot;,
+    UPPER(State) = &quot;SE&quot;,
+    UPPER(State) = &quot;SP&quot;,
+    UPPER(State) = &quot;TO&quot;,
+    UPPER(State) = &quot;MI&quot;,
+    UPPER(State) = &quot;OH&quot;,
+    UPPER(State) = &quot;IN&quot;,
+    UPPER(State) = &quot;CO&quot;,
+    UPPER(State) = &quot;MEX&quot;
+  )
+)</errorConditionFormula>
+    <errorMessage>O campo estado não pode estar vazio ou o campo deve ser um estado válido.</errorMessage>
 </ValidationRule>

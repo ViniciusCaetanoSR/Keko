@@ -67,11 +67,19 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Campanhas RD</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Customer Event</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Google AdWords</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ligação</fullName>
             <default>false</default>
         </values>
         <values>
@@ -84,6 +92,14 @@
         </values>
         <values>
             <fullName>RD Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Site Keko</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Visitas</fullName>
             <default>false</default>
         </values>
         <values>
@@ -115,29 +131,6 @@
         </values>
         <values>
             <fullName>Price</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Mercado__c</picklist>
-        <values>
-            <fullName>E-commerce B2B</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>E-commerce B2C</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Export</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Montadora</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Varejo</fullName>
             <default>false</default>
         </values>
     </picklistValues>

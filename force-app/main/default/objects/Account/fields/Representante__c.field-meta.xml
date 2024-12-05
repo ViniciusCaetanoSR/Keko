@@ -35,11 +35,6 @@
                 <label>GE SPR.PRETO</label>
             </value>
             <value>
-                <fullName>VI SUDESTE</fullName>
-                <default>false</default>
-                <label>VI SUDESTE</label>
-            </value>
-            <value>
                 <fullName>VI SUL/SP</fullName>
                 <default>false</default>
                 <label>VI SUL/SP</label>

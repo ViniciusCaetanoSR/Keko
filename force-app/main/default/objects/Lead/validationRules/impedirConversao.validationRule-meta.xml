@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>impedirConversao</fullName>
+    <active>true</active>
+    <description>Impede a conversão do Lead quando o motivo da perda estiver preenchido.</description>
+    <errorConditionFormula>AND(ISCHANGED(IsConverted), RecordType.DeveloperName = &apos;Varejo&apos;,NOT(ISBLANK(TEXT(MotivoPerda__c))))</errorConditionFormula>
+    <errorMessage>Para conversão o lead não pode estar perdido, ou seja, o campo Motivo da Perda não pode estar preenchido.</errorMessage>
+</ValidationRule>

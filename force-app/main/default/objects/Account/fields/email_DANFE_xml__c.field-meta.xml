@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <inlineHelpText>Caso você deseje que seu cliente receba uma cópia da Nota Fiscal, preencha esse campo. Pode ser o mesmo email do comercial.</inlineHelpText>
     <label>Email DANFE xml</label>
-    <required>false</required>
+    <required>true</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <type>Email</type>

@@ -6,7 +6,7 @@
     <fields>Tipo_de_cliente__c</fields>
     <fields>Bandeira__c</fields>
     <fields>Segmento__c</fields>
-    <fields>Phone</fields>
     <fields>statusIntegracao__c</fields>
+    <fields>Phone</fields>
     <label>Account Compact Layout</label>
 </CompactLayout>

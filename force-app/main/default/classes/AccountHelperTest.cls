@@ -2,6 +2,63 @@
 public class AccountHelperTest {
 
     @isTest
+    static void testValidateAndFormatPhoneLead() {
+        Lead lead = new Lead(
+            NomeAbreviado__c = 'BS',
+            LastName = 'Big Sky',
+            Mercado__c = 'Varejo',
+            Bandeira__c = 'KEKO', 
+            RazaoSocial__c = 'Big Sky Inc.', 
+            Segmento__c = 'After Nacional',
+            Canal__c = 'AFTER MI',
+            Cod_Canal__c = '2',
+            Street = 'Avenida Paulista, 13',
+            City = 'São Paulo',
+            State = 'SP',
+            PostalCode = '12345678',
+            Country = 'Brasil',
+            Bairro__c = 'Centro',
+            Phone = '1123456789',
+            Telefone_fixo__c = '1123456789',
+            Company = 'Big Sky Inc.',
+            Ramo_de_Atividade__c = 'Lojista',
+            email_comercial__c = 'bsi@email.com',
+            CNPJ__c = '12345678000195',
+            Condicoes_de_Pagamento__c = 'Apresentação',
+            email_financeiro__c = 'bsifinanceiro@email.com',
+            MunicipalRegistration__c = '12345',
+            Cidade__c = 'a02N500000GctqQIAR'
+
+        );
+        insert lead;
+
+        Test.startTest();
+        AccountHelper.validateAndFormatPhone(lead);
+        Test.stopTest();
+
+        lead = [SELECT Phone FROM Lead WHERE Id = :lead.Id];
+
+        System.assertEquals('+55(11)2345-6789', lead.Phone, 'O número de telefone de estar no formato correto');
+    }
+
+    @isTest
+    static void testValidateAndFormatPhoneContact() {
+        Contact contact = new Contact(
+            LastName = 'Small Sky',
+            Phone = '1198765432'
+        );
+        insert contact;
+
+        Test.startTest();
+        AccountHelper.validateAndFormatPhone(contact);
+        Test.stopTest();
+
+        contact = [SELECT Phone FROM Contact WHERE Id = :contact.Id];
+
+        System.assertEquals('+55(11)9876-5432', contact.Phone, 'O número de telefone de estar no formato correto');
+    }
+
+    @isTest
     static void testValidateAndFormatPhone_ValidNumber() {
         // Criar uma conta com número de telefone válido
         Account acc = new Account(

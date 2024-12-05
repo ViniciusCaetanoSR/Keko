@@ -22,7 +22,6 @@ public with sharing class TotvsBody {
     public String billingCity;
     public String billingCompleteAddress;
     public String billingCountry;
-    public Integer billingIbgeCode;
     public String billingNeighborhood;
     public String billingPersonalId;
     public String billingState;
@@ -33,12 +32,13 @@ public with sharing class TotvsBody {
     public Integer representativeCode;
     public Integer paymentTerms;
     public String NFeEmail;
-   // public String parentName;
     public String tradeName;
-    public String municipalRegistration;
     public Integer defaultHolder;
     public Integer defaultModality;
     public Integer modality;
+    // public String municipalRegistration;
+    // public String parentName;
+    // public Integer billingIbgeCode;
   // public Integer additionalCredit;
   // public Integer bank;
   // public String bankBranch;

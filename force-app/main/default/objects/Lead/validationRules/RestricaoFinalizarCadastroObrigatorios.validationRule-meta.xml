@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RestricaoFinalizarCadastroObrigatorios</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL(PRIORVALUE(Status), &apos;Finalizar Cadastro&apos;),
+ISPICKVAL(Status, &apos;Aprovação Back Office&apos;),
+RecordType.DeveloperName = &apos;Varejo&apos;,
+OR(
+ISBLANK(email_comercial__c),
+ISBLANK(email_DANFE_xml__c),
+ISBLANK(email_financeiro__c),
+ISBLANK(Address),
+ISBLANK(Bairro__c),
+ISBLANK(Nome_do_contato_principal__c),
+ISBLANK(Telefone_fixo__c),
+ISBLANK(MobilePhone),
+AnexaContratoSocial__c = false
+)
+)</errorConditionFormula>
+    <errorMessage>Preencha os campos obrigatórios.
+
+Email comercial
+Email DANFE xml
+Email financeiro
+Endereço de Entrega
+Nome do contato principal
+Telefone fixo
+Celular
+Anexa Contrato Social</errorMessage>
+</ValidationRule>

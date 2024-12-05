@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>JustificativaNegativaAuxiliar__c</fullName>
+    <description>Este campo informará se o campo &quot;Justificativa Negativa&quot; está visível ou não. Esta validação é importante para criar a obrigatoriedade do campo &quot;Justificativa Negativa&quot; quando visível.</description>
+    <formula>OR( ISPICKVAL(O_cliente_fara_compra_mensal_de_2200__c, &apos;Não&apos;),  ISPICKVAL(O_primeiro_pedido_sera_de_6000__c, &apos;Não&apos;),  QuantidadeProdutos__c = false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Justificativa Negativa Auxiliar</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

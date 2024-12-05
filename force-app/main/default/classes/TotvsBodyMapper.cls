@@ -46,41 +46,61 @@ public with sharing class TotvsBodyMapper {
             System.debug('CAMPOS: ' + campoPaymentTotvs);
         }
         
-        request.shortName = conta.NomeAbreviado__c;
-        request.city = conta.BillingCity;
-        request.billingCity = conta.BillingCity;
-        request.country = conta.BillingCountry;
-        request.billingCountry = conta.BillingCountry;
-        request.billingState = conta.BillingState;
-        request.state = conta.BillingState;
-        request.billingZipCode = remocaoCaracteresESpecial(conta.BillingPostalCode);
-        request.zipCode = remocaoCaracteresESpecial(conta.BillingPostalCode);
-        request.email = conta.email_comercial__c;
+        request.shortName = conta.Name;
         request.customerName = conta.RazaoSocial__c;
         request.personalId = remocaoCaracteresESpecial(conta.CNPJ__c);
-        request.billingPersonalId = remocaoCaracteresESpecial(conta.CNPJ__c);
-        request.phone1 = remocaoCaracteresESpecial(conta.Telefone_fixo__c);
-        request.billingCompleteAddress = conta.BillingStreet;
-        request.completeAddress = conta.BillingStreet;
+        request.email =  conta.email_comercial__c;
+        request.entityType = transformacaoInteiro(totvsApi.EntityType__c);
         request.address = conta.BillingStreet;
+        request.customerGroup = transformacaoInteiro(camposBandeiraTotvs.CustomerGroup__c);
+        request.completeAddress = conta.BillingStreet;
+        request.neighborhood = conta.Neighborhood__c;
+        request.city = conta.BillingCity;
+        request.state = conta.BillingState;
+        request.country = conta.BillingCountry;
+        request.zipCode =  remocaoCaracteresESpecial(conta.BillingPostalCode);
         request.billingAddress = conta.BillingStreet;
+        request.billingCity = conta.BillingCity;
+        request.billingCompleteAddress = conta.BillingStreet;
+        request.billingCountry = conta.BillingCountry;
+        request.billingNeighborhood = conta.Neighborhood__c;
+        request.billingPersonalId = remocaoCaracteresESpecial(conta.CNPJ__c);
+        request.billingState = conta.BillingState;
+        request.billingZipCode =  remocaoCaracteresESpecial(conta.BillingPostalCode);
+        
+        
+        request.phone1 = remocaoCaracteresESpecial(conta.Telefone_fixo__c);
         request.activityBranch = conta.Ramo_de_Atividade__c;
         request.salesChannel = transformacaoTextoInteiro(conta.Cod_Canal__c);
-        request.customerGroup = transformacaoInteiro(camposBandeiraTotvs.CustomerGroup__c);
         request.representativeCode = transformacaoInteiro(camposBandeiraTotvs.RepresentativeCode__c);
         request.paymentTerms = transformacaoInteiro(campoPaymentTotvs.PaymentTerms__c);
         request.NFeEmail = conta.email_DANFE_xml__c;
-        // request.parentName = 'Nome do Pai';
+        //request.parentName = 'Nome do Pai';
         request.tradeName = conta.Name;
-        request.billingNeighborhood = conta.Neighborhood__c;
-        request.municipalRegistration = conta.MunicipalRegistration__c;
+        //request.municipalRegistration = conta.MunicipalRegistration__c;
+        
         request.defaultHolder = transformacaoInteiro(totvsApi.DefaultHolder__c);
         request.defaultModality = transformacaoInteiro(totvsApi.DefaultModality__c);
-        request.entityType = transformacaoInteiro(totvsApi.EntityType__c);
-        request.modality = transformacaoInteiro(totvsApi.Modality__c);
-        request.neighborhood = conta.Neighborhood__c;
-        request.billingIbgeCode = transformacaoInteiro(totvsApi.IbgeCode__c);
         
+        request.modality = transformacaoInteiro(totvsApi.Modality__c);
+        
+       // request.billingIbgeCode = transformacaoInteiro(totvsApi.IbgeCode__c);
+        
+        System.debug('City: ' + request.city);
+        System.debug('BillingCity: ' + request.billingCity);
+        System.debug('Country: ' + request.country);
+        System.debug('BillingCountry: ' + request.billingCountry);
+        System.debug('State: ' + request.state);
+        System.debug('BillingState: ' + request.billingState);
+        System.debug('ZipCode: ' + request.zipCode);
+        System.debug('BillingZipCode: ' + request.billingZipCode);
+        System.debug('BillingCompleteAddress: ' + request.billingCompleteAddress);
+        System.debug('CompleteAddress: ' + request.completeAddress);
+        System.debug('Address: ' + request.address);
+        System.debug('BillingAddress: ' + request.billingAddress);
+        System.debug('Bairro: ' + request.neighborhood);
+        System.debug('Personal ID: ' + request.personalId);
+
         
        // request.additionalCredit = 0;
        // request.bank = 0;

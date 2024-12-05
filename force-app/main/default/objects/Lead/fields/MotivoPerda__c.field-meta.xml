@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MotivoPerda__c</fullName>
+    <label>Motivo da Perda</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Achou muito caro</fullName>
+                <default>false</default>
+                <label>Achou muito caro</label>
+            </value>
+            <value>
+                <fullName>Baixo volume (encaminhado para Distribuidor)</fullName>
+                <default>false</default>
+                <label>Baixo volume (encaminhado para Distribuidor)</label>
+            </value>
+            <value>
+                <fullName>Compra de oportunidade</fullName>
+                <default>false</default>
+                <label>Compra de oportunidade</label>
+            </value>
+            <value>
+                <fullName>Fiel a outra marca</fullName>
+                <default>false</default>
+                <label>Fiel a outra marca</label>
+            </value>
+            <value>
+                <fullName>Interesse somente em Capota Rígida</fullName>
+                <default>false</default>
+                <label>Interesse somente em Capota Rígida</label>
+            </value>
+            <value>
+                <fullName>Outro motivo</fullName>
+                <default>false</default>
+                <label>Outro motivo</label>
+            </value>
+            <value>
+                <fullName>Prazo de entrega muito longo</fullName>
+                <default>false</default>
+                <label>Prazo de entrega muito longo</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Perdido</controllingFieldValue>
+            <valueName>Achou muito caro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdido</controllingFieldValue>
+            <valueName>Baixo volume (encaminhado para Distribuidor)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdido</controllingFieldValue>
+            <valueName>Compra de oportunidade</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdido</controllingFieldValue>
+            <valueName>Fiel a outra marca</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdido</controllingFieldValue>
+            <valueName>Interesse somente em Capota Rígida</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdido</controllingFieldValue>
+            <valueName>Outro motivo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdido</controllingFieldValue>
+            <valueName>Prazo de entrega muito longo</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

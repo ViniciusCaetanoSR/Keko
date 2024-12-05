@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>emailParaBackOffice</name>
+        <label>Email para Back Office</label>
+        <locationX>1634</locationX>
+        <locationY>431</locationY>
+        <actionName>Lead.EmailParaBackOffice</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Lead.EmailParaBackOffice</nameSegment>
+        <offset>0</offset>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>notificaProprietarioSobreLeadPerdido</name>
+        <label>Email para proprietário do Lead</label>
+        <locationX>1898</locationX>
+        <locationY>431</locationY>
+        <actionName>Lead.EmailAlertLeadPerdidoPeloBackOffice</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Lead.EmailAlertLeadPerdidoPeloBackOffice</nameSegment>
+        <offset>0</offset>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>SubmeterAprovacao</name>
+        <label>Submeter aprovação</label>
+        <locationX>1106</locationX>
+        <locationY>431</locationY>
+        <actionName>submit</actionName>
+        <actionType>submit</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>objectId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>processDefinitionNameOrId</name>
+            <value>
+                <stringValue>04aN50000001r8k</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>submit</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>SubmeterAprovacaoFinanceiro</name>
+        <label>Submeter aprovação do financeiro</label>
+        <locationX>1370</locationX>
+        <locationY>431</locationY>
+        <actionName>submit</actionName>
+        <actionType>submit</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>objectId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>processDefinitionNameOrId</name>
+            <value>
+                <stringValue>04aN50000001r8j</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>submit</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
+    <decisions>
+        <name>LeadVoltaraEstagio</name>
+        <label>Lead voltará estágio?</label>
+        <locationX>710</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>AtualizaLeadPaParaFinalizarCadastro</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Não</defaultConnectorLabel>
+        <rules>
+            <name>Sim</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Negociação</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Apresentação das Vantagens de Comprar KEKO</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Sim</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>ValidacaoCampos</name>
+        <label>Validação de campos</label>
+        <locationX>1106</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Resultado padrão</defaultConnectorLabel>
+        <rules>
+            <name>CamposOk</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.O_cliente_fara_compra_mensal_de_2200__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sim</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.O_primeiro_pedido_sera_de_6000__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Sim</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Produtos</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>StatusPrior</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Segmento__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>After Nacional</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AtualizacaoStatusLead</targetReference>
+            </connector>
+            <label>Campos estão OK</label>
+        </rules>
+        <rules>
+            <name>LeadPa</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Segmento__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>P&amp;A</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Avaliação do Lead</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AtualizaLeadPaParaAvaliacaoVantagens</targetReference>
+            </connector>
+            <label>Lead é P&amp;A</label>
+        </rules>
+        <rules>
+            <name>LeadPaIndoFinalizarCadastro</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Segmento__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>P&amp;A</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Negociação</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>LeadVoltaraEstagio</targetReference>
+            </connector>
+            <label>Lead é P&amp;A indo pra finalizar cadastro</label>
+        </rules>
+        <rules>
+            <name>LeadAprovovacaGerente</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Validação do Gerente</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SubmeterAprovacao</targetReference>
+            </connector>
+            <label>Lead está em aprovação do gerente</label>
+        </rules>
+        <rules>
+            <name>LeadAprovacaoFinanceiro</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Aprovação Financeira</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SubmeterAprovacaoFinanceiro</targetReference>
+            </connector>
+            <label>Lead está em aprovação do financeiro</label>
+        </rules>
+        <rules>
+            <name>LeadBackOffice</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Aprovação Back Office</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>emailParaBackOffice</targetReference>
+            </connector>
+            <label>Lead está na fase BackOffice</label>
+        </rules>
+        <rules>
+            <name>notificarLeadPerdidoPeloBackOffice</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Aprovação Back Office</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Perdido</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>notificaProprietarioSobreLeadPerdido</targetReference>
+            </connector>
+            <label>Lead perdido pelo BackOffice</label>
+        </rules>
+    </decisions>
+    <description>Este flow verifica se os campos Cliente Comprará quais fam. de produto?, O cliente fará compra mensal de R$2200 e O primeiro pedido será de R$6000 estão preenchidos corretamente para avançar o estágio.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AprovacaoFinanceiroStatusPrior</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL(PRIORVALUE({!$Record.Status}), &apos;Aprovação Financeira&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>Produtos</name>
+        <dataType>Boolean</dataType>
+        <expression>PICKLISTCOUNT({!$Record.Cliente_comprar_quais_fam_de_produto__c}) &gt;= 2</expression>
+    </formulas>
+    <formulas>
+        <name>StatusPrior</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL(PRIORVALUE({!$Record.Status}), &apos;Avaliação do Lead&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>ValidacaoGerenteStatusPrior</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL(PRIORVALUE({!$Record.Status}), &apos;Validação do Gerente&apos;)</expression>
+    </formulas>
+    <interviewLabel>Validação para avanço do estágio Avaliação do Lead para Apresentação das Vantagens {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Validação para avanço do estágio Avaliação do Lead para Apresentação das Vantagens</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>AtualizacaoStatusLead</name>
+        <label>Atualização do Status do Lead</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Apresentação das Vantagens de Comprar KEKO</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>AtualizaLeadPaParaAvaliacaoVantagens</name>
+        <label>Atualiza Lead P&amp;A para Avaliação das Vantagens</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Apresentação das Vantagens de Comprar KEKO</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>AtualizaLeadPaParaFinalizarCadastro</name>
+        <label>Atualiza Lead P&amp;A para Finalizar Cadastro</label>
+        <locationX>842</locationX>
+        <locationY>539</locationY>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Finalizar Cadastro</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>980</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>ValidacaoCampos</targetReference>
+        </connector>
+        <filterFormula>AND(ISCHANGED({!$Record.Status}), {!$Record.RecordType.Name} == &apos;Varejo&apos;)</filterFormula>
+        <object>Lead</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>emailBackOffice</name>
+        <isViewedAsPlainText>false</isViewedAsPlainText>
+        <text>&lt;p&gt;Olá!&lt;/p&gt;&lt;p&gt;O lead se encontra na fase de aprovação backoffice.&lt;/p&gt;&lt;p&gt;Link: &lt;a href=&quot;https://keko--qakeko.sandbox.lightning.force.com/lightning/r/Lead/{!$Record.Id}/view&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Clique aqui para visualizar o Lead&lt;/a&gt;&lt;/p&gt;</text>
+    </textTemplates>
+    <variables>
+        <name>currentItem_FiltroUsuarios</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>User</objectType>
+    </variables>
+    <variables>
+        <name>EnderecosEmail</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

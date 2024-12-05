@@ -693,6 +693,10 @@
             <valueName>TRES LAGOAS</valueName>
         </valueSettings>
         <valueSettings>
+            <controllingFieldValue>GE SPCAP</controllingFieldValue>
+            <valueName>SAO PAULO</valueName>
+        </valueSettings>
+        <valueSettings>
             <controllingFieldValue>VI NORD/SUD</controllingFieldValue>
             <valueName>ALAGOINHAS</valueName>
         </valueSettings>
@@ -939,10 +943,6 @@
         <valueSettings>
             <controllingFieldValue>GE NORT/GODF</controllingFieldValue>
             <valueName>RIO VERDE</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>GE SPCAP</controllingFieldValue>
-            <valueName>SAO PAULO</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>GE SUL</controllingFieldValue>

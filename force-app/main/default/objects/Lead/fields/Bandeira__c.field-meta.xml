@@ -87,6 +87,12 @@
                 <isActive>false</isActive>
                 <label>AGRALE</label>
             </value>
+            <value>
+                <fullName>teste</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>teste</label>
+            </value>
         </valueSetDefinition>
         <valueSettings>
             <controllingFieldValue>960</controllingFieldValue>

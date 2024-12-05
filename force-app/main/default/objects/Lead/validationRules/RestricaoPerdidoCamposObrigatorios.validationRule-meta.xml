@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RestricaoPerdidoCamposObrigatorios</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Status, &apos;Perdido&apos;),
+    RecordType.DeveloperName = &apos;Varejo&apos;,
+    OR(
+       ISPICKVAL(MotivoPerda__c, &quot;&quot;)
+    ) 
+)</errorConditionFormula>
+    <errorMessage>É preciso preencher o motivo da perda.</errorMessage>
+</ValidationRule>

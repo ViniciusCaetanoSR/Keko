@@ -4,6 +4,7 @@
     <externalId>false</externalId>
     <formula>(IF(ISBLANK(LastActivityDate), 999, today() - LastActivityDate))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Este campo representa há quanto tempo a conta está sem atendimento.</inlineHelpText>
     <label>Sem atividade há (dias)</label>
     <precision>18</precision>
     <required>false</required>

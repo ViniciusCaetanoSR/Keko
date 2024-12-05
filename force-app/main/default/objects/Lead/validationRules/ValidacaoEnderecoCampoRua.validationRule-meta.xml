@@ -3,6 +3,9 @@
     <fullName>ValidacaoEnderecoCampoRua</fullName>
     <active>true</active>
     <description>Garante que o campo rua esteja preenchido antes de salvar o registro.</description>
-    <errorConditionFormula>OR(ISBLANK(Street), NOT(REGEX(Street,&quot;.*,\\s*\\d+&quot;)))</errorConditionFormula>
+    <errorConditionFormula>OR(
+    ISBLANK(Street), 
+    NOT(REGEX(Street, &quot;.*,\\s*\\d+.*$&quot;))
+)</errorConditionFormula>
     <errorMessage>O campo rua deve incluir uma vírgula seguida por um número. Exemplo: &quot;Rua São João, 55&quot;.</errorMessage>
 </ValidationRule>

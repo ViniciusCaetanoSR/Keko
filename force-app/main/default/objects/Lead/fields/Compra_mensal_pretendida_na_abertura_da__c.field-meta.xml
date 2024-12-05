@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Compra_mensal_pretendida_na_abertura_da__c</fullName>
-    <label>Compra mensal pretendida na abertura da</label>
+    <label>Compra mensal pretendida abertura conta</label>
     <precision>18</precision>
     <required>false</required>
     <scale>2</scale>

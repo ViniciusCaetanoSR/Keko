@@ -7,11 +7,60 @@ public class AccountHelper {
         '95', '96', '97', '98', '99'
     };
 
-    public static void validateAndFormatPhone(Account acc) {
-        if (String.isNotBlank(acc.Phone)) {
-            String formattedPhone = validatePhoneNumber(acc.Phone, acc);
-            acc.Phone = formattedPhone;
+    public static void validateAndFormatPhone(SObject obj) {
+
+        List<String> camposTelefone = new List<String>();
+
+        camposTelefone.add('Phone');
+        camposTelefone.add('Telefone_fixo__c');
+        
+        if(obj instanceof Lead) {
+            camposTelefone.add('MobilePhone');
         }
+
+        if(obj instanceof Contact) {
+            camposTelefone.add('AssistantPhone');
+            camposTelefone.add('HomePhone');
+            camposTelefone.add('OtherPhone');
+            camposTelefone.add('MobilePhone');
+        }
+
+        for(String campo : camposTelefone) {
+            if(obj.get(campo) != null && String.isNotBlank((String)obj.get(campo))) {
+                String formattedPhone = validatePhoneNumber((String)obj.get(campo), obj);
+                obj.put(campo, formattedPhone);
+            }
+        }
+        
+        // if (obj.get('Phone') != null && String.isNotBlank((String)obj.get('Phone'))) {
+        //     String formattedPhone = validatePhoneNumber((String)obj.get('Phone'), obj);
+        //     obj.put('Phone' ,formattedPhone);
+        // }
+
+        // if(obj.get('Telefone_fixo__c') != null && String.isNotBlank((String)obj.get('Telefone_fixo__c'))) {
+        //     String formattedPhone = validatePhoneNumber((String)obj.get('Telefone_fixo__c'), obj);
+        //     obj.put('Telefone_fixo__c', formattedPhone);
+        // }
+
+        // if(obj.get('AssistantPhone') != null && String.isNotBlank((String)obj.get('AssistantPhone'))) {
+        //     String formattedPhone = validatePhoneNumber((String)obj.get('AssistantPhone'), obj);
+        //     obj.put('AssistantPhone', formattedPhone);
+        // }
+
+        // if(obj.get('HomePhone') != null && String.isNotBlank((String)obj.get('HomePhone'))) {
+        //     String formattedPhone = validatePhoneNumber((String)obj.get('HomePhone'), obj);
+        //     obj.put('HomePhone', formattedPhone);
+        // }
+
+        // if(obj.get('OtherPhone') != null && String.isNotBlank((String)obj.get('OtherPhone'))) {
+        //     String formattedPhone = validatePhoneNumber((String)obj.get('OtherPhone'), obj);
+        //     obj.put('OtherPhone', formattedPhone);
+        // }
+
+        // if(obj.get('MobilePhone') != null && String.isNotBlank((String)obj.get('MobilePhone'))) {
+        //     String formattedPhone = validatePhoneNumber((String)obj.get('MobilePhone'), obj);
+        //     obj.put('MobilePhone', formattedPhone);
+        // }
     }
     
     public static String validatePhoneNumber(String phoneNumber, SObject objectToAddError) {

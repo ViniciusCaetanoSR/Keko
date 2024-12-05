@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <label>Nome do contato principal</label>
     <length>255</length>
-    <required>false</required>
+    <required>true</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>true</trackHistory>
     <type>Text</type>

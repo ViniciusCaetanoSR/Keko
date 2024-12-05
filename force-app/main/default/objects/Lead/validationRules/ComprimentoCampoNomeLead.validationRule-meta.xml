@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ComprimentoCampoNomeLead</fullName>
+    <active>true</active>
+    <description>Validação para verificar se o campo Nome do Lead contém apenas 12 caracteres. Caso haja mais de 12 caracteres, haverá uma mensagem de erro.</description>
+    <errorConditionFormula>LEN(Company) &gt; 12</errorConditionFormula>
+    <errorDisplayField>Company</errorDisplayField>
+    <errorMessage>O nome do lead deve ter no máximo 12 caracteres.</errorMessage>
+</ValidationRule>

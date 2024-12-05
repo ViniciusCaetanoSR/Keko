@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <label>Telefone fixo</label>
     <length>20</length>
-    <required>true</required>
+    <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>true</trackHistory>
     <type>Text</type>

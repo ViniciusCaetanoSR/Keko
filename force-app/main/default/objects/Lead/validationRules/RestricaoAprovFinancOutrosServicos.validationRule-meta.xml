@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RestricaoAprovFinancOutrosServicos</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(PRIORVALUE(Status), &apos;Avaliação do Lead&apos;),
+    ISPICKVAL( Segmento__c, &apos;After Nacional&apos;), 
+    RecordType.DeveloperName = &apos;Varejo&apos;, 
+    OR(
+     ISPICKVAL(Status, &apos;Validação do Gerente&apos;),
+     ISPICKVAL(Status, &apos;Apresentação das Vantagens de Comprar KEKO&apos;)
+    ),
+    OR(
+       ISPICKVAL(Esta_loja_tem_outros_tipos_de_servicos__c, &quot;Sim&quot;),
+       ISPICKVAL(Esta_loja_tem_outros_tipos_de_servicos__c, &quot;&quot;)
+    ),
+    ISBLANK(Se_sim_marque_quais__c)
+)</errorConditionFormula>
+    <errorMessage>Para avançar o estágio é preciso preencher os campos necessário para essa fase. Verifique na aba Qualificação do Lead as seções Perfil do Cliente e Políticas Comerciais estão preenchidas corretamente.</errorMessage>
+</ValidationRule>

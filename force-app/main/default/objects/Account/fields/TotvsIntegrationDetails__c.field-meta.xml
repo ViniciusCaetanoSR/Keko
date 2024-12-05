@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TotvsIntegrationDetails__c</fullName>
+    <description>Este campo armazena informações relacionadas à integração com o sistema TOTVS.</description>
+    <inlineHelpText>Este campo armazena as informações retornadas pela API do TOTVS em caso de não ter sucesso durante a integração com o sistema TOTVS. Utilize-o para rastrear e solucionar problemas de comunicação entre as plataformas.</inlineHelpText>
+    <label>Informação sobre integração TOTVS</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>
