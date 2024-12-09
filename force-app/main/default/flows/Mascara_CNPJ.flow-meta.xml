@@ -5,7 +5,7 @@
         <name>Mascara_CNPJ</name>
         <label>Mascara CNPJ</label>
         <locationX>50</locationX>
-        <locationY>971</locationY>
+        <locationY>1079</locationY>
         <assignmentItems>
             <assignToReference>newCNPJ</assignToReference>
             <operator>Assign</operator>
@@ -21,7 +21,7 @@
         <name>RemoveMascara_assignment</name>
         <label>RemoveMascara</label>
         <locationX>182</locationX>
-        <locationY>755</locationY>
+        <locationY>863</locationY>
         <assignmentItems>
             <assignToReference>newCNPJ</assignToReference>
             <operator>Assign</operator>
@@ -38,7 +38,7 @@
         <name>CNPJ_preenchido_erro</name>
         <label>CNPJ preenchido erro</label>
         <locationX>1370</locationX>
-        <locationY>539</locationY>
+        <locationY>647</locationY>
         <customErrorMessages>
             <errorMessage>Contas internacionais não devem ter CNPJ</errorMessage>
             <fieldSelection>CNPJ__c</fieldSelection>
@@ -50,7 +50,7 @@
         <name>CNPJ_vazio_erro</name>
         <label>CNPJ vazio erro</label>
         <locationX>842</locationX>
-        <locationY>539</locationY>
+        <locationY>647</locationY>
         <customErrorMessages>
             <errorMessage>CNPJ não pode estar vazio</errorMessage>
             <fieldSelection>CNPJ__c</fieldSelection>
@@ -61,7 +61,7 @@
         <name>Erro_de_Validacao</name>
         <label>Erro de Validação</label>
         <locationX>314</locationX>
-        <locationY>971</locationY>
+        <locationY>1079</locationY>
         <customErrorMessages>
             <errorMessage>O CNPJ inserido não é válido.</errorMessage>
             <fieldSelection>CNPJ__c</fieldSelection>
@@ -72,7 +72,7 @@
         <name>Erro_Duplicidade</name>
         <label>Erro de Duplicidade</label>
         <locationX>578</locationX>
-        <locationY>755</locationY>
+        <locationY>863</locationY>
         <customErrorMessages>
             <errorMessage>O CNPJ inserido está em duplicidade no sistema.</errorMessage>
             <fieldSelection>CNPJ__c</fieldSelection>
@@ -83,7 +83,7 @@
         <name>Algoritmo_Validado</name>
         <label>Algoritmo Validado?</label>
         <locationX>182</locationX>
-        <locationY>863</locationY>
+        <locationY>971</locationY>
         <defaultConnector>
             <targetReference>Erro_de_Validacao</targetReference>
         </defaultConnector>
@@ -105,10 +105,32 @@
         </rules>
     </decisions>
     <decisions>
+        <name>CNPJ_Atualizado</name>
+        <label>CNPJ Atualizado?</label>
+        <locationX>1279</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Resultado padrão</defaultConnectorLabel>
+        <rules>
+            <name>CnpjAtualizadoSim</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.CNPJ_sem_formatacao__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.CNPJ_sem_formatacao__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Conta_internacional</targetReference>
+            </connector>
+            <label>Sim</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>CNPJ_em_duplicidade_na_base</name>
         <label>CNPJ em duplicidade na base?</label>
         <locationX>380</locationX>
-        <locationY>647</locationY>
+        <locationY>755</locationY>
         <defaultConnector>
             <targetReference>Erro_Duplicidade</targetReference>
         </defaultConnector>
@@ -133,7 +155,7 @@
         <name>CNPJ_preenchido</name>
         <label>CNPJ preenchido?</label>
         <locationX>1238</locationX>
-        <locationY>431</locationY>
+        <locationY>539</locationY>
         <defaultConnector>
             <targetReference>CNPJ_preenchido_erro</targetReference>
         </defaultConnector>
@@ -155,7 +177,7 @@
         <name>CNPJ_vazio</name>
         <label>CNPJ vazio?</label>
         <locationX>611</locationX>
-        <locationY>431</locationY>
+        <locationY>539</locationY>
         <defaultConnector>
             <targetReference>CNPJ_vazio_erro</targetReference>
         </defaultConnector>
@@ -180,7 +202,7 @@
         <name>Conta_internacional</name>
         <label>Conta é internacional?</label>
         <locationX>924</locationX>
-        <locationY>323</locationY>
+        <locationY>431</locationY>
         <defaultConnector>
             <targetReference>CNPJ_preenchido</targetReference>
         </defaultConnector>
@@ -307,7 +329,7 @@ true, false
         <name>BuscarContas1</name>
         <label>Buscar Contas</label>
         <locationX>380</locationX>
-        <locationY>539</locationY>
+        <locationY>647</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>CNPJ_em_duplicidade_na_base</targetReference>
@@ -342,7 +364,7 @@ true, false
         <name>AtualizaCNPJ</name>
         <label>AtualizaCNPJ</label>
         <locationX>50</locationX>
-        <locationY>1079</locationY>
+        <locationY>1187</locationY>
         <inputAssignments>
             <field>CNPJ__c</field>
             <value>
@@ -352,16 +374,16 @@ true, false
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>798</locationX>
+        <locationX>1153</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Conta_internacional</targetReference>
+            <targetReference>CNPJ_Atualizado</targetReference>
         </connector>
         <object>Account</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>CNPJBuscarConta</name>
         <dataType>String</dataType>

@@ -158,6 +158,13 @@
                     <stringValue>Campanhas RD</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Feiras e Eventos</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>AtualizaProprietarioLead</targetReference>
             </connector>
@@ -261,6 +268,13 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Portal Montadora</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.LeadSource</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Feiras e Eventos</stringValue>
                 </rightValue>
             </conditions>
             <connector>

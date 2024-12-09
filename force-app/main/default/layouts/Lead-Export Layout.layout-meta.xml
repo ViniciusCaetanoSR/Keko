@@ -12,10 +12,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Cidade__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Required</behavior>
                 <field>Status</field>
             </layoutItems>
             <layoutItems>
@@ -178,7 +174,6 @@
     </layoutSections>
     <miniLayout>
         <fields>Bairro__c</fields>
-        <fields>Cidade__c</fields>
     </miniLayout>
     <platformActionList>
         <actionListContext>Record</actionListContext>
