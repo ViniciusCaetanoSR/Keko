@@ -6,7 +6,7 @@ private class TotvsIntegrationSchedulerTest {
         String idConta = '12345678ABCD';
         Boolean isUpdate = true;
 
-        List<CronTrigger> oldJobs = [SELECT Id FROM CronTrigger WHERE CronJobDetail.Name LIKE 'Integração Conta > TOTVS: %'];
+        List<CronTrigger> oldJobs = [SELECT Id FROM CronTrigger WHERE CronJobDetail.Name LIKE 'Integração Conta > TOTVS: %' AND CronJobDetail.Name LIKE :('%' + idConta + '%') LIMIT 1];
         if (!oldJobs.isEmpty()) {
             for (CronTrigger oldJob : oldJobs) {
                 System.abortJob(oldJob.Id);
@@ -16,7 +16,7 @@ private class TotvsIntegrationSchedulerTest {
         Test.startTest();
         TotvsIntegrationScheduler.scheduleAttempt(idConta, isUpdate);
 
-        List<CronTrigger> triggers = [SELECT Id, CronJobDetail.Name FROM CronTrigger WHERE CronJobDetail.Name LIKE 'Integração Conta > TOTVS: %'];
+        List<CronTrigger> triggers = [SELECT Id, CronJobDetail.Name FROM CronTrigger WHERE CronJobDetail.Name LIKE 'Integração Conta > TOTVS: %' AND CronJobDetail.Name LIKE :('%' + idConta + '%') LIMIT 1];
         System.assertEquals(1, triggers.size(), 'Um job de integração deve ter sido agendado.');
         System.assert(triggers[0].CronJobDetail.Name.contains(idConta), 'O nome do job deve conter o ID da conta.');
     }

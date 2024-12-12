@@ -33,7 +33,7 @@ private class IntegrationTotvsServiceTest {
         );
         insert testAccount;
 
-        List<CronTrigger> oldJobs = [SELECT Id FROM CronTrigger WHERE CronJobDetail.Name LIKE 'Integração Conta > TOTVS: %'];
+        List<CronTrigger> oldJobs = [SELECT Id FROM CronTrigger WHERE CronJobDetail.Name LIKE 'Integração Conta > TOTVS: %' LIMIT 1];
         if (!oldJobs.isEmpty()) {
             for (CronTrigger oldJob : oldJobs) {
                 System.abortJob(oldJob.Id);
@@ -86,7 +86,7 @@ private class IntegrationTotvsServiceTest {
         
         testAccount.Name = 'Conta Atualizada';
 
-        List<CronTrigger> oldJobs = [SELECT Id FROM CronTrigger WHERE CronJobDetail.Name LIKE 'Integração Conta > TOTVS: %'];
+        List<CronTrigger> oldJobs = [SELECT Id FROM CronTrigger WHERE CronJobDetail.Name LIKE 'Integração Conta > TOTVS: %' LIMIT 1];
         if (!oldJobs.isEmpty()) {
             for (CronTrigger oldJob : oldJobs) {
                 System.abortJob(oldJob.Id);
