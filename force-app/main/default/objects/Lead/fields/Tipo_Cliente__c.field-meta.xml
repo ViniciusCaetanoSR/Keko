@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tipo_Cliente__c</fullName>
+    <description>Indica o status do cliente em relação a KEKO. Use este campo para classificar os clientes como &apos;Ativo&apos; ou &apos;Prospect&apos;.</description>
+    <inlineHelpText>Ativo: clientes que já possuem um relacionamento estabelecido com a KEKO.
+Propect: potenciais clientes que ainda não possuem vínculo formal com a empresa, mas estão em fase de prospecção.</inlineHelpText>
+    <label>Tipo de Cliente</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ativo</fullName>
+                <default>false</default>
+                <label>Ativo</label>
+            </value>
+            <value>
+                <fullName>Prospect</fullName>
+                <default>true</default>
+                <label>Prospect</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
