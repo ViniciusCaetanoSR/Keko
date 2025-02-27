@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MotivoContato__c</fullName>
+    <description>Campo utilizado para preenchimento do VI ou GE com o motivo do contato com o cliente.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Insira um texto com o motivo do cliente estar em contato com a Keko.</inlineHelpText>
+    <label>Motivo do Contato</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
