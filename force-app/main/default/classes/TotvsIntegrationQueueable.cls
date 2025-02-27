@@ -79,30 +79,40 @@ public class TotvsIntegrationQueueable implements Queueable, Database.AllowsCall
     // Método para tratar as tentativas de re-execução
     private void handleRetry(String requestBody, String responseBody) {
 
-        if (retryCount < TotvsIntegrationScheduler.MAX_RETRY_COUNT) {
-            retryCount++;
-            System.debug('Reagendando nova tentativa de integração. Tentativa número: ' + retryCount);
-            System.debug('Request Body: ' + requestBody);
-            System.debug('Response Body: ' + responseBody);
+        try{
+            if (retryCount < TotvsIntegrationScheduler.MAX_RETRY_COUNT) {
+                retryCount++;
+                System.debug('Reagendando nova tentativa de integração. Tentativa número: ' + retryCount);
+                System.debug('Request Body: ' + requestBody);
+                System.debug('Response Body: ' + responseBody);
 
-            if(!Test.isRunningTest()) {
-                System.enqueueJob(new TotvsIntegrationQueueable(accountId, retryCount, isUpdate));
+                if(!Test.isRunningTest()) {
+                    System.enqueueJob(new TotvsIntegrationQueueable(accountId, retryCount, isUpdate));
+                } else {
+                    System.debug('Em contexto de teste não haverá enfileiramento.');
+                }
             } else {
-                System.debug('Em contexto de teste não haverá enfileiramento.');
-            }
-        } else {
-            System.debug('Número máximo de tentativas foi alcançado.');
-            CreateLogRecord.createLog(accountId, requestBody, responseBody);
-
-            if(!String.isBlank(responseBody)) {
-                Map<String, Object> errorResponse = (Map<String, Object>) JSON.deserializeUntyped(responseBody);
-                String detailedMessage = (String) errorResponse.get('detailedMessage');
-                Account conta = [SELECT Id, TotvsIntegrationDetails__c FROM Account WHERE Id = :accountId];
-                if (conta != null && (conta.TotvsIntegrationDetails__c == null || conta.TotvsIntegrationDetails__c != detailedMessage)) {
-                    conta.TotvsIntegrationDetails__c = detailedMessage;
-                    update conta;
+                System.debug('Número máximo de tentativas foi alcançado.');
+                CreateLogRecord.createLog(accountId, requestBody, responseBody);
+                System.debug('responseBody>> ' + responseBody);
+                if(!String.isBlank(responseBody)) {
+                    Map<String, Object> errorResponse = (Map<String, Object>) JSON.deserializeUntyped(responseBody);
+                    String detailedMessage = (String) errorResponse.get('detailedMessage');
+                    TriggerContext.isExecutingIntegration = true;
+                    Account conta = [SELECT Id, TotvsIntegrationDetails__c FROM Account WHERE Id = :accountId];
+                    if (conta != null && (conta.TotvsIntegrationDetails__c == null || conta.TotvsIntegrationDetails__c != detailedMessage)) {
+                        
+                        conta.TotvsIntegrationDetails__c = detailedMessage;
+                        update conta;
+                        TriggerContext.isExecutingIntegration = false;
+                    }
                 }
             }
+        } catch (Exception e) {
+            System.debug(LoggingLevel.ERROR, 'Exception>> e.getMessage: ' + e.getMessage());
+            System.debug(LoggingLevel.ERROR, 'Exception>> e.getCause: ' + e.getCause());
+            System.debug(LoggingLevel.ERROR, 'Exception>> e.getLineNumber: ' + e.getLineNumber());
+            System.debug(LoggingLevel.ERROR, 'Exception>> e.getStackTraceString: ' + e.getStackTraceString());
         }
     }
 }

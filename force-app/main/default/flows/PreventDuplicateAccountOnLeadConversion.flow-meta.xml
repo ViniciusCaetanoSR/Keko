@@ -19,9 +19,9 @@
         </inputParameters>
         <nameSegment>Account.Email_para_proprietario_sobre_lead_convertido_pelo_backoffice</nameSegment>
         <offset>0</offset>
-        <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>61.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <customErrors>
         <name>Mensagem_sobre_mesmo_nome_abreviado</name>
         <label>Mensagem sobre mesmo nome abreviado</label>

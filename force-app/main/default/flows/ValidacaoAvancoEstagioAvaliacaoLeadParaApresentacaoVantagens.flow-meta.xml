@@ -3,7 +3,7 @@
     <actionCalls>
         <name>emailParaBackOffice</name>
         <label>Email para Back Office</label>
-        <locationX>1634</locationX>
+        <locationX>1106</locationX>
         <locationY>431</locationY>
         <actionName>Lead.EmailParaBackOffice</actionName>
         <actionType>emailAlert</actionType>
@@ -16,12 +16,11 @@
         </inputParameters>
         <nameSegment>Lead.EmailParaBackOffice</nameSegment>
         <offset>0</offset>
-        <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>notificaProprietarioSobreLeadPerdido</name>
         <label>Email para proprietário do Lead</label>
-        <locationX>1898</locationX>
+        <locationX>1370</locationX>
         <locationY>431</locationY>
         <actionName>Lead.EmailAlertLeadPerdidoPeloBackOffice</actionName>
         <actionType>emailAlert</actionType>
@@ -34,12 +33,11 @@
         </inputParameters>
         <nameSegment>Lead.EmailAlertLeadPerdidoPeloBackOffice</nameSegment>
         <offset>0</offset>
-        <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>SubmeterAprovacao</name>
         <label>Submeter aprovação</label>
-        <locationX>1106</locationX>
+        <locationX>578</locationX>
         <locationY>431</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
@@ -59,12 +57,11 @@
         <nameSegment>submit</nameSegment>
         <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
-        <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>SubmeterAprovacaoFinanceiro</name>
         <label>Submeter aprovação do financeiro</label>
-        <locationX>1370</locationX>
+        <locationX>842</locationX>
         <locationY>431</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
@@ -78,48 +75,19 @@
         <inputParameters>
             <name>processDefinitionNameOrId</name>
             <value>
-                <stringValue>04aN50000001r8j</stringValue>
+                <stringValue>AprovacaoFinanceiro</stringValue>
             </value>
         </inputParameters>
         <nameSegment>submit</nameSegment>
         <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
-        <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>61.0</apiVersion>
-    <decisions>
-        <name>LeadVoltaraEstagio</name>
-        <label>Lead voltará estágio?</label>
-        <locationX>710</locationX>
-        <locationY>431</locationY>
-        <defaultConnector>
-            <targetReference>AtualizaLeadPaParaFinalizarCadastro</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Não</defaultConnectorLabel>
-        <rules>
-            <name>Sim</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record__Prior.Status</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Negociação</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Status</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Apresentação das Vantagens de Comprar KEKO</stringValue>
-                </rightValue>
-            </conditions>
-            <label>Sim</label>
-        </rules>
-    </decisions>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>ValidacaoCampos</name>
         <label>Validação de campos</label>
-        <locationX>1106</locationX>
+        <locationX>842</locationX>
         <locationY>323</locationY>
         <defaultConnectorLabel>Resultado padrão</defaultConnectorLabel>
         <rules>
@@ -186,28 +154,6 @@
                 <targetReference>AtualizaLeadPaParaAvaliacaoVantagens</targetReference>
             </connector>
             <label>Lead é P&amp;A</label>
-        </rules>
-        <rules>
-            <name>LeadPaIndoFinalizarCadastro</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Segmento__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>P&amp;A</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record__Prior.Status</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Negociação</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>LeadVoltaraEstagio</targetReference>
-            </connector>
-            <label>Lead é P&amp;A indo pra finalizar cadastro</label>
         </rules>
         <rules>
             <name>LeadAprovovacaGerente</name>
@@ -346,21 +292,8 @@
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
-    <recordUpdates>
-        <name>AtualizaLeadPaParaFinalizarCadastro</name>
-        <label>Atualiza Lead P&amp;A para Finalizar Cadastro</label>
-        <locationX>842</locationX>
-        <locationY>539</locationY>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Finalizar Cadastro</stringValue>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
     <start>
-        <locationX>980</locationX>
+        <locationX>716</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>ValidacaoCampos</targetReference>
@@ -370,7 +303,7 @@
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <textTemplates>
         <name>emailBackOffice</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>

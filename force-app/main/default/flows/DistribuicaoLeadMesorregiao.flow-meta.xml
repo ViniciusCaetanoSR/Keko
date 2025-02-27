@@ -16,7 +16,6 @@
         </inputParameters>
         <nameSegment>Lead.Lead_para_vendedor_interno_ou_gestor_externo</nameSegment>
         <offset>0</offset>
-        <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>Email_para_gestor_externo</name>
@@ -34,7 +33,6 @@
         </inputParameters>
         <nameSegment>Lead.Lead_para_vendedor_interno_ou_gestor_externo</nameSegment>
         <offset>0</offset>
-        <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>Email_para_vendedor_interno</name>
@@ -52,7 +50,6 @@
         </inputParameters>
         <nameSegment>Lead.Lead_para_vendedor_interno_ou_gestor_externo</nameSegment>
         <offset>0</offset>
-        <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>EmailGePortalMontadora</name>
@@ -70,7 +67,6 @@
         </inputParameters>
         <nameSegment>Lead.Lead_para_vendedor_interno_ou_gestor_externo</nameSegment>
         <offset>0</offset>
-        <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>EmailParaViPortalMontadora</name>
@@ -88,9 +84,9 @@
         </inputParameters>
         <nameSegment>Lead.Lead_para_vendedor_interno_ou_gestor_externo</nameSegment>
         <offset>0</offset>
-        <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <description>Verifica se o Lead é criado ou atualizado.</description>
         <name>LeadCriadoOuAtualizado</name>
@@ -133,7 +129,7 @@
         <defaultConnector>
             <targetReference>AtualizaProprietarioGestorExterno</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>Origem do lead é &quot;visita&quot;</defaultConnectorLabel>
+        <defaultConnectorLabel>Origem do lead é &quot;visita&quot; ou &quot;ligação GE&quot;</defaultConnectorLabel>
         <rules>
             <name>ValorOrigemLead</name>
             <conditionLogic>or</conditionLogic>

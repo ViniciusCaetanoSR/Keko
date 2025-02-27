@@ -5,8 +5,8 @@ public with sharing class IntegrationTotvsService {
         TotvsIntegrationScheduler.scheduleAttempt(account.Id, false);
     }
 
-    public static void updateTotvs(Account account) {
+    public static void updateTotvs(Account newAccount, Account oldAccount) {
         System.debug('Iniciando envio de dados para Totvs UPDATE: ' + account.Id);
-        TotvsIntegrationScheduler.scheduleAttempt(account.Id, true);
+        TotvsIntegrationScheduler.scheduleAttempt(newAccount.Id, true);
     }
 }

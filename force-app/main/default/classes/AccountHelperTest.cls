@@ -27,11 +27,11 @@ public class AccountHelperTest {
             Condicoes_de_Pagamento__c = 'Apresentação',
             email_financeiro__c = 'bsifinanceiro@email.com',
             MunicipalRegistration__c = '12345',
-            Cidade__c = 'a02be000001S9EoAAK'
+            Cidade__c = 'a02be000001SCEYAA4'
 
         );
         insert lead;
-
+		System.debug(lead);
         Test.startTest();
         AccountHelper.validateAndFormatPhone(lead);
         Test.stopTest();

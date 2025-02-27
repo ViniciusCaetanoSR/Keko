@@ -15,7 +15,6 @@
             </value>
         </inputParameters>
         <nameSegment>Lead.Alerta_Lead_Criado</nameSegment>
-        <versionSegment>1</versionSegment>
     </actionCalls>
     <actionCalls>
         <name>Nova_Tarefa_Criacao_Lead</name>
@@ -59,9 +58,9 @@
             </value>
         </inputParameters>
         <nameSegment>NewTask</nameSegment>
-        <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>Nova tarefa Novo Lead - RD Station</description>
     <environments>Default</environments>
     <interviewLabel>Nova tarefa Novo Lead {!$Flow.CurrentDateTime}</interviewLabel>

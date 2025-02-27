@@ -15,18 +15,21 @@ public with sharing class AccountTriggerHandler {
     }
 
     public static void onAfterUpdate(List<Account> newAccounts, Map<Id, Account> oldAccounts) {
-		
-        for(Account account : newAccounts) { 
 
-            Account oldAccount = oldAccounts.get(account.Id);
-
-            if(String.isNotBlank(oldAccount.Codigo_do_cliente__c) && (account.Codigo_do_cliente__c == oldAccount.Codigo_do_cliente__c)){ 
-                IntegrationTotvsService.updateTotvs(account);
-            }
+		if (!TriggerContext.isExecutingIntegration) {
             
-            if(String.isBlank(account.Codigo_do_cliente__c)) {
-                IntegrationTotvsService.insertTotvs(account);
+            for(Account newAccount : newAccounts) { 
+
+                Account oldAccount = oldAccounts.get(newAccount.Id);
+
+                if(String.isNotBlank(oldAccount.Codigo_do_cliente__c) && (newAccount.Codigo_do_cliente__c == oldAccount.Codigo_do_cliente__c)){ 
+                    IntegrationTotvsService.updateTotvs(newAccount, oldAccount);
+                }
+                
+                if(String.isBlank(newAccount.Codigo_do_cliente__c)) {
+                    IntegrationTotvsService.insertTotvs(newAccount);
+                }
             }
-        }
+        }   
     }
 }

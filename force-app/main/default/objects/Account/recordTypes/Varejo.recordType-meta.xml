@@ -18,6 +18,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Feiras e Eventos</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Google AdWords</fullName>
             <default>false</default>
         </values>

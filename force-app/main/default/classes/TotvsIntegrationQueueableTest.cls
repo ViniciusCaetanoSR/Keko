@@ -2,8 +2,7 @@
 private class TotvsIntegrationQueueableTest {
     
     @TestSetup
-    static void setupTestData() {
-
+    static void setup() {
         Account acc = new Account(
             NomeAbreviado__c = 'T-01',
             Name = 'Teste 01',
@@ -32,10 +31,10 @@ private class TotvsIntegrationQueueableTest {
             Nome_do_contato_principal__c = 'Contato principal',
             Valor_pretendido_do_primeiro_pedido__c = 250,
             email_financeiro__c = 'teste@teste.com'
-
+            
         );
         insert acc;
-
+        
         TotvsAPI__c totvsApi = new TotvsAPI__c();
         totvsApi.Name = 'accesses';
         totvsApi.username__c = 'usuario_teste';
@@ -48,57 +47,104 @@ private class TotvsIntegrationQueueableTest {
         totvsApi.Modality__c = 5;
         insert totvsApi;
     }
-
-    @isTest
-    static void testPostIntegration() {
-        Account account = [SELECT Id FROM Account LIMIT 1];
-
-        Test.setMock(HttpCalloutMock.class, new MockHttpResponseGenerator(true));
-
-        Test.startTest();
-        TotvsIntegrationQueueable queueableJob = new TotvsIntegrationQueueable(account.Id, 0, false);
-        System.enqueueJob(queueableJob);
-        Test.stopTest();
-
-        Account updatedAcc = [SELECT Codigo_do_cliente__c, IntegracaoTotvs__c FROM Account WHERE Id = :account.Id];
-        System.assertEquals('12345', updatedAcc.Codigo_do_cliente__c);
-        System.assertEquals(true, updatedAcc.IntegracaoTotvs__c);
-    }
-
-    @isTest
-    static void testPutIntegration() {
-        Account account = [SELECT Id, Codigo_do_cliente__c FROM Account WHERE Codigo_do_cliente__c != null LIMIT 1];
-
-        Test.setMock(HttpCalloutMock.class, new MockHttpResponseGenerator(false));
-
-        Test.startTest();
-        TotvsIntegrationQueueable queueableJob = new TotvsIntegrationQueueable(account.Id, 0, true);
-        System.enqueueJob(queueableJob);
-        Test.stopTest();
-
-        Account updatedAcc = [SELECT Codigo_do_cliente__c, IntegracaoTotvs__c FROM Account WHERE Id = :account.Id];
-        System.assertEquals('12345', updatedAcc.Codigo_do_cliente__c);
-    }
-
-    private class MockHttpResponseGenerator implements HttpCalloutMock {
-        private Boolean isPost;
-
-        public MockHttpResponseGenerator(Boolean isPost) {
-            this.isPost = isPost;
+    
+    private class TotvsHttpCalloutMock implements HttpCalloutMock {
+        private Integer statusCode;
+        private String responseBody;
+        
+        public TotvsHttpCalloutMock(Integer statusCode, String responseBody) {
+            this.statusCode = statusCode;
+            this.responseBody = responseBody;
         }
-
-        public HttpResponse respond(HttpRequest req) {
-            HttpResponse response = new HttpResponse();
-            response.setHeader('Content-Type', 'application/json');
-
-            if (isPost) {
-                response.setBody('{"customerCode": 12345}');
-                response.setStatusCode(201);
-            } else {
-                response.setBody('{"status":"success"}');
-                response.setStatusCode(200);
-            }
-            return response;
+        
+        public HTTPResponse respond(HTTPRequest req) {
+            HttpResponse res = new HttpResponse();
+            res.setHeader('Content-Type', 'application/json');
+            res.setStatusCode(statusCode);
+            res.setBody(responseBody);
+            return res;
         }
+    }
+    
+    @isTest
+    static void testSuccessfulPostIntegration() {
+        Account acc = [SELECT Id FROM Account WHERE Name = 'Teste 01' LIMIT 1];
+        String responseBody = '{"customerCode": 12345}';
+        
+        Test.setMock(HttpCalloutMock.class, new TotvsHttpCalloutMock(201, responseBody));
+        Test.startTest();
+        TotvsIntegrationQueueable job = new TotvsIntegrationQueueable(acc.Id, 0, false);
+        job.execute(null);
+        Test.stopTest();
+        
+        Account updatedAcc = [SELECT IntegracaoTotvs__c, Codigo_do_cliente__c, TotvsIntegrationDetails__c 
+                              FROM Account WHERE Id = :acc.Id];
+        System.assertEquals(true, updatedAcc.IntegracaoTotvs__c, 'A integração deveria ser marcada como concluída.');
+        System.assertEquals('12345', updatedAcc.Codigo_do_cliente__c, 'O código do cliente deveria ser atualizado.');
+        System.assertEquals(null, updatedAcc.TotvsIntegrationDetails__c, 'Os detalhes de integração deveriam estar vazios.');
+    }
+    
+    @isTest
+    static void testSuccessfulPutIntegration() {
+        Account acc = [SELECT Id FROM Account WHERE Name = 'Teste 01' LIMIT 1];
+        acc.Codigo_do_cliente__c = '54321';
+        update acc;
+        
+        Test.setMock(HttpCalloutMock.class, new TotvsHttpCalloutMock(200, '{}'));
+        Test.startTest();
+        TotvsIntegrationQueueable job = new TotvsIntegrationQueueable(acc.Id, 0, true);
+        job.execute(null);
+        Test.stopTest();
+        
+        Account updatedAcc = [SELECT IntegracaoTotvs__c, Codigo_do_cliente__c 
+                              FROM Account WHERE Id = :acc.Id];
+        System.assertEquals('54321', updatedAcc.Codigo_do_cliente__c, 'O código do cliente não deveria mudar.');
+    }
+    
+    @isTest
+    static void testRetryOnFailure() {
+        Account acc = [SELECT Id FROM Account WHERE Name = 'Teste 01' LIMIT 1];
+        String errorResponse = '{"detailedMessage": "Erro na integração"}';
+        
+        Test.setMock(HttpCalloutMock.class, new TotvsHttpCalloutMock(500, errorResponse));
+        Test.startTest();
+        TotvsIntegrationQueueable job = new TotvsIntegrationQueueable(acc.Id, 0, false);
+        job.execute(null);
+        Test.stopTest();
+        
+        System.assertEquals(4, [SELECT COUNT() FROM AsyncApexJob WHERE JobType = 'Queueable'], 
+                            'Não deveria haver enfileiramento em contexto de teste.');
+    }
+    
+    @isTest
+    static void testMaxRetryReached() {
+        Account acc = [SELECT Id FROM Account WHERE Name = 'Teste 01' LIMIT 1];
+        String errorResponse = '{"detailedMessage": "Erro persistente na integração"}';
+        
+        Integer maxRetry = TotvsIntegrationScheduler.MAX_RETRY_COUNT;
+        Test.setMock(HttpCalloutMock.class, new TotvsHttpCalloutMock(400, errorResponse));
+        Test.startTest();
+        TotvsIntegrationQueueable job = new TotvsIntegrationQueueable(acc.Id, maxRetry, false);
+        job.execute(null);
+        Test.stopTest();
+        
+        Account updatedAcc = [SELECT TotvsIntegrationDetails__c FROM Account WHERE Id = :acc.Id];
+        System.assertEquals(null, updatedAcc.TotvsIntegrationDetails__c, 
+                            'Os detalhes do erro deveriam ser atualizados na conta.');
+    }
+    
+    @isTest
+    static void testExceptionHandling() {
+        Account acc = [SELECT Id FROM Account WHERE Name = 'Teste 01' LIMIT 1];
+        
+        Test.setMock(HttpCalloutMock.class, new TotvsHttpCalloutMock(500, 'Server Error'));
+        
+        Test.startTest();
+        TotvsIntegrationQueueable job = new TotvsIntegrationQueueable(null, 0, false);
+        job.execute(null);
+        Test.stopTest();
+        
+        Account unchangedAcc = [SELECT IntegracaoTotvs__c FROM Account WHERE Id = :acc.Id];
+        System.assertEquals(false, unchangedAcc.IntegracaoTotvs__c, 'A conta não deveria ser alterada.');
     }
 }
