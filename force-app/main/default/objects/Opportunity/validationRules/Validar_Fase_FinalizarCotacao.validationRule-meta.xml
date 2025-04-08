@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validar_Fase_FinalizarCotacao</fullName>
+    <active>true</active>
+    <description>Regra de validação para validar etapa correta após a fase &quot;Finalizar Cotação&quot;.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(PRIORVALUE(StageName), &apos;Finalizar Cotação&apos;),
+OR(
+ISPICKVAL(StageName, &apos;Liberação Back Office&apos;),
+ISPICKVAL(StageName, &apos;Fechado Ganho&apos;)
+)
+)</errorConditionFormula>
+    <errorMessage>Não é possível pular etapas na esteira de oportunidade. Siga a sequência correta.</errorMessage>
+</ValidationRule>

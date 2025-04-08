@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RunningFLow__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Este campo é atualizado dentro do flow Quote - After Save. Quando ele é marcado com o valor &quot;true&quot;, permite que o estágio seja modificado de &quot;Gerar Cotação&quot; para &quot;Aguardando aprovação Financeiro&quot;.</description>
+    <label>Running FLow</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

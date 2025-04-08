@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InformacoesAdicionaisPerda</fullName>
+    <active>true</active>
+    <description>Regra de validação que torna o preenchimento do campo &quot;Informações Adicionais&quot; quando o &quot;Motivo da Perda&quot; for outros.</description>
+    <errorConditionFormula>AND(
+     ISPICKVAL(Motivo_Perda__c, &apos;Outros&apos;),
+     ISBLANK(InformacoesAdicionais__c)
+)</errorConditionFormula>
+    <errorDisplayField>InformacoesAdicionais__c</errorDisplayField>
+    <errorMessage>É preciso preencher o campo com mais detalhes da perda.</errorMessage>
+</ValidationRule>
