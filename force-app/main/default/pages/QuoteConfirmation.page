@@ -1,0 +1,11 @@
+<apex:page controller="QuoteController" >
+    <h1>Confirmação de Cotação</h1>
+    <p>Por favor, escolha uma opção:</p>
+    <p>ID recebido: {!cotacaoId}</p>
+
+    <apex:form>
+        <apex:commandButton value="✅ Aprovado" action="{!aprovar}" />
+        <apex:commandButton value="❌ Recusado" action="{!reprovar}" />
+        <apex:commandButton value="✏️ Solicitar alteração" action="{!alteracao}" />
+    </apex:form>
+</apex:page>

@@ -1,0 +1,4 @@
+<apex:page >
+    <h1>Resultado da Ação</h1>
+    <p>{!IF(NOT(ISNULL($CurrentPage.parameters.msg)), $CurrentPage.parameters.msg, 'Nenhuma mensagem recebida.')}</p>
+</apex:page>
