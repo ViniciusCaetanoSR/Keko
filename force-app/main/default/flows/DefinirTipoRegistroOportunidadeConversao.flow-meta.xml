@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
-    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>VerificaSegmentoLead</name>
         <label>Verifica segmento do Lead</label>
@@ -96,10 +95,23 @@
                 <elementReference>ObterOportunidadeId.Id</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Nova</stringValue>
+            </value>
+        </filters>
         <inputAssignments>
             <field>RecordTypeId</field>
             <value>
                 <stringValue>012be000000jcvZAAQ</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>Nova</stringValue>
             </value>
         </inputAssignments>
         <object>Opportunity</object>
@@ -121,6 +133,12 @@
             <field>RecordTypeId</field>
             <value>
                 <stringValue>012be000000xLLNAA2</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>Nova</stringValue>
             </value>
         </inputAssignments>
         <object>Opportunity</object>

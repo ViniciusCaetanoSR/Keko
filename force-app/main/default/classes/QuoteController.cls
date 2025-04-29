@@ -1,5 +1,7 @@
 public without sharing class QuoteController {
     public Id cotacaoId {get; set;}
+    public String justificativa {get; set;}
+    public Boolean exibirCampoJustificativa {get; set;}
  
     public QuoteController() {
         cotacaoId = ApexPages.currentPage().getParameters().get('id');
@@ -21,10 +23,10 @@ public without sharing class QuoteController {
 
     public PageReference reprovar() {
 
-        Quote cotacao = [SELECT Id, Status FROM Quote WHERE Id = :cotacaoId LIMIT 1];
+        Quote cotacao = [SELECT Id, Substatus__c FROM Quote WHERE Id = :cotacaoId LIMIT 1];
         
         if(cotacao != null) {
-            cotacao.Status = 'Reprovado';
+            cotacao.Substatus__c = 'Cotação reprovada pelo cliente';
             update cotacao;
 
             return redirecionarPagina('Cotação reprovada com sucesso!', cotacaoId);
@@ -37,21 +39,27 @@ public without sharing class QuoteController {
         
         System.debug('ATUALIZAÇÃO - INÍCIO DO MÉTODO ALTERACAO()');
 
-        Quote cotacao = [SELECT Id, Status, Substatus__c FROM Quote WHERE Id = :cotacaoId LIMIT 1];
+        Quote cotacao = [SELECT Id, Status, Substatus__c, JustificativaDoReajuste__c FROM Quote WHERE Id = :cotacaoId LIMIT 1];
 
         if(cotacao != null) {
             System.debug('Substatus atual: ' + cotacao.Substatus__c);
             cotacao.Substatus__c = 'Cliente solicitou reajuste';
+            cotacao.JustificativaDoReajuste__c = justificativa;
             update cotacao;
 
             System.debug('Cotação atualizada. Novo substatus: ' + cotacao.Substatus__c);
 
-            return redirecionarPagina('Cotação reajustada com sucesso!', cotacaoId);
+            return redirecionarPagina('Sua solicitação de alteração foi enviada com sucesso.', cotacaoId);
             
         } else {
             System.debug('COTAÇÃO NÃO ENCONTRADA');
         }
 
+        return null;
+    }
+
+    public PageReference mostrarCampoJustificativa() {
+        exibirCampoJustificativa = true;
         return null;
     }
 

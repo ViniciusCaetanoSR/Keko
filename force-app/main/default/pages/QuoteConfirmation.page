@@ -1,11 +1,56 @@
 <apex:page controller="QuoteController" >
-    <h1>Confirmação de Cotação</h1>
-    <p>Por favor, escolha uma opção:</p>
-    <p>ID recebido: {!cotacaoId}</p>
-
     <apex:form>
-        <apex:commandButton value="✅ Aprovado" action="{!aprovar}" />
-        <apex:commandButton value="❌ Recusado" action="{!reprovar}" />
-        <apex:commandButton value="✏️ Solicitar alteração" action="{!alteracao}" />
+        <style>
+            body {
+                background-color: orangered;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+
+            .card {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .options {
+                display: flex;
+                gap: 3rem;
+            }
+            
+            .painel {
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                justify-content: center;
+                padding-top: 2rem;
+                gap: 1rem;
+            }
+        </style>
+
+        <div class="card">
+            <h1>Por favor, Escolha uma das opções abaixo para dar sequência no pedido:</h1>
+
+            <div class="options">
+                <apex:commandButton value="✅ Aprovado" action="{!aprovar}" />
+                <apex:commandButton value="❌ Recusado" action="{!reprovar}" />
+                <apex:commandButton value="✏️ Solicitar alteração" action="{!mostrarCampoJustificativa}" rerender="justificativaPanel"/>
+            </div>
+        </div>
+
+            <apex:outputPanel id="justificativaPanel">
+                <apex:outputPanel rendered="{!exibirCampoJustificativa}">
+                <div class="painel">
+                    <h1>Descrição das alterações:</h1>
+                    <apex:inputTextarea value="{!justificativa}" rows="4" cols="50" />
+                    <apex:commandButton value="Enviar alterações" action="{!alteracao}" />
+                </div>
+                </apex:outputPanel>
+            </apex:outputPanel>
+
     </apex:form>
 </apex:page>

@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
+        <name>EmailCotacaoCliente</name>
+        <label>Email com cotação para o cliente</label>
+        <locationX>1106</locationX>
+        <locationY>755</locationY>
+        <actionName>Opportunity.AlertaEmailCotacaoCliente</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Opportunity.AlertaEmailCotacaoCliente</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
         <name>EmailOportunidadeBackOffice</name>
         <label>Email sobre Oportunidade para BackOffice</label>
-        <locationX>1634</locationX>
+        <locationX>1898</locationX>
         <locationY>755</locationY>
         <actionName>Opportunity.OportunidadeEmailBackOffice</actionName>
         <actionType>emailAlert</actionType>
@@ -21,7 +38,7 @@
     <customErrors>
         <name>MensagemErroCamposNaoPreenchidos</name>
         <label>Mensagem de erro para campos não preenchidos</label>
-        <locationX>1106</locationX>
+        <locationX>1370</locationX>
         <locationY>863</locationY>
         <customErrorMessages>
             <errorMessage>Não é possível ir para o próximo estágio porque os campos obrigatórios não estão preenchidos em Conta.</errorMessage>
@@ -31,7 +48,7 @@
     <decisions>
         <name>CamposContaPreenchidos</name>
         <label>Campos em conta estão preenchidos?</label>
-        <locationX>1238</locationX>
+        <locationX>1502</locationX>
         <locationY>755</locationY>
         <defaultConnectorLabel>Sim</defaultConnectorLabel>
         <rules>
@@ -154,7 +171,7 @@
     <decisions>
         <name>OportunidadeCriadaAtualizada</name>
         <label>Oportunidade criada ou atualizada?</label>
-        <locationX>479</locationX>
+        <locationX>545</locationX>
         <locationY>323</locationY>
         <defaultConnector>
             <targetReference>ObterCamposCotacaoRelacionada</targetReference>
@@ -176,7 +193,7 @@
     <decisions>
         <name>QualEstagioOportunidade</name>
         <label>Qual o estágio da Oportunidade?</label>
-        <locationX>1172</locationX>
+        <locationX>1304</locationX>
         <locationY>647</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -193,6 +210,28 @@
                 <targetReference>OportunidadeAprovadaRejeitadaOuReajustada</targetReference>
             </connector>
             <label>Finalizar Cotação</label>
+        </rules>
+        <rules>
+            <name>PropostaAnaliseCliente</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Finalizar cotação</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Proposta em Análise Cliente</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>EmailCotacaoCliente</targetReference>
+            </connector>
+            <label>Proposta em análise do cliente</label>
         </rules>
         <rules>
             <name>FinalizarCadastro</name>
@@ -264,7 +303,7 @@
     <recordLookups>
         <name>ObterCamposCotacaoRelacionada</name>
         <label>Obter campos da cotação relacionada</label>
-        <locationX>1172</locationX>
+        <locationX>1304</locationX>
         <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -285,7 +324,7 @@
     <recordLookups>
         <name>ObterContaRelacionada</name>
         <label>Obter conta relacionada</label>
-        <locationX>1172</locationX>
+        <locationX>1304</locationX>
         <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -373,7 +412,7 @@
         <object>Quote</object>
     </recordUpdates>
     <start>
-        <locationX>353</locationX>
+        <locationX>419</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>OportunidadeCriadaAtualizada</targetReference>

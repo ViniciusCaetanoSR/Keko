@@ -8,13 +8,64 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
+        <controllingField>StageName</controllingField>
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
+                <fullName>Agilidade de Atendimento</fullName>
+                <default>false</default>
+                <label>Agilidade de Atendimento</label>
+            </value>
+            <value>
+                <fullName>Baixa demanda de mercado</fullName>
+                <default>false</default>
+                <label>Baixa demanda de mercado</label>
+            </value>
+            <value>
+                <fullName>CNPJ restrito (problemas financeiros)</fullName>
+                <default>false</default>
+                <label>CNPJ restrito (problemas financeiros)</label>
+            </value>
+            <value>
+                <fullName>Compra de oportunidade (uso próprio ou venda casada)</fullName>
+                <default>false</default>
+                <label>Compra de oportunidade (uso próprio ou venda casada)</label>
+            </value>
+            <value>
+                <fullName>Experiência negativa com a marca no passado</fullName>
+                <default>false</default>
+                <label>Experiência negativa com a marca no passado</label>
+            </value>
+            <value>
+                <fullName>Não atende volume mínimo</fullName>
+                <default>false</default>
+                <label>Não atende volume mínimo</label>
+            </value>
+            <value>
+                <fullName>Não quer trocar de marca (já trabalha com outra)</fullName>
+                <default>false</default>
+                <label>Não quer trocar de marca (já trabalha com outra)</label>
+            </value>
+            <value>
+                <fullName>Pouca flexibilidade nas condições de pagamento</fullName>
+                <default>false</default>
+                <label>Pouca flexibilidade nas condições de pagamento</label>
+            </value>
+            <value>
                 <fullName>Prazo de Entrega</fullName>
                 <default>false</default>
                 <label>Prazo de Entrega</label>
+            </value>
+            <value>
+                <fullName>Prazo de entrega não atende a necessidade do cliente</fullName>
+                <default>false</default>
+                <label>Prazo de entrega não atende a necessidade do cliente</label>
+            </value>
+            <value>
+                <fullName>Preço</fullName>
+                <default>false</default>
+                <label>Preço</label>
             </value>
             <value>
                 <fullName>Preço Alto</fullName>
@@ -27,15 +78,67 @@
                 <label>Qualidade do Produto</label>
             </value>
             <value>
-                <fullName>Agilidade de Atendimento</fullName>
-                <default>false</default>
-                <label>Agilidade de Atendimento</label>
-            </value>
-            <value>
                 <fullName>Outros</fullName>
                 <default>false</default>
-                <label>Outros</label>
+                <label>Outro. Qual?</label>
             </value>
         </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Perdido</controllingFieldValue>
+            <valueName>Baixa demanda de mercado</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdido</controllingFieldValue>
+            <valueName>CNPJ restrito (problemas financeiros)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdido</controllingFieldValue>
+            <valueName>Compra de oportunidade (uso próprio ou venda casada)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdido</controllingFieldValue>
+            <valueName>Experiência negativa com a marca no passado</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdido</controllingFieldValue>
+            <valueName>Não atende volume mínimo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdido</controllingFieldValue>
+            <valueName>Não quer trocar de marca (já trabalha com outra)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdido</controllingFieldValue>
+            <valueName>Pouca flexibilidade nas condições de pagamento</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdido</controllingFieldValue>
+            <valueName>Prazo de entrega não atende a necessidade do cliente</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdido</controllingFieldValue>
+            <valueName>Preço</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Perdido</controllingFieldValue>
+            <controllingFieldValue>Fechado Perdido</controllingFieldValue>
+            <valueName>Outros</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fechado Perdido</controllingFieldValue>
+            <valueName>Agilidade de Atendimento</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fechado Perdido</controllingFieldValue>
+            <valueName>Prazo de Entrega</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fechado Perdido</controllingFieldValue>
+            <valueName>Preço Alto</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fechado Perdido</controllingFieldValue>
+            <valueName>Qualidade do Produto</valueName>
+        </valueSettings>
     </valueSet>
 </CustomField>

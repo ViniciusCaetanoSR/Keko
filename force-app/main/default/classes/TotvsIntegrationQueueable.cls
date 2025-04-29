@@ -52,20 +52,25 @@ public class TotvsIntegrationQueueable implements Queueable, Database.AllowsCall
             
 
             if (response.getStatusCode() == 200 || response.getStatusCode() == 201 || response.getStatusCode() == 204) {
-                
-                if (!isUpdate) {
+                TriggerContext.isExecutingIntegration = true;
+
+                if (isUpdate) {
+                    account.IntegracaoTotvs__c = true;
+                    account.TotvsIntegrationDetails__c = '';
+                    update account;
+                    System.debug('Dados atualizados com sucesso na Totvs (PUT).');
+                } else {
                     Map<String, Object> responseMap = (Map<String, Object>) JSON.deserializeUntyped(response.getBody());
                     Integer customerCodeInt = (Integer) responseMap.get('customerCode');
                     String customerCode = String.valueOf(customerCodeInt);
-                    System.debug('Customer Code recebido: ' + customerCode);
-
+                    System.debug('Customer Code recebido: ' + customerCode);account.IntegracaoTotvs__c = true;
+                   
                     account.IntegracaoTotvs__c = true;
                     account.Codigo_do_cliente__c = customerCode;
                     account.TotvsIntegrationDetails__c = '';
-                    update account;
-                } else {
-                    System.debug('Dados atualizados com sucesso na Totvs (PUT).');
+                    update account; 
                 }
+                TriggerContext.isExecutingIntegration = false;
             } else {
                 handleRetry(JSON.serialize(requestBodyJson), response.getBody());
             }

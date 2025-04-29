@@ -82,6 +82,13 @@
             <name>AprovacaoCliente</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Enviar para aprovação financeiro</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
                 <leftValueReference>$Record.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>

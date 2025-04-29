@@ -8,7 +8,8 @@
    NOT(
       OR(
          OwnerId = $User.Id,
-         $Profile.Name = &quot;System Administrator&quot;
+         $Profile.Name = &quot;System Administrator&quot;,
+         $Profile.Name = &quot;Cotação para Cliente Profile&quot; 
       )
    )
 )</errorConditionFormula>

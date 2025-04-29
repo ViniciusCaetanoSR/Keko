@@ -1,4 +1,39 @@
 <apex:page >
-    <h1>Resultado da Ação</h1>
-    <p>{!IF(NOT(ISNULL($CurrentPage.parameters.msg)), $CurrentPage.parameters.msg, 'Nenhuma mensagem recebida.')}</p>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f8f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .mensagem {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .mensagem h1 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .mensagem p {
+            font-size: 18px;
+            margin: 0;
+        }
+    </style>
+    
+    <div class="mensagem">
+        <h1>Resultado da Ação</h1>
+        <p>{!IF(NOT(ISNULL($CurrentPage.parameters.msg)), $CurrentPage.parameters.msg, 'Nenhuma mensagem recebida.')}</p> 
+    </div>
 </apex:page>

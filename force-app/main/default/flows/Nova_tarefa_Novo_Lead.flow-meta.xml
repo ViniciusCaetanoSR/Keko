@@ -60,7 +60,6 @@
         <nameSegment>NewTask</nameSegment>
     </actionCalls>
     <apiVersion>56.0</apiVersion>
-    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>Nova tarefa Novo Lead - RD Station</description>
     <environments>Default</environments>
     <interviewLabel>Nova tarefa Novo Lead {!$Flow.CurrentDateTime}</interviewLabel>

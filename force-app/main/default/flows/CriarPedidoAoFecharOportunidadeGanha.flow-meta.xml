@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>62.0</apiVersion>
-    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>Este fluxo cria automaticamente um Pedido relacionado a uma Oportunidade/Conta quando o estágio da Oportunidade é alterado para &apos;Fechado Ganho&apos;. O Pedido é criado na fase &apos;Análise&apos; para garantir o acompanhamento correto da Oportunidade fechada.</description>
     <environments>Default</environments>
     <interviewLabel>Criar Pedido ao Fechar Oportunidade {!$Flow.CurrentDateTime}</interviewLabel>

@@ -60,11 +60,11 @@
                 <field>Phone</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>email_comercial__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>Nome_do_contato_principal__c</field>
             </layoutItems>
         </layoutColumns>
@@ -148,15 +148,15 @@
         <label>Dados Financeiros</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>Condicoes_de_Pagamento__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>Compra_mensal_pretendida_na_abertura_da__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>Valor_pretendido_do_primeiro_pedido__c</field>
             </layoutItems>
             <layoutItems>
@@ -170,11 +170,11 @@
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>email_financeiro__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>email_DANFE_xml__c</field>
             </layoutItems>
             <layoutItems>

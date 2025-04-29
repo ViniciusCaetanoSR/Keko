@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Oportunidade_RestricaoAlteracaoCotacao</fullName>
-    <active>true</active>
+    <active>false</active>
     <description>Esta regra impede que o usuário altere o estágio &quot;Gerar Cotação&quot; para qualquer outro manualmente.</description>
     <errorConditionFormula>AND(
     ISCHANGED(StageName),

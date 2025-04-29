@@ -95,7 +95,7 @@ private class IntegrationTotvsServiceTest {
         
         Test.startTest();
         
-        IntegrationTotvsService.updateTotvs(testAccount);
+        IntegrationTotvsService.updateTotvs(testAccount, testAccount);
         
         List<CronTrigger> scheduledJobs = [SELECT Id, CronExpression FROM CronTrigger];
         System.assertNotEquals(0, scheduledJobs.size(), 'O job de agendamento deve ter sido adicionado.');
