@@ -30,7 +30,10 @@ private class TotvsBodyMapperTest {
             Compra_mensal_pretendida_na_abertura_da__c = 2000,
             Nome_do_contato_principal__c = 'Contato principal',
             Valor_pretendido_do_primeiro_pedido__c = 250,
-            email_financeiro__c = 'teste@teste.com'
+            email_financeiro__c = 'teste@teste.com',
+            Transportadora__c = 'BERTOLINI',
+            Natureza_de_Operacao__c = '712701 - Venda de produção - Drawback'
+
         );
         insert testAccount;
         
@@ -44,7 +47,14 @@ private class TotvsBodyMapperTest {
             MasterLabel = '30 Dias',
             PaymentTerms__c = 30
         );
+
+        Transportadora__mdt testTransportadora = new Transportadora__mdt(
+            MasterLabel = 'Transfarrapo',
+            codigoTransportadora__c = 204
+        );
+
         System.debug('PC: ' + testPaymentCondition);
+        System.debug('TP: ' + testTransportadora);
         System.debug('Test Account' + testAccount);
         
         Test.startTest();

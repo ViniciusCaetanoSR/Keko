@@ -36,6 +36,8 @@ public with sharing class TotvsBody {
     public Integer defaultHolder;
     public Integer defaultModality;
     public Integer modality;
+    public Integer codeCarrier;
+    public String transactionType;
     // public String municipalRegistration;
     // public String parentName;
     // public Integer billingIbgeCode;

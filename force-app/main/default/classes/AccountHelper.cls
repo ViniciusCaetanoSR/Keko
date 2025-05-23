@@ -1,4 +1,8 @@
 public class AccountHelper {
+
+    private static final String TOTVS_SETTING_NAME = 'Totvs';
+    private static BypassSettings__mdt bypassSettings;
+
     public static final Set<String> dddsBR = new Set<String>{
         '11', '12', '13', '14', '15', '16', '17', '18', '19', '21', '22', '24', '27', '28',
         '31', '32', '33', '34', '35', '37', '38', '41', '42', '43', '44', '45', '46', '47', '48', '49',
@@ -64,41 +68,63 @@ public class AccountHelper {
     }
     
     public static String validatePhoneNumber(String phoneNumber, SObject objectToAddError) {
-        
-        if (phoneNumber.length() < 10) {
-            objectToAddError.addError('Número sem DDD');
-        }
-        
+
         String formattedNumber = formatPhoneNumber(phoneNumber);
         
-        if (formattedNumber.startsWith('+55') && !dddsBR.contains(formattedNumber.substring(4, 6))) {
-            objectToAddError.addError('DDD Inválido');
-        }
-        
-        if (formattedNumber.length() > 17) {
-            objectToAddError.addError('Verifique quantidade de digitos do número');
+        if(!isValidationByPassed()) {
+            if (phoneNumber.length() < 10) {
+                objectToAddError.addError('Número sem DDD');
+            }
+            
+             if (formattedNumber.startsWith('+55') && formattedNumber.length() >= 6 && !dddsBR.contains(formattedNumber.substring(4, 6))) {
+                objectToAddError.addError('DDD Inválido');
+             }
+            
+            if (formattedNumber.length() > 17) {
+                objectToAddError.addError('Verifique quantidade de digitos do número');
+            }
         }
         
         return formattedNumber;
     }
 
     public static String formatPhoneNumber(String phoneNumber) {
-        phoneNumber = phoneNumber.replaceAll('\\s+', '').replaceAll('[^0-9+]', '');
-                
-        if (!phoneNumber.startsWith('+55') && phoneNumber.length() >= 10 && phoneNumber.length() <= 11) {
-            phoneNumber = '+55' + phoneNumber;
+        
+
+        if(!isValidationByPassed()) {
+            phoneNumber = phoneNumber.replaceAll('\\s+', '').replaceAll('[^0-9+]', '');
+            if (!phoneNumber.startsWith('+55') && phoneNumber.length() >= 10 && phoneNumber.length() <= 11) {
+                phoneNumber = '+55' + phoneNumber;
+            }
+            
+            if (phoneNumber.startsWith('55') && !phoneNumber.startsWith('+55')) {
+                phoneNumber = '+' + phoneNumber;
+            }
+            
+            if (phoneNumber.startsWith('+55') && phoneNumber.length() == 13) { // Para números fixos
+                phoneNumber = phoneNumber.replaceFirst('(\\+\\d{2})(\\d{2})(\\d{4})(\\d{4})', '$1($2)$3-$4');
+            } else if (phoneNumber.startsWith('+55') && phoneNumber.length() == 14) { // Para números móveis
+                phoneNumber = phoneNumber.replaceFirst('(\\+\\d{2})(\\d{2})(\\d{5})(\\d{4})', '$1($2)$3-$4');
+            }
         }
         
-        if (phoneNumber.startsWith('55') && !phoneNumber.startsWith('+55')) {
-            phoneNumber = '+' + phoneNumber;
-        }
-        
-        if (phoneNumber.startsWith('+55') && phoneNumber.length() == 13) { // Para números fixos
-            phoneNumber = phoneNumber.replaceFirst('(\\+\\d{2})(\\d{2})(\\d{4})(\\d{4})', '$1($2)$3-$4');
-        } else if (phoneNumber.startsWith('+55') && phoneNumber.length() == 14) { // Para números móveis
-            phoneNumber = phoneNumber.replaceFirst('(\\+\\d{2})(\\d{2})(\\d{5})(\\d{4})', '$1($2)$3-$4');
-        }
         return phoneNumber;
+    }
+
+    private static Boolean isValidationByPassed() {
+        // Carrega as configurações apenas uma vez (lazy loading)
+        if (bypassSettings == null) {
+            try {
+                bypassSettings = [SELECT BypassValidation__c 
+                                 FROM BypassSettings__mdt 
+                                 WHERE DeveloperName = :TOTVS_SETTING_NAME 
+                                 LIMIT 1];
+            } catch (QueryException e) {
+                System.debug('Configuração BypassSettings__mdt não encontrada para ' + TOTVS_SETTING_NAME + '. Erro: ' + e.getMessage());
+                return false;
+            }
+        }
+        return bypassSettings != null && bypassSettings.BypassValidation__c;
     }
     
 }

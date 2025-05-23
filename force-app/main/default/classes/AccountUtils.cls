@@ -45,6 +45,9 @@ public with sharing class AccountUtils {
         newAccount.Telefone_fixo__c = phone;
         newAccount.Cod_Canal__c = '2';
         newAccount.Canal__c = 'AFTER MI';
+        newAccount.Transportadora__c = 'BERTOLINI';
+        newAccount.Natureza_de_Operacao__c = '712701 - Venda de produção - Drawback';
+
         
         System.debug('Conta : ' + JSON.serialize(newAccount));
         try {

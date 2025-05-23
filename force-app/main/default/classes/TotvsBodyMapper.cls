@@ -45,6 +45,20 @@ public with sharing class TotvsBodyMapper {
                 campoPaymentTotvs = listaPaymentTotvs[0];
                 System.debug('Campos PaymentCondition: ' + campoPaymentTotvs);
             }
+
+            List<Transportadora__mdt> listaTransportadoraTotvs = [SELECT codigoTransportadora__c FROM Transportadora__mdt WHERE Name__c = :conta.Transportadora__c LIMIT 1];
+            Transportadora__mdt campoTransportadoraTotvs;
+            if (!listaTransportadoraTotvs.isEmpty()) {
+                campoTransportadoraTotvs = listaTransportadoraTotvs[0];
+                System.debug('Campos Transportadora: ' + campoTransportadoraTotvs);
+            }
+
+            List<Natureza_de_Operacao__mdt> listaNatureza_de_OperacaoTotvs = [SELECT codigoNaturezaOperacao__c FROM Natureza_de_Operacao__mdt WHERE Name__c = :conta.Natureza_de_Operacao__c LIMIT 1];
+            Natureza_de_Operacao__mdt campoNatureza_de_OperacaoTotvs;
+            if (!listaNatureza_de_OperacaoTotvs.isEmpty()) {
+                campoNatureza_de_OperacaoTotvs = listaNatureza_de_OperacaoTotvs[0];
+                System.debug('Campos Natureza_de_Operacao: ' + campoNatureza_de_OperacaoTotvs);
+            }
             
             request.shortName = conta.Name;
             request.customerName = conta.RazaoSocial__c;
@@ -68,6 +82,7 @@ public with sharing class TotvsBodyMapper {
             request.billingState = conta.BillingState;
             request.billingZipCode =  remocaoCaracteresESpecial(conta.BillingPostalCode);
             
+            
             request.phone1 = remocaoCaracteresESpecial(conta.Telefone_fixo__c);
             request.activityBranch = conta.Ramo_de_Atividade__c;
             request.salesChannel = transformacaoTextoInteiro(conta.Cod_Canal__c);
@@ -79,6 +94,10 @@ public with sharing class TotvsBodyMapper {
             request.defaultHolder = transformacaoInteiro(totvsApi.DefaultHolder__c);
             request.defaultModality = transformacaoInteiro(totvsApi.DefaultModality__c);
             request.modality = transformacaoInteiro(totvsApi.Modality__c);
+
+            request.codeCarrier = transformacaoInteiro(campoTransportadoraTotvs.codigoTransportadora__c);
+
+            request.transactionType = remocaoCaracteresESpecial(campoNatureza_de_OperacaoTotvs.codigoNaturezaOperacao__c);
     
             
             System.debug('City: ' + request.city);

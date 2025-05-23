@@ -19,7 +19,7 @@ public class AccountHelperTest {
             Country = 'Brasil',
             Bairro__c = 'Centro',
             Phone = '1123456789',
-            Telefone_fixo__c = '1123456789',
+            Telefone_fixo__c = '01123456789',
             Company = 'Big Sky Inc.',
             Ramo_de_Atividade__c = 'Lojista',
             email_comercial__c = 'bsi@email.com',
@@ -27,7 +27,7 @@ public class AccountHelperTest {
             Condicoes_de_Pagamento__c = 'Apresentação',
             email_financeiro__c = 'bsifinanceiro@email.com',
             MunicipalRegistration__c = '12345',
-            Cidade__c = 'a02be000001SCEYAA4'
+            Cidade__c = 'a02be000001S99sAAC'
 
         );
         insert lead;
@@ -156,4 +156,5 @@ public class AccountHelperTest {
         // Verificar se o número de telefone não foi alterado
         System.assertEquals('+551112345678901234', acc.Phone, 'Phone number should remain unchanged');
     }
+
 }
