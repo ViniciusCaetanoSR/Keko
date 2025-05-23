@@ -5,6 +5,14 @@
     <allowedSubmitters>
         <type>owner</type>
     </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>patrick.baldez@srconsulting.io</submitter>
+        <type>user</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
+        <submitter>vinicius.silva@srconsulting.io</submitter>
+        <type>user</type>
+    </allowedSubmitters>
     <approvalPageFields>
         <field>LeadProcessoAvaliacao__c</field>
         <field>Name</field>
@@ -24,11 +32,6 @@
     </approvalStep>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <entryCriteria>
-        <criteriaItems>
-            <field>Lead.Status</field>
-            <operation>equals</operation>
-            <value>Aprovação Financeira</value>
-        </criteriaItems>
         <criteriaItems>
             <field>Lead.RecordType</field>
             <operation>equals</operation>

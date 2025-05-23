@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>53.0</apiVersion>
-    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>Elimina todos os casos, para que recriem somente os abertos via dataloader.</description>
     <interviewLabel>Elimina_Casos_Em_Atendimento {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Elimina_Casos_Em_Atendimento</label>

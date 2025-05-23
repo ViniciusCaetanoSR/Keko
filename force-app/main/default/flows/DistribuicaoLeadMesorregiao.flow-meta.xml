@@ -86,7 +86,6 @@
         <offset>0</offset>
     </actionCalls>
     <apiVersion>62.0</apiVersion>
-    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <description>Verifica se o Lead é criado ou atualizado.</description>
         <name>LeadCriadoOuAtualizado</name>
@@ -129,17 +128,10 @@
         <defaultConnector>
             <targetReference>AtualizaProprietarioGestorExterno</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>Origem do lead é &quot;visita&quot; ou &quot;ligação GE&quot;</defaultConnectorLabel>
+        <defaultConnectorLabel>Origem do lead é &quot;Visita&quot; ou &quot;Indicação&quot;</defaultConnectorLabel>
         <rules>
             <name>ValorOrigemLead</name>
             <conditionLogic>or</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.LeadSource</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Ligação</stringValue>
-                </rightValue>
-            </conditions>
             <conditions>
                 <leftValueReference>$Record.LeadSource</leftValueReference>
                 <operator>EqualTo</operator>
@@ -164,7 +156,7 @@
             <connector>
                 <targetReference>AtualizaProprietarioLead</targetReference>
             </connector>
-            <label>Origem do lead é &quot;ligação&quot;, &quot;site Keko&quot; ou &quot;campanha RD&quot;</label>
+            <label>Origem do lead é &quot;Site Keko&quot; ou &quot;Campanha RD&quot; ou &quot;Feiras e Eventos&quot;</label>
         </rules>
         <rules>
             <name>OrigemPortalMontadora</name>
@@ -242,13 +234,6 @@
                 <leftValueReference>$Record.LeadSource</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Ligação</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.LeadSource</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
                     <stringValue>Site Keko</stringValue>
                 </rightValue>
             </conditions>
@@ -276,7 +261,7 @@
             <connector>
                 <targetReference>PossuiGestorExterno</targetReference>
             </connector>
-            <label>Origem do lead é &quot;ligação&quot;, &quot;site Keko&quot; ou &quot;campanha RD&quot;</label>
+            <label>Origem do lead é &quot;Site Keko&quot; ou &quot;Campanha RD&quot; ou &quot;Portal Montadora&quot; ou &quot;Feiras e Eventos&quot;</label>
         </rules>
     </decisions>
     <decisions>

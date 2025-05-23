@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
-    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <description>Este fluxo define automaticamente a Data de Fechamento da Oportunidade para 10 dias após a conversão do Lead ou a criação manual da Oportunidade.</description>
     <environments>Default</environments>
     <formulas>

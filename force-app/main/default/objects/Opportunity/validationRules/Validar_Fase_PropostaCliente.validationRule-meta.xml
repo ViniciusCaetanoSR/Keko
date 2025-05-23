@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validar_Fase_PropostaCliente</fullName>
+    <active>true</active>
+    <description>Regra de validação garante que a ordem da esteira de oportunidade siga a sequência estabelecida.</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(PRIORVALUE(StageName), &apos;Proposta em Análise Cliente&apos;),
+       ISPICKVAL(StageName, &apos;Fechado Ganho&apos;)
+)</errorConditionFormula>
+    <errorMessage>Não é possível pular etapas na esteira de oportunidade. Siga a sequência correta.</errorMessage>
+</ValidationRule>
